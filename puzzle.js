@@ -1,0 +1,117 @@
+// puzzle.js - Grid generation and word placement algorithms
+
+const GRID_SIZE = 10;
+const DIRECTIONS = [
+    { dx: 1, dy: 0, name: 'horizontal' },      // right
+    { dx: 0, dy: 1, name: 'vertical' },        // down
+    { dx: 1, dy: 1, name: 'diagonal-down' },   // down-right
+    { dx: -1, dy: 1, name: 'diagonal-down' },  // down-left
+    { dx: 1, dy: -1, name: 'diagonal-up' },    // up-right
+    { dx: -1, dy: -1, name: 'diagonal-up' }    // up-left
+];
+
+function createEmptyGrid() {
+    return Array(GRID_SIZE).fill(null).map(() => Array(GRID_SIZE).fill(null));
+}
+
+function canPlaceWord(grid, word, startX, startY, direction) {
+    for (let i = 0; i < word.length; i++) {
+        const x = startX + i * direction.dx;
+        const y = startY + i * direction.dy;
+
+        // Check bounds
+        if (x < 0 || x >= GRID_SIZE || y < 0 || y >= GRID_SIZE) {
+            return false;
+        }
+
+        // Check if cell is empty or has the same letter
+        if (grid[y][x] !== null && grid[y][x] !== word[i]) {
+            return false;
+        }
+    }
+    return true;
+}
+
+function placeWord(grid, word, startX, startY, direction) {
+    const positions = [];
+    for (let i = 0; i < word.length; i++) {
+        const x = startX + i * direction.dx;
+        const y = startY + i * direction.dy;
+        grid[y][x] = word[i];
+        positions.push({ x, y });
+    }
+    return positions;
+}
+
+function tryPlaceWord(grid, word, maxAttempts = 100) {
+    for (let attempt = 0; attempt < maxAttempts; attempt++) {
+        const direction = DIRECTIONS[Math.floor(Math.random() * DIRECTIONS.length)];
+        const startX = Math.floor(Math.random() * GRID_SIZE);
+        const startY = Math.floor(Math.random() * GRID_SIZE);
+
+        if (canPlaceWord(grid, word, startX, startY, direction)) {
+            const positions = placeWord(grid, word, startX, startY, direction);
+            return { success: true, positions };
+        }
+    }
+    return { success: false, positions: [] };
+}
+
+function fillEmptyCells(grid) {
+    const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    for (let y = 0; y < GRID_SIZE; y++) {
+        for (let x = 0; x < GRID_SIZE; x++) {
+            if (grid[y][x] === null) {
+                grid[y][x] = letters[Math.floor(Math.random() * letters.length)];
+            }
+        }
+    }
+}
+
+function generatePuzzle(words) {
+    const grid = createEmptyGrid();
+    const wordPlacements = [];
+
+    // Sort words by length (longest first) for better placement
+    const sortedWords = [...words].sort((a, b) => b.length - a.length);
+
+    for (const word of sortedWords) {
+        const result = tryPlaceWord(grid, word);
+        if (result.success) {
+            wordPlacements.push({
+                word,
+                positions: result.positions
+            });
+        }
+    }
+
+    fillEmptyCells(grid);
+
+    return {
+        grid,
+        words: wordPlacements.map(wp => wp.word),
+        placements: wordPlacements
+    };
+}
+
+function isAdjacent(pos1, pos2) {
+    const dx = Math.abs(pos1.x - pos2.x);
+    const dy = Math.abs(pos1.y - pos2.y);
+    return dx <= 1 && dy <= 1 && (dx + dy > 0);
+}
+
+function positionsMatch(positions1, positions2) {
+    if (positions1.length !== positions2.length) return false;
+
+    // Check forward match
+    const forwardMatch = positions1.every((pos, i) =>
+        pos.x === positions2[i].x && pos.y === positions2[i].y
+    );
+    if (forwardMatch) return true;
+
+    // Check reverse match
+    const reversed = [...positions2].reverse();
+    return positions1.every((pos, i) =>
+        pos.x === reversed[i].x && pos.y === reversed[i].y
+    );
+}
