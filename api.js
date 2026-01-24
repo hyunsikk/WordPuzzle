@@ -20,15 +20,22 @@ async function generateWords(moodText) {
         throw new Error('API key not configured');
     }
 
-    const prompt = `Given the user's mood: "${moodText}"
-Generate 5-7 positive words related to this feeling.
+    const prompt = `Generate 5-7 words for a word search puzzle based on this input: "${moodText}"
+
 Rules:
-- Each word 3-8 letters
+- Words must be HIGHLY RELEVANT to the input text
+- Prioritize funny, witty, clever, or playful words when possible
+- Each word must be 3-8 letters
 - Capital letters only
-- Single words (no spaces)
+- Single words (no spaces or hyphens)
 - Return ONLY a JSON array of strings, nothing else
 
-Example output: ["HAPPY", "JOY", "BRIGHT", "SMILE", "GLOW"]`;
+Be creative! If the input mentions something specific, include related words that might make the player smile or chuckle. Puns and wordplay are welcome.
+
+Example: Input "I love pizza" → ["CHEESE", "CRUST", "DROOL", "HANGRY", "SLICE", "DEVOUR"]
+Example: Input "Monday morning" → ["COFFEE", "ZOMBIE", "SNOOZE", "GROAN", "YAWN", "SURVIVE"]`;
+
+    console.log('Making API request with key:', apiKey.substring(0, 10) + '...');
 
     const response = await fetch(API_URL, {
         method: 'POST',
@@ -52,6 +59,9 @@ Example output: ["HAPPY", "JOY", "BRIGHT", "SMILE", "GLOW"]`;
 
     if (!response.ok) {
         const error = await response.json();
+        console.log('API Error Response:', JSON.stringify(error, null, 2));
+        console.log('Response Status:', response.status);
+        console.log('API Key (first 10 chars):', apiKey.substring(0, 10) + '...');
         throw new Error(error.error?.message || 'API request failed');
     }
 

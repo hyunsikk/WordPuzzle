@@ -1,0 +1,3826 @@
+{
+  "abandon_leave": [
+    "ABANDON",
+    "ABSCOND",
+    "ABDICATE",
+    "ABJURE"
+  ],
+  "ability_expertise": [
+    "SKILL",
+    "SKILLED",
+    "EXPERT",
+    "ABLE"
+  ],
+  "abundance_excess": [
+    "PROFUSE",
+    "PROFUSION",
+    "PROLIFERATE",
+    "PROLIFIC",
+    "RAMPANT"
+  ],
+  "abundance_plenty": [
+    "FEAST",
+    "FERTILE",
+    "FLOURISH",
+    "FLOOD"
+  ],
+  "abundance_quantity": [
+    "PLENTIFUL",
+    "PLENTY",
+    "PLETHORA",
+    "PLURALITY",
+    "POPULATION"
+  ],
+  "academic_learning": [
+    "ACADEMIC",
+    "ACADEMY",
+    "ANALYZE",
+    "ANNOTATE"
+  ],
+  "academic_topics": [
+    "THEME",
+    "THEMATIC",
+    "TOPIC",
+    "TOPICAL",
+    "THESIS",
+    "THEORY"
+  ],
+  "acceptance_openness": [
+    "RECEIVE",
+    "RECEPTIVE",
+    "RECIPIENT",
+    "REGARD"
+  ],
+  "accuracy_exactness": [
+    "PRECISE",
+    "PRECISION",
+    "PRISTINE",
+    "PRIMARY",
+    "PRIME"
+  ],
+  "achievement_success": [
+    "SUCCEED",
+    "SUCCESS",
+    "SUCCESSFUL",
+    "SURPASS",
+    "SUMMIT"
+  ],
+  "actions_calculation": [
+    "CALCULATE",
+    "CALIBRATE",
+    "CATEGORIZE",
+    "CHART"
+  ],
+  "actions_change": [
+    "UNDERGO",
+    "UNDERTAKE",
+    "UPDATE",
+    "UPGRADE",
+    "VARY"
+  ],
+  "actions_change_modify": [
+    "REVISE",
+    "REVISION",
+    "RESTRUCTURE",
+    "RESTORE",
+    "RESTATE"
+  ],
+  "actions_communication": [
+    "CAJOLE",
+    "CANDOR",
+    "CAPTIVATE",
+    "CHIDE",
+    "COAX"
+  ],
+  "actions_conflict": [
+    "CHALLENGE",
+    "CHASE",
+    "CHASTISE",
+    "CLASH",
+    "COMBAT"
+  ],
+  "actions_control": [
+    "OVERCOME",
+    "OVERRIDE",
+    "OVERRULE",
+    "OVERTHROW",
+    "OVERTURN",
+    "OVERWHELM"
+  ],
+  "actions_creation": [
+    "PRODUCE",
+    "PRODUCT",
+    "PROCURE",
+    "PROCESS",
+    "PROCEDURE"
+  ],
+  "actions_damage": [
+    "UNDERMINE",
+    "UNDERVALUE",
+    "UPBRAID",
+    "VILIFY",
+    "VIOLATE"
+  ],
+  "actions_destruction": [
+    "DESTROY",
+    "DISMANTLE",
+    "DISRUPT",
+    "DISSOLVE",
+    "DISCARD"
+  ],
+  "actions_destruction_damage": [
+    "RUIN",
+    "RUPTURE",
+    "SABOTAGE",
+    "SAVAGE",
+    "SCAR"
+  ],
+  "actions_examination_study": [
+    "REVIEW",
+    "SCRUTINIZE",
+    "SCRUTINY",
+    "SCAN",
+    "SEARCH"
+  ],
+  "actions_giving": [
+    "VOLUNTEER",
+    "VOUCH",
+    "VOW",
+    "YIELD"
+  ],
+  "actions_growth": [
+    "BROADEN",
+    "BURGEON",
+    "BUILD",
+    "CAPITALIZE"
+  ],
+  "actions_improvement": [
+    "ENHANCE",
+    "ENRICH",
+    "ELEVATE",
+    "EMPOWER",
+    "ENERGIZE"
+  ],
+  "actions_limitation_control": [
+    "RESTRAIN",
+    "RESTRAINT",
+    "RESTRICT",
+    "RESTRICTION",
+    "RETAIN"
+  ],
+  "actions_management": [
+    "OVERSEE",
+    "PARTICIPATE",
+    "PERFORM",
+    "PERMIT",
+    "PERSUADE"
+  ],
+  "actions_movement": [
+    "EMERGE",
+    "EMERGE",
+    "EMIGRATE",
+    "ESCAPE",
+    "EVACUATE",
+    "EVADE"
+  ],
+  "actions_movement_down": [
+    "PLUMMET",
+    "PLUNGE",
+    "PRECIPITATE"
+  ],
+  "actions_movement_general": [
+    "PLOD",
+    "POISE",
+    "POSE",
+    "POSTURE"
+  ],
+  "actions_movement_travel": [
+    "ROAM",
+    "ROTATE",
+    "ROLL",
+    "RUSH",
+    "SAIL"
+  ],
+  "actions_physical": [
+    "WEAVE",
+    "WIELD",
+    "WRING",
+    "WRESTLE",
+    "WRITHE"
+  ],
+  "actions_return_back": [
+    "RETURN",
+    "RETREAT",
+    "REVERT",
+    "RETRACT",
+    "REVERSE"
+  ],
+  "actions_reveal": [
+    "UNCOVER",
+    "UNFOLD",
+    "UNRAVEL",
+    "UNVEIL",
+    "VET"
+  ],
+  "actions_revival_renewal": [
+    "REVIVE",
+    "REVIVAL",
+    "REVITALIZE",
+    "RESURRECT",
+    "RESURGENCE"
+  ],
+  "actions_separation": [
+    "DIVIDE",
+    "DIVISION",
+    "DISSOLVE",
+    "DISPERSE",
+    "DISPLACE",
+    "DISPLACEMENT"
+  ],
+  "actions_support": [
+    "UNDERLIE",
+    "UNDERSCORE",
+    "UPHOLD",
+    "VALIDATE",
+    "VINDICATE"
+  ],
+  "actions_violent": [
+    "PLUNDER",
+    "PLUCK",
+    "POISON",
+    "POLLUTE"
+  ],
+  "actions_violent_conflict": [
+    "RETALIATE",
+    "RETALIATION",
+    "REVENGE",
+    "REVOLT",
+    "REVOLUTION"
+  ],
+  "adequacy_sufficiency": [
+    "SUFFICE",
+    "SUFFICIENT",
+    "SURPLUS",
+    "SUSTAIN",
+    "SUSTAINABLE"
+  ],
+  "admiration_esteem": [
+    "RESPECT",
+    "REGARD",
+    "REPUTATION",
+    "REPUTABLE"
+  ],
+  "agreement_consensus": [
+    "CONCUR",
+    "CONCURRENT",
+    "CONSENSUS",
+    "CONSENT",
+    "CONCEDE"
+  ],
+  "agreement_disagreement": [
+    "DISAGREE",
+    "DISCORD",
+    "DISPUTE",
+    "DISSENT",
+    "DISSONANCE",
+    "DISSONANT"
+  ],
+  "agreement_harmony": [
+    "COMPATIBLE",
+    "COMPLY",
+    "COMPLIANCE",
+    "COMPLIANT",
+    "CONFORM",
+    "CONFORMITY"
+  ],
+  "aloneness_isolation": [
+    "SOLITARY",
+    "SOLITUDE",
+    "ALONE",
+    "ISOLATED"
+  ],
+  "angle_perspective": [
+    "SLANT",
+    "ANGLE",
+    "TILT",
+    "PERSPECTIVE"
+  ],
+  "answers_resolution": [
+    "SOLUTION",
+    "SOLVE",
+    "ANSWER",
+    "RESOLVE"
+  ],
+  "approval_support": [
+    "APPROVE",
+    "APPROVAL",
+    "BOLSTER",
+    "BOOST"
+  ],
+  "argument_debate": [
+    "REBUT",
+    "REBUTTAL",
+    "REFUTE",
+    "REFUSE",
+    "REJECT"
+  ],
+  "arrogance_pride": [
+    "SMUG",
+    "ARROGANT",
+    "PROUD",
+    "CONCEITED"
+  ],
+  "artistic_creative": [
+    "MUSIC",
+    "MURAL",
+    "MELODRAMA",
+    "METAPHOR",
+    "MYTH"
+  ],
+  "assembly_gathering": [
+    "ASSEMBLE",
+    "ASSEMBLY",
+    "AUDIENCE",
+    "BANQUET"
+  ],
+  "assistance_provision": [
+    "SUPPORT",
+    "SUPPLY",
+    "SUPPLIER",
+    "SUPPLEMENT",
+    "SUSTAIN"
+  ],
+  "assumptions_beliefs": [
+    "SUPPOSE",
+    "SUSPECT",
+    "SURMISE",
+    "SUSPICION",
+    "SUSPICIOUS"
+  ],
+  "authority_control": [
+    "REGIME",
+    "REIGN",
+    "REGULATE",
+    "REGULATION"
+  ],
+  "authority_official": [
+    "OFFICE",
+    "OFFICER",
+    "OFFICIAL",
+    "ORDER"
+  ],
+  "authority_power": [
+    "SUPREMACY",
+    "SUPREME",
+    "SUPERIOR",
+    "SULTAN",
+    "SUPERVISE"
+  ],
+  "avoidance_evasion": [
+    "SHIRK",
+    "SHUN",
+    "AVOID",
+    "EVADE"
+  ],
+  "awareness_perception": [
+    "OBSERVABLE",
+    "OBSERVANT",
+    "OBSERVATION",
+    "OBSERVE"
+  ],
+  "backward_movement": [
+    "REGRESS",
+    "REGRESSION",
+    "RECEDE",
+    "RECOIL"
+  ],
+  "basic_fundamental": [
+    "BASE",
+    "BASIC",
+    "BASIS",
+    "BENCHMARK"
+  ],
+  "beginner_new": [
+    "NOVICE",
+    "NOVEL",
+    "NOVELTY",
+    "NEWFOUND"
+  ],
+  "beginning_new": [
+    "FLEDGLING",
+    "FRESH",
+    "FIRST",
+    "FABRICATE"
+  ],
+  "beginning_start": [
+    "INAUGURATE",
+    "INCEPTION",
+    "INITIAL",
+    "INITIATE",
+    "INITIATIVE"
+  ],
+  "beginnings_origins": [
+    "ORIGIN",
+    "ORIGINAL",
+    "ORIGINATE",
+    "ONSET"
+  ],
+  "belief_trust": [
+    "CREDENCE",
+    "CREDIBLE",
+    "CREDIT",
+    "CREDULOUS"
+  ],
+  "betrayal_breaking": [
+    "RENEGE",
+    "REPEAL",
+    "RESCIND",
+    "REPUDIATE"
+  ],
+  "body_parts": [
+    "THROAT",
+    "TONGUE",
+    "TISSUE",
+    "TRUNK"
+  ],
+  "body_physical": [
+    "STOMACH",
+    "STRENGTH",
+    "STRENGTHEN"
+  ],
+  "brevity_shortness": [
+    "SHORT",
+    "SHORTAGE",
+    "SHORTCOMING",
+    "BRIEF"
+  ],
+  "brightness_clarity": [
+    "LIGHT",
+    "LIGHTEN",
+    "LUMINOUS",
+    "LUCID",
+    "LOFTY",
+    "MAGNIFICENT"
+  ],
+  "brightness_illumination": [
+    "SHINE",
+    "BRIGHT",
+    "ILLUMINATE",
+    "GLOW"
+  ],
+  "business_commerce": [
+    "PACKAGE",
+    "PACT",
+    "PARTNER",
+    "PARTNERSHIP",
+    "PATRON",
+    "PATRONIZE"
+  ],
+  "business_economics": [
+    "MONETARY",
+    "MONEY",
+    "MERCENARY",
+    "MORTGAGE",
+    "MERGER"
+  ],
+  "business_finance": [
+    "EXCHANGE",
+    "EXPENSE",
+    "EXPENSIVE",
+    "EXPENDITURE",
+    "FINANCE",
+    "FINANCIAL"
+  ],
+  "business_money": [
+    "PROFIT",
+    "PROSPERITY",
+    "PROSPER",
+    "PURCHASE",
+    "PROPERTY"
+  ],
+  "business_money_commerce": [
+    "REVENUE",
+    "RETAIL",
+    "SALARY",
+    "SAVINGS",
+    "SATISFACTION"
+  ],
+  "business_work": [
+    "WORK",
+    "WORKER",
+    "WORKFORCE",
+    "WORKSHOP",
+    "WAGE"
+  ],
+  "calming_comfort": [
+    "SOOTHE",
+    "STILL",
+    "STEADY"
+  ],
+  "calmness_soothing": [
+    "ALLAY",
+    "ALLEVIATE",
+    "AMELIORATE",
+    "APPEASE"
+  ],
+  "calmness_stillness": [
+    "QUIET",
+    "QUIESCENT",
+    "PEACEFUL",
+    "TRANQUIL"
+  ],
+  "calmness_tranquility": [
+    "SEDATE",
+    "SEDATIVE",
+    "SERENE",
+    "SERENITY",
+    "PEACEFUL"
+  ],
+  "capability_skill": [
+    "FACULTY",
+    "FACILITATE",
+    "FACILITY",
+    "FEASIBLE",
+    "FITNESS"
+  ],
+  "carelessness_neglect": [
+    "NEGLECT",
+    "NEGLIGENT",
+    "OBLIVIOUS",
+    "NONCHALANT"
+  ],
+  "cessation_halt": [
+    "STOP",
+    "STRAND",
+    "STRANDED"
+  ],
+  "change_adjustment": [
+    "ADAPT",
+    "ADJUST",
+    "ALTER",
+    "ALTERNATE"
+  ],
+  "change_concepts": [
+    "VARIABLE",
+    "VARIANCE",
+    "VARIANT",
+    "VARIATION",
+    "VARIED"
+  ],
+  "change_direction": [
+    "REDIRECT",
+    "REFLECT",
+    "REFLECTION",
+    "REFRAIN"
+  ],
+  "change_variation": [
+    "FLUCTUATE",
+    "FLUX",
+    "FRACTURE",
+    "FRAGMENT"
+  ],
+  "characteristics_intrinsic": [
+    "INSTINCT",
+    "INTRINSIC",
+    "INVOLUNTARY",
+    "INHERENT",
+    "INTANGIBLE",
+    "KINETIC"
+  ],
+  "characteristics_traits": [
+    "PRONE",
+    "PROPENSITY",
+    "TENDENCY",
+    "INCLINATION"
+  ],
+  "claims_statements": [
+    "ALLEGE",
+    "ALLEGIANCE",
+    "ALLUSION",
+    "ANNOUNCE"
+  ],
+  "cleanliness_health_purity": [
+    "SANITARY",
+    "SALUBRIOUS",
+    "SACRED",
+    "SANE"
+  ],
+  "cleverness_cunning": [
+    "SHREWD",
+    "SLY",
+    "CUNNING",
+    "CLEVER"
+  ],
+  "closeness_connection": [
+    "ADHERE",
+    "ADJACENT",
+    "AFFILIATION",
+    "AFFINITY"
+  ],
+  "closure_ending": [
+    "SHUT",
+    "CLOSE",
+    "END",
+    "SEAL"
+  ],
+  "collection_variety": [
+    "REPERTOIRE",
+    "RESERVOIR",
+    "RESOURCE",
+    "RESOURCEFUL"
+  ],
+  "communication_expression": [
+    "IMPART",
+    "IMPLY",
+    "INFORM",
+    "INDICATE",
+    "INQUIRE"
+  ],
+  "communication_inform": [
+    "APPRISE",
+    "ASSERT",
+    "AVER",
+    "ANNOUNCE"
+  ],
+  "communication_interaction": [
+    "INTERACT",
+    "INTERACTION",
+    "INTERCHANGE",
+    "INTERFACE",
+    "INTERVIEW",
+    "INVOKE"
+  ],
+  "communication_language": [
+    "PARAPHRASE",
+    "PARDON",
+    "PARODY",
+    "PHRASE",
+    "PARAGRAPH"
+  ],
+  "communication_media": [
+    "MEDIA",
+    "MESSAGE",
+    "MENTION",
+    "MEDIATE",
+    "MEDIATOR"
+  ],
+  "communication_response": [
+    "RESPOND",
+    "RESPONSE",
+    "RESPONSIVE",
+    "RETORT",
+    "REPLY"
+  ],
+  "communication_signals": [
+    "SIGN",
+    "SIGNAL",
+    "SIGNATURE",
+    "COMMUNICATE"
+  ],
+  "communication_speaking": [
+    "REMARK",
+    "REPLY",
+    "REPORT",
+    "REPRESENT"
+  ],
+  "communication_speech": [
+    "VOCABULARY",
+    "VOICE",
+    "WORD",
+    "WRITE",
+    "WRITER"
+  ],
+  "communication_written": [
+    "DOCUMENT",
+    "DICTIONARY",
+    "DIAGRAM",
+    "DRAFT",
+    "DISCLOSURE"
+  ],
+  "comparison_evaluation": [
+    "COMPARABLE",
+    "COMPARATIVE",
+    "COMPARE",
+    "COMPARISON",
+    "CONTRAST"
+  ],
+  "competition_rivalry": [
+    "COMPETE",
+    "COMPETITION",
+    "COMPETITIVE",
+    "CONTEST",
+    "CONTEND"
+  ],
+  "completeness_entirety": [
+    "OVERALL",
+    "PANORAMA",
+    "PARAMOUNT",
+    "PARTICULAR",
+    "PARTICULARLY"
+  ],
+  "completeness_purity": [
+    "SHEER",
+    "PURE",
+    "COMPLETE",
+    "ABSOLUTE"
+  ],
+  "completeness_totality": [
+    "SET",
+    "SETTLEMENT",
+    "SEVERAL",
+    "COMPLETE"
+  ],
+  "completeness_wholeness": [
+    "INTACT",
+    "INTEGRAL",
+    "INTEGRITY",
+    "INTEGRATE",
+    "INVARIABLE",
+    "IRREPARABLE"
+  ],
+  "completion_fulfillment": [
+    "FULFILL",
+    "FULL",
+    "FRUITFUL",
+    "FUNCTION"
+  ],
+  "completion_fulfillment_satisfaction": [
+    "SATISFY",
+    "SATISFACTORY",
+    "SATISFACTION",
+    "SATIATE"
+  ],
+  "completion_wholeness": [
+    "COMPLETE",
+    "COMPRISE",
+    "COMPREHENSIVE",
+    "CONCLUDE",
+    "CONCLUSION"
+  ],
+  "complexity_difficulty": [
+    "COMPLEX",
+    "COMPLEXITY",
+    "COMPLICATE",
+    "CONVOLUTED",
+    "CONUNDRUM"
+  ],
+  "compliance_obedience": [
+    "OBEDIENT",
+    "OBEY",
+    "OBLIGE",
+    "OBLIGATORY"
+  ],
+  "compression_pressure": [
+    "SQUASH",
+    "SQUEEZE",
+    "STIFLE"
+  ],
+  "compulsion_force": [
+    "COMPEL",
+    "COMPELLING",
+    "COMPULSION",
+    "CONSTRAIN",
+    "CONSTRAINT"
+  ],
+  "concealment_secrecy": [
+    "SECRECY",
+    "SECRET",
+    "SECRETIVE",
+    "HIDE",
+    "SHROUD",
+    "SHADOW"
+  ],
+  "condition_status": [
+    "STATE",
+    "STATUS",
+    "STATUTE"
+  ],
+  "confidence_certainty": [
+    "CONFIDENT",
+    "CONFIDENTIAL",
+    "CONFIRM",
+    "CONCLUSIVE",
+    "CONSTANT"
+  ],
+  "conflict_attack": [
+    "OFFEND",
+    "OFFENSE",
+    "OFFENSIVE",
+    "ONSLAUGHT"
+  ],
+  "conflict_concepts": [
+    "VENDETTA",
+    "VENGEANCE",
+    "VERSUS",
+    "VICTIM",
+    "VICTORY"
+  ],
+  "conflict_opposition": [
+    "PARANOID",
+    "PARIAH",
+    "PARTISAN",
+    "PERSECUTE",
+    "PERTURB"
+  ],
+  "conflict_warfare": [
+    "SIEGE",
+    "SLAUGHTER",
+    "BATTLE",
+    "WAR"
+  ],
+  "conflicted_feelings": [
+    "AMBIVALENT",
+    "AMORAL",
+    "APATHY",
+    "ANXIOUS"
+  ],
+  "connection_relationship": [
+    "LINK",
+    "LIAISON",
+    "LIKEWISE",
+    "MATCH",
+    "MATE"
+  ],
+  "consciousness_essence": [
+    "SPIRIT",
+    "SPIRITED",
+    "SPIRITUAL",
+    "SOUL"
+  ],
+  "consideration_thoughtfulness": [
+    "CONSIDER",
+    "CONSIDERABLE",
+    "CONSIDERATE",
+    "CONTEMPLATE",
+    "CONCERN"
+  ],
+  "consistency_pattern": [
+    "REGULAR",
+    "RELIABLE",
+    "RELIABILITY",
+    "RELIANCE"
+  ],
+  "construction_building": [
+    "RECONSTRUCT",
+    "RENOVATE",
+    "RENOVATION",
+    "REPAIR",
+    "REFURBISH"
+  ],
+  "containers_storage": [
+    "CABINET",
+    "CACHE",
+    "CHAMBER",
+    "CELL",
+    "COFFER"
+  ],
+  "contempt_disdain": [
+    "SNEER",
+    "CONTEMPT",
+    "DISDAIN",
+    "SCORN"
+  ],
+  "control_management": [
+    "CONTROL",
+    "CONDUCT",
+    "COORDINATE",
+    "COMMAND",
+    "CONSTRAIN"
+  ],
+  "conversation_discussion": [
+    "CONVERSE",
+    "CONVERSANT",
+    "CONFER",
+    "CONFERENCE",
+    "CONSULT"
+  ],
+  "cooperation_collaboration": [
+    "COOPERATE",
+    "COOPERATION",
+    "COORDINATE",
+    "COLLABORATE",
+    "CONTRIBUTE"
+  ],
+  "cooperation_together": [
+    "COLLABORATE",
+    "COLLECTIVE",
+    "COMBINE",
+    "COEXIST"
+  ],
+  "correctness_appropriateness": [
+    "PROPER",
+    "PROPRIETY",
+    "APPROPRIATE",
+    "SUITABLE"
+  ],
+  "corruption_harm": [
+    "ADULTERATE",
+    "ADVERSE",
+    "ABUSE",
+    "AFFLICTION"
+  ],
+  "covering_concealing": [
+    "SHROUD",
+    "COVER",
+    "CONCEAL",
+    "WRAP"
+  ],
+  "covering_surface": [
+    "SKIN",
+    "SURFACE",
+    "COVER",
+    "EXTERIOR"
+  ],
+  "creation_construction": [
+    "COMPOSE",
+    "COMPONENT",
+    "COMPOUND",
+    "CONSTRUCT",
+    "CONSTRUCTION",
+    "CREATE"
+  ],
+  "creation_making": [
+    "CREATION",
+    "CREATIVE",
+    "CREATURE",
+    "CULTIVATE",
+    "CULTURE",
+    "DESIGN"
+  ],
+  "creation_production": [
+    "MAKE",
+    "MAKEUP",
+    "MANUFACTURE",
+    "MANUSCRIPT",
+    "MATERIAL",
+    "MATERIALIZE"
+  ],
+  "criticism_disapproval": [
+    "REBUKE",
+    "REPRIMAND",
+    "REPROACH",
+    "REJECT",
+    "REFUTE",
+    "REPUDIATE"
+  ],
+  "cutting_dividing": [
+    "SLICE",
+    "CUT",
+    "DIVIDE",
+    "SECTION"
+  ],
+  "darkness_opacity": [
+    "SHADE",
+    "SHADOW",
+    "SHADY",
+    "DARK"
+  ],
+  "deception_dishonesty": [
+    "MENDACITY",
+    "MISLEAD",
+    "MISLEADING",
+    "MISREPRESENT",
+    "MISNOMER"
+  ],
+  "deception_falseness": [
+    "SHAM",
+    "SHAME",
+    "FALSE",
+    "DECEPTIVE"
+  ],
+  "deception_pretense": [
+    "PRETEND",
+    "PRETENSE",
+    "PREVARICATE",
+    "PRESUMPTUOUS"
+  ],
+  "deception_stealth": [
+    "SNEAKY",
+    "DECEPTIVE",
+    "STEALTHY",
+    "CUNNING"
+  ],
+  "decision_choice": [
+    "DECIDE",
+    "DECISION",
+    "DECISIVE",
+    "DELIBERATE",
+    "DETERMINE",
+    "DEEM"
+  ],
+  "decision_solving": [
+    "RESOLUTION",
+    "RESOLVE",
+    "RECONCILE",
+    "RECTIFY"
+  ],
+  "decline_depression": [
+    "SLUMP",
+    "DECLINE",
+    "DEPRESSION",
+    "DROP"
+  ],
+  "decline_deterioration": [
+    "DECAY",
+    "DECLINE",
+    "DECREASE",
+    "DETERIORATE",
+    "DEGRADE",
+    "DEMISE"
+  ],
+  "decoration_beauty": [
+    "ORNAMENT",
+    "ORNAMENTAL",
+    "ORNATE"
+  ],
+  "defamation_accusation": [
+    "SLANDER",
+    "ACCUSE",
+    "DEFAME",
+    "LIBEL"
+  ],
+  "defeat_overcome": [
+    "SUCCUMB",
+    "SURRENDER",
+    "SUPPRESS",
+    "SURMOUNT",
+    "SURVIVE"
+  ],
+  "demanding_severe": [
+    "STRICT",
+    "STRIDENT",
+    "STRINGENT"
+  ],
+  "demands_needs": [
+    "REQUEST",
+    "REQUIRE",
+    "REQUIREMENT",
+    "REQUISITE"
+  ],
+  "description_explanation": [
+    "DESCRIBE",
+    "DESCRIPTION",
+    "DEFINE",
+    "DEFINITION",
+    "DELINEATE",
+    "DEPICT"
+  ],
+  "desire_wanting": [
+    "WANT",
+    "WISH",
+    "YEARN",
+    "VORACIOUS"
+  ],
+  "destruction_breaking": [
+    "SHATTER",
+    "SHEAR",
+    "SMASH",
+    "BREAK"
+  ],
+  "deterioration_ruin": [
+    "SPOIL",
+    "SQUANDER",
+    "STALE"
+  ],
+  "development_growth": [
+    "MATURE",
+    "MATURITY",
+    "NASCENT",
+    "MELLOW",
+    "MIGRATE"
+  ],
+  "difficulty_tension": [
+    "STRAIN",
+    "STRESS",
+    "STRIFE"
+  ],
+  "dimensions_area": [
+    "SPACE",
+    "SPACIOUS",
+    "SPAN",
+    "SPATIAL"
+  ],
+  "dimensions_measurement": [
+    "SIZE",
+    "MEASURE",
+    "DIMENSION",
+    "SCALE"
+  ],
+  "directness_linear": [
+    "STRAIGHT",
+    "STREAMLINE",
+    "STREET"
+  ],
+  "disasters_negative_events": [
+    "CATACLYSM",
+    "CATASTROPHE",
+    "CASUALTY",
+    "CHAOS",
+    "COLLAPSE"
+  ],
+  "disease_harm": [
+    "VIRUS",
+    "VIRULENT",
+    "VITRIOLIC",
+    "WOUNDED"
+  ],
+  "disgust_aversion": [
+    "REPEL",
+    "REPUGNANT",
+    "REPUDIATE",
+    "RESIST"
+  ],
+  "dismissive_gestures": [
+    "SHRUG",
+    "SHUFFLE",
+    "DISMISS",
+    "GESTURE"
+  ],
+  "disorder_chaos": [
+    "ANARCHY",
+    "ANOMALY",
+    "ABERRANT",
+    "ABNORMAL"
+  ],
+  "display_presentation": [
+    "SHOW",
+    "DISPLAY",
+    "PRESENT",
+    "EXHIBIT"
+  ],
+  "distribution_sharing": [
+    "SHARE",
+    "DISTRIBUTE",
+    "DIVIDE"
+  ],
+  "diversity_concepts": [
+    "VARIEGATED",
+    "VARIETY",
+    "VARIOUS",
+    "VERSATILE",
+    "VIBRANT"
+  ],
+  "division_parts": [
+    "SECT",
+    "SECTION",
+    "SECTOR",
+    "SEGMENT",
+    "SEPARATE",
+    "SEVER"
+  ],
+  "doubt_questioning": [
+    "SKEPTIC",
+    "SKEPTICAL",
+    "DOUBT",
+    "QUESTION"
+  ],
+  "downward_movement": [
+    "SINK",
+    "FALL",
+    "DROP",
+    "DESCEND"
+  ],
+  "drawing_representation": [
+    "SKETCH",
+    "DRAW",
+    "REPRESENT",
+    "ILLUSTRATE"
+  ],
+  "dwellings_places": [
+    "ABODE",
+    "ACADEMY",
+    "ABYSS",
+    "APERTURE"
+  ],
+  "earth_ground": [
+    "SOIL",
+    "EARTH",
+    "GROUND",
+    "DIRT"
+  ],
+  "economic_terms": [
+    "ECONOMIC",
+    "ECONOMICS",
+    "ECONOMIZE",
+    "ECONOMY",
+    "DISCOUNT"
+  ],
+  "editing_publishing": [
+    "EDIT",
+    "EDITION",
+    "EXCERPT",
+    "EXAMPLE",
+    "ENUMERATE"
+  ],
+  "education_learning": [
+    "SEMINAR",
+    "SESSION",
+    "STUDY",
+    "LEARN"
+  ],
+  "effectiveness_results": [
+    "EFFECT",
+    "EFFECTIVE",
+    "EFFICACY",
+    "EFFICIENCY",
+    "EFFICIENT"
+  ],
+  "effort_attempt": [
+    "STRIVE",
+    "STRUGGLE",
+    "STRUT"
+  ],
+  "elegance_refinement": [
+    "SLEEK",
+    "ELEGANT",
+    "REFINED",
+    "POLISHED"
+  ],
+  "emotions_anger": [
+    "RAGE",
+    "RANT",
+    "RANKLE",
+    "FURY"
+  ],
+  "emotions_attitudes": [
+    "DISDAIN",
+    "DISPARAGE",
+    "DISGRUNTLED",
+    "DIFFIDENT",
+    "DIFFIDENCE"
+  ],
+  "emotions_fear": [
+    "TERROR",
+    "THREAT",
+    "THREATEN",
+    "TIMID",
+    "TIMOROUS",
+    "TREPIDATION"
+  ],
+  "emotions_feelings": [
+    "SYMPATHIZE",
+    "SYMPATHY",
+    "SURPRISE",
+    "SUFFER",
+    "SULLEN"
+  ],
+  "emotions_negative": [
+    "WAIL",
+    "WHIMPER",
+    "WINCE",
+    "WOE",
+    "WORRY",
+    "WRATH"
+  ],
+  "emotions_positive": [
+    "VIVACIOUS",
+    "WELCOME",
+    "WONDERFUL",
+    "ZEAL",
+    "ZEALOUS",
+    "ZEST"
+  ],
+  "emotions_respect_reverence": [
+    "REVERE",
+    "REVERENCE",
+    "REVERENT",
+    "RIGHTEOUS"
+  ],
+  "emotions_silence_withdrawal": [
+    "RETICENCE",
+    "RETICENT",
+    "RETREAT",
+    "SECLUDE"
+  ],
+  "encouragement_motivation": [
+    "STIMULATE",
+    "STIMULUS",
+    "SPUR"
+  ],
+  "ending_completion": [
+    "EXPIRE",
+    "EXPIRATION",
+    "EXTINCT",
+    "EXTINCTION",
+    "FINAL"
+  ],
+  "endurance_persistence": [
+    "STAMINA",
+    "STEADFAST",
+    "STRENUOUS"
+  ],
+  "enhancement_betterment": [
+    "IMPROVE",
+    "IMPROVEMENT",
+    "INNOVATE",
+    "INNOVATION",
+    "INNOVATIVE"
+  ],
+  "entertainment_leisure": [
+    "RECREATE",
+    "RECREATION",
+    "RELAX",
+    "RELAXATION",
+    "RELISH"
+  ],
+  "environmental_reuse": [
+    "RECYCLE",
+    "REDEEM",
+    "REDUCE",
+    "REDUCTION"
+  ],
+  "equality_fairness": [
+    "EQUAL",
+    "EQUITABLE",
+    "EQUIVALENT",
+    "EQUATE",
+    "EQUATION"
+  ],
+  "essence_reality": [
+    "SUBSTANCE",
+    "SUBSTANTIAL",
+    "SUBSTANTIATE",
+    "SYMBOL",
+    "SYMBOLIC"
+  ],
+  "evaluation_judgment": [
+    "CRITERIA",
+    "CRITERION",
+    "CRITIC",
+    "CRITICAL",
+    "CRITICIZE",
+    "CRITIQUE"
+  ],
+  "evidence_proof": [
+    "EVIDENCE",
+    "EVIDENT",
+    "EVINCE",
+    "EMPIRICAL",
+    "EXACTITUDE"
+  ],
+  "evil_darkness": [
+    "SINISTER",
+    "EVIL",
+    "DARK",
+    "MALEVOLENT"
+  ],
+  "evil_harmful": [
+    "NEFARIOUS",
+    "NOXIOUS",
+    "NOTORIOUS",
+    "OBNOXIOUS",
+    "ODIOUS"
+  ],
+  "examination_analysis": [
+    "INSPECT",
+    "INVESTIGATE",
+    "INTERROGATE",
+    "INTERPRET",
+    "INTROSPECT",
+    "JUDGE"
+  ],
+  "examination_investigation": [
+    "PROBE",
+    "PORE",
+    "POLL",
+    "PREVIEW"
+  ],
+  "excess_beyond": [
+    "EXCEED",
+    "EXCESS",
+    "EXCESSIVE",
+    "EXAGGERATE",
+    "EXACERBATE"
+  ],
+  "excess_superiority": [
+    "OUTGROW",
+    "OUTSTANDING",
+    "OUTSTRIP",
+    "OUTWEIGH"
+  ],
+  "exchange_trade": [
+    "BARGAIN",
+    "BARTER",
+    "BORROW",
+    "BOND"
+  ],
+  "exclusion_removal": [
+    "OSTRACIZE",
+    "OUST",
+    "OUTLAW",
+    "OBLITERATE"
+  ],
+  "exclusion_separation": [
+    "EXCLUDE",
+    "EXCLUSIVE",
+    "EXEMPT",
+    "EXTRACT",
+    "EXTRANEOUS"
+  ],
+  "exclusivity_only": [
+    "SOLE",
+    "SOLELY",
+    "ONLY",
+    "EXCLUSIVE"
+  ],
+  "expansion_growth": [
+    "EXPAND",
+    "EXPANSE",
+    "EXPANSION",
+    "EXTEND",
+    "EXTENSION",
+    "EXTENSIVE"
+  ],
+  "expectation_prediction": [
+    "ANTICIPATE",
+    "APPARENT",
+    "APPLY",
+    "APPRAISE"
+  ],
+  "expertise_specialization": [
+    "SPECIAL",
+    "SPECIALIST",
+    "SPECIALIZE",
+    "SPECIFIC"
+  ],
+  "extremes_limits": [
+    "MAXIMUM",
+    "MAXIMIZE",
+    "MINIMUM",
+    "MINIMIZE",
+    "MINIMAL"
+  ],
+  "faith_spirituality": [
+    "RELIGION",
+    "RELIGIOUS",
+    "RELIANCE",
+    "RELY"
+  ],
+  "family_connection": [
+    "RELATE",
+    "RELATION",
+    "RELATIONSHIP",
+    "RELATIVE"
+  ],
+  "family_generations": [
+    "PROGENITOR",
+    "PROGENY",
+    "OFFSPRING",
+    "DESCENDANT"
+  ],
+  "family_relationships": [
+    "KIN",
+    "KINSHIP",
+    "INTIMATE",
+    "JOIN",
+    "JOINT",
+    "INVOLVE"
+  ],
+  "fear_anxiety": [
+    "VULNERABLE",
+    "WARY",
+    "WORRIED",
+    "XENOPHOBIA"
+  ],
+  "feeling_emotion": [
+    "SENTIMENT",
+    "SENTIMENTAL",
+    "EMOTION",
+    "FEELING"
+  ],
+  "financial_money": [
+    "RECEIPT",
+    "REFUND",
+    "REIMBURSE",
+    "REPAY",
+    "RENT"
+  ],
+  "financial_support": [
+    "SUBSIDIZE",
+    "SUBSIDY",
+    "SUPPLY",
+    "SUPPORT",
+    "SUPPLEMENT"
+  ],
+  "firmness_reliability": [
+    "STABILITY",
+    "STABLE",
+    "STEADFAST",
+    "STAUNCH"
+  ],
+  "firmness_strength": [
+    "SOLID",
+    "FIRM",
+    "STRONG",
+    "STURDY"
+  ],
+  "flying_rising": [
+    "SOAR",
+    "FLY",
+    "RISE",
+    "ASCEND"
+  ],
+  "foolishness_lack_wisdom": [
+    "FOLLY",
+    "FOOLISH",
+    "FOOLHARDY",
+    "FRIVOLOUS"
+  ],
+  "force_motivation": [
+    "IMPEL",
+    "IMPETUS",
+    "IMPULSE",
+    "IMPULSIVE",
+    "INCENTIVE"
+  ],
+  "forgiveness_cleansing": [
+    "ABSOLVE",
+    "ALLEVIATE",
+    "AMELIORATE",
+    "AMEND"
+  ],
+  "form_structure": [
+    "SHAPE",
+    "FORM",
+    "STRUCTURE"
+  ],
+  "fragrance_scent": [
+    "SMELL",
+    "SCENT",
+    "FRAGRANCE",
+    "AROMA"
+  ],
+  "freedom_liberation": [
+    "RELEASE",
+    "RELIEVE",
+    "RELIEF",
+    "RELAX"
+  ],
+  "frequency_occurrence": [
+    "INCESSANT",
+    "INCIDENCE",
+    "INCIDENT",
+    "INFREQUENT",
+    "INNUMERABLE"
+  ],
+  "friendly_pleasant": [
+    "AFFABLE",
+    "AMIABLE",
+    "AMICABLE",
+    "AMENABLE"
+  ],
+  "friendship_relationships": [
+    "FRIEND",
+    "FRATERNAL",
+    "FOLK",
+    "FOSTER"
+  ],
+  "gathering_collecting": [
+    "ACCUMULATE",
+    "ACCRUE",
+    "ACQUIRE",
+    "AMASS"
+  ],
+  "gentleness_softening": [
+    "SOFTEN",
+    "GENTLE",
+    "MILD",
+    "TENDER"
+  ],
+  "geographical_areas": [
+    "SUBURB",
+    "SUBURBAN",
+    "SURFACE",
+    "TERRAIN",
+    "TERRESTRIAL"
+  ],
+  "geography_space": [
+    "PLAIN",
+    "PLANE",
+    "PLANET",
+    "POLE",
+    "POLAR"
+  ],
+  "giving_up": [
+    "RELINQUISH",
+    "RENOUNCE",
+    "RESIGN",
+    "RELUCTANT"
+  ],
+  "government_authority": [
+    "SENATE",
+    "SENIOR",
+    "AUTHORITY",
+    "OFFICIAL"
+  ],
+  "government_political": [
+    "MUNICIPAL",
+    "MINISTER",
+    "MINISTRY",
+    "MONARCH",
+    "MILITARY"
+  ],
+  "government_politics": [
+    "REPUBLIC",
+    "REPUBLICAN",
+    "REFERENDUM",
+    "REGIME"
+  ],
+  "guidance_direction": [
+    "GUIDANCE",
+    "GUIDE",
+    "GUIDELINE",
+    "HERALD",
+    "HINT"
+  ],
+  "guidance_leadership": [
+    "MENTOR",
+    "MINISTER",
+    "MEDIATE",
+    "MODEL",
+    "MOTIVATE"
+  ],
+  "guilt_regret": [
+    "REPENT",
+    "REMORSE",
+    "REGRET",
+    "REPROACH"
+  ],
+  "happiness_joy": [
+    "SMILE",
+    "HAPPY",
+    "JOY",
+    "CHEERFUL"
+  ],
+  "harm_damage": [
+    "MAR",
+    "MARRED",
+    "MALADY",
+    "MALIGN",
+    "LITTER"
+  ],
+  "harsh_bitter": [
+    "ACERBIC",
+    "ACID",
+    "ACRID",
+    "ACRIMONIOUS"
+  ],
+  "harshness_intensity": [
+    "SEVERE",
+    "SEVERITY",
+    "HARSH",
+    "INTENSE"
+  ],
+  "health_wellness": [
+    "HEAL",
+    "HEALTH",
+    "HEALTHY",
+    "ILLNESS",
+    "HUMAN"
+  ],
+  "healthcare_medicine": [
+    "MEDICAL",
+    "MEDICATE",
+    "MEDICINE",
+    "METABOLIC",
+    "MENTAL"
+  ],
+  "helping_supporting": [
+    "ACCOMMODATE",
+    "ACCOMPANY",
+    "AID",
+    "ADVOCATE"
+  ],
+  "hesitation_unwillingness": [
+    "RELUCTANCE",
+    "RELUCTANT",
+    "REMISS",
+    "RESIST"
+  ],
+  "hiding_concealing": [
+    "OBSCURE",
+    "OBFUSCATE",
+    "OCCLUDE",
+    "OPAQUE"
+  ],
+  "hiring_employment": [
+    "RECRUIT",
+    "REGISTER",
+    "REFER",
+    "REFEREE"
+  ],
+  "historical_cultural": [
+    "RENAISSANCE",
+    "REPUBLIC",
+    "REPUBLICAN",
+    "RENOWNED"
+  ],
+  "honesty_authenticity": [
+    "SINCERE",
+    "SINCERITY",
+    "HONEST",
+    "GENUINE"
+  ],
+  "hostility_conflict": [
+    "AGGRESSIVE",
+    "ALIENATE",
+    "ANIMOSITY",
+    "ANTAGONIZE"
+  ],
+  "ignition_energy": [
+    "SPARK",
+    "STIMULATE",
+    "STIMULUS",
+    "STOKE"
+  ],
+  "illness_health": [
+    "SICK",
+    "HEALTHY",
+    "ILL",
+    "WELL"
+  ],
+  "imitation_copying": [
+    "SIMULATE",
+    "SIMULATION",
+    "IMITATE",
+    "COPY"
+  ],
+  "immobility_calmness": [
+    "STILL",
+    "STOIC",
+    "STOLID"
+  ],
+  "implementation_action": [
+    "IMPLEMENT",
+    "IMPOSE",
+    "INFLICT",
+    "INJECT",
+    "INITIATE"
+  ],
+  "importance_meaning": [
+    "SIGNIFICANCE",
+    "SIGNIFICANT",
+    "SIGNIFY",
+    "IMPORTANT"
+  ],
+  "importance_significance": [
+    "RELEVANCE",
+    "RELEVANT",
+    "REMARKABLE",
+    "RENOWN"
+  ],
+  "improvement_betterment": [
+    "AMELIORATE",
+    "AMEND",
+    "APPRECIATE",
+    "APPLAUD"
+  ],
+  "improvement_fixing": [
+    "RECTIFY",
+    "REFORM",
+    "REMEDY",
+    "REPAIR",
+    "REDRESS"
+  ],
+  "inability_incapacity": [
+    "INABILITY",
+    "INCAPABLE",
+    "IMPOSSIBLE",
+    "INCOMPLETE",
+    "INCOMPATIBLE"
+  ],
+  "incline_gradient": [
+    "SLOPE",
+    "INCLINE",
+    "GRADIENT",
+    "HILL"
+  ],
+  "influence_impact": [
+    "AFFECT",
+    "AFFECTATION",
+    "AGGRESSIVE",
+    "AGITATE"
+  ],
+  "insignificance_smallness": [
+    "SLIGHT",
+    "SMALL",
+    "MINOR",
+    "TINY"
+  ],
+  "installation_setup": [
+    "INSTALL",
+    "INSTILL",
+    "INTEGRATE",
+    "INTEGRATION",
+    "INTRODUCE",
+    "INVEST"
+  ],
+  "intellectual_concepts": [
+    "TECHNIQUE",
+    "TECHNOLOGY",
+    "THEORY",
+    "THOUGHT",
+    "THESIS"
+  ],
+  "intelligence_cleverness": [
+    "SMART",
+    "CLEVER",
+    "INTELLIGENT",
+    "BRIGHT"
+  ],
+  "intelligence_skill": [
+    "ABILITY",
+    "ACUITY",
+    "ACUMEN",
+    "ADEPT",
+    "APLOMB"
+  ],
+  "intelligence_wisdom": [
+    "WISDOM",
+    "WISE",
+    "WIT",
+    "WITTY"
+  ],
+  "intensity_extreme": [
+    "EXTREME",
+    "EXCRUCIATING",
+    "EXIGENT",
+    "FLAGRANT",
+    "FERVOR"
+  ],
+  "intensity_extremes": [
+    "TERRIBLE",
+    "TERRIFIC",
+    "TERRIFY",
+    "TREMENDOUS",
+    "TENSION"
+  ],
+  "involvement_connection": [
+    "IMPLICATE",
+    "IMPLICATION",
+    "IMPLICIT",
+    "INCLUDE",
+    "INCORPORATE"
+  ],
+  "killing_violence": [
+    "SLAUGHTER",
+    "KILL",
+    "MURDER",
+    "VIOLENCE"
+  ],
+  "knowledge_awareness": [
+    "COGNITION",
+    "COGNIZANT",
+    "CHRONICLE",
+    "CITATION"
+  ],
+  "knowledge_concepts": [
+    "UNDERSTAND",
+    "UNIVERSITY",
+    "UNKNOWN",
+    "USUAL",
+    "USAGE"
+  ],
+  "knowledge_learning": [
+    "KNOW",
+    "KNOWLEDGE",
+    "INSIGHT",
+    "KEEN",
+    "KERNEL",
+    "KEY"
+  ],
+  "knowledge_learning_education": [
+    "SCHOLAR",
+    "SCHOLARSHIP",
+    "SCHOOL",
+    "SCIENCE",
+    "SCIENTIST"
+  ],
+  "knowledge_understanding": [
+    "INFORM",
+    "INFORMATION",
+    "INFER",
+    "INFERENCE",
+    "INQUIRY"
+  ],
+  "lack_absence": [
+    "DEARTH",
+    "DEFICIENT",
+    "DEFICIT",
+    "DEPLETE",
+    "DESTITUTE"
+  ],
+  "language_communication": [
+    "POEM",
+    "POET",
+    "PLATITUDE",
+    "PLEA",
+    "PLEAD"
+  ],
+  "language_concepts": [
+    "VERBAL",
+    "VERBOSE",
+    "VERNACULAR",
+    "VERSE",
+    "VERSION"
+  ],
+  "leadership_authority": [
+    "PRESIDE",
+    "PRESIDENT",
+    "PREMIER",
+    "PREEMINENT",
+    "PRINCIPAL"
+  ],
+  "learning_education": [
+    "INSTRUCT",
+    "INSTRUCTION",
+    "INSTITUTE",
+    "INSTITUTION",
+    "INTRODUCE",
+    "INTRODUCTION"
+  ],
+  "learning_knowledge": [
+    "PEDAGOGY",
+    "PEDANT",
+    "PHILOSOPHER",
+    "PHILOSOPHY",
+    "PHYSICS"
+  ],
+  "leftover_remaining": [
+    "RESIDUE",
+    "REMAINDER",
+    "RESERVE",
+    "RESERVATION"
+  ],
+  "legal_business": [
+    "LEASE",
+    "LICENCE",
+    "LICENSE",
+    "LIEN",
+    "LIABLE",
+    "LITIGATION",
+    "LITIGANT"
+  ],
+  "legal_documents": [
+    "TREATY",
+    "TITLE",
+    "TOME",
+    "TREATISE",
+    "TEXT"
+  ],
+  "legal_formal": [
+    "SUBPOENA",
+    "SUIT",
+    "SUSPECT",
+    "SURVEILLANCE",
+    "SUMMON"
+  ],
+  "legal_judicial": [
+    "JUDGE",
+    "JUDGMENT",
+    "JUDICIAL",
+    "JURISDICTION",
+    "JUST",
+    "JUSTICE"
+  ],
+  "legal_justice": [
+    "EXCULPATE",
+    "EXCUSE",
+    "EXECUTE",
+    "EXONERATE",
+    "FALLACIOUS"
+  ],
+  "legal_system": [
+    "LAW",
+    "LAWSUIT",
+    "LEGAL",
+    "LEGISLATE",
+    "LEGISLATION",
+    "LEGITIMATE",
+    "LIABILITY"
+  ],
+  "legal_testimony": [
+    "TEST",
+    "TESTAMENT",
+    "TESTIFY",
+    "TESTIMONY",
+    "TRIAL",
+    "TRIBUNAL"
+  ],
+  "life_existence": [
+    "LIFE",
+    "LIVE",
+    "LIVELIHOOD",
+    "LIVING",
+    "LIVELY",
+    "LEISURE",
+    "LEISURELY"
+  ],
+  "light_brightness": [
+    "GLEAM",
+    "GLIMMER",
+    "GLITTER",
+    "GLOW"
+  ],
+  "likelihood_chance": [
+    "POSSIBILITY",
+    "POSSIBLE",
+    "PROBABILITY",
+    "PROBABLE",
+    "POTENTIAL"
+  ],
+  "liquidity_dissolution": [
+    "SOLVENT",
+    "DISSOLVE",
+    "LIQUID",
+    "FLUID"
+  ],
+  "literary_devices": [
+    "ALLEGORY",
+    "ANALOGY",
+    "ANECDOTE",
+    "ANTITHESIS"
+  ],
+  "living_dwelling": [
+    "RESIDE",
+    "RESIDENCE",
+    "RESIDENT",
+    "RESIDENTIAL"
+  ],
+  "location_geography": [
+    "REGION",
+    "REGIONAL",
+    "RESIDENCE",
+    "RESIDENTIAL",
+    "RESIDE"
+  ],
+  "looseness_relaxation": [
+    "SLACK",
+    "LOOSE",
+    "RELAXED",
+    "LAX"
+  ],
+  "loyalty_faithfulness": [
+    "FAITH",
+    "FIDELITY",
+    "FAITHFUL",
+    "FAVOR",
+    "FAVORABLE"
+  ],
+  "magnitude_size": [
+    "LARGE",
+    "MASSIVE",
+    "MAJOR",
+    "MAGNITUDE",
+    "MAGNIFY",
+    "MAIN",
+    "MAJORITY"
+  ],
+  "management_control": [
+    "ADMINISTER",
+    "ALLOCATE",
+    "ALLOT",
+    "APPOINT"
+  ],
+  "marking_blemish": [
+    "STAIN",
+    "STIGMA",
+    "STREAK"
+  ],
+  "measurement_evaluation": [
+    "MEASURE",
+    "MEASUREMENT",
+    "MERIT",
+    "METICULOUS",
+    "METHOD"
+  ],
+  "medical_health": [
+    "THERAPY",
+    "THERAPEUTIC",
+    "TREATMENT",
+    "TRAUMA",
+    "TOXIC"
+  ],
+  "memory_recall": [
+    "RECALL",
+    "RECOLLECT",
+    "REMEMBER",
+    "REMINISCE",
+    "REMIND"
+  ],
+  "memory_remembrance": [
+    "MEMOIR",
+    "MEMORABLE",
+    "MEMORIAL",
+    "MEMORIZE",
+    "MEMORY"
+  ],
+  "mental_abilities": [
+    "PSYCHOLOGY",
+    "RATIONAL",
+    "RATIONALE",
+    "REASON",
+    "REASONABLE"
+  ],
+  "mental_awareness": [
+    "NOTICE",
+    "NOTIFY",
+    "NOTE",
+    "NOTION",
+    "OBSERVE",
+    "OBSERVATION"
+  ],
+  "mental_cognitive": [
+    "MIND",
+    "MINDFUL",
+    "MENTAL",
+    "MENTALITY",
+    "MEDITATE"
+  ],
+  "mental_concepts": [
+    "IDEA",
+    "IDEAL",
+    "IDENTITY",
+    "IDEOLOGY",
+    "ILLUSION"
+  ],
+  "mental_confusion": [
+    "BEFUDDLE",
+    "BEMUSE",
+    "BEWILDER",
+    "BLUR"
+  ],
+  "mental_faculties": [
+    "INTELLECT",
+    "INTELLECTUAL",
+    "INTELLIGENCE",
+    "INTELLIGENT",
+    "INTUITION",
+    "INTUITIVE"
+  ],
+  "mental_processes": [
+    "PONDER",
+    "PONDEROUS",
+    "POSIT",
+    "POSTULATE",
+    "PREDICT"
+  ],
+  "mixing_combining": [
+    "AMALGAMATE",
+    "AMASS",
+    "AGGREGATE",
+    "APPEND"
+  ],
+  "money_finance": [
+    "FUND",
+    "FUNDING",
+    "FORTUNE",
+    "GAIN"
+  ],
+  "moral_ethical": [
+    "MORAL",
+    "MORALE",
+    "MERCIFUL",
+    "MUNIFICENT",
+    "MUTUAL"
+  ],
+  "morality_corruption": [
+    "SORDID",
+    "SPURIOUS",
+    "SPECIOUS"
+  ],
+  "motionless_unchanging": [
+    "STAGNANT",
+    "STATIC",
+    "STATIONARY"
+  ],
+  "movement_action": [
+    "INVADE",
+    "INVASION",
+    "INTRUDE",
+    "INTERVENE",
+    "INTERCEDE",
+    "JUMP"
+  ],
+  "movement_actions": [
+    "PUSH",
+    "PROPEL",
+    "PUMP",
+    "PURSUE",
+    "CHASE"
+  ],
+  "movement_actions_2": [
+    "THRUST",
+    "THWART",
+    "TIE",
+    "TIGHTEN",
+    "TILT",
+    "TURN",
+    "TWIST"
+  ],
+  "movement_actions_3": [
+    "TRAVEL",
+    "TRAVERSE",
+    "TREK",
+    "TRAMPLE",
+    "TUMBLE"
+  ],
+  "movement_agitation": [
+    "STIR",
+    "STORM",
+    "STORMY"
+  ],
+  "movement_air": [
+    "FLUTTER",
+    "FLY",
+    "GLIDE",
+    "GALLOP"
+  ],
+  "movement_approach": [
+    "APPROACH",
+    "APPROXIMATE",
+    "ATTACH",
+    "ATTEND"
+  ],
+  "movement_direction": [
+    "DESCEND",
+    "DEPART",
+    "DEPARTURE",
+    "DEFLECT",
+    "DELIVER",
+    "DEPLOY"
+  ],
+  "movement_forward": [
+    "PROGRESS",
+    "PROGRESSIVE",
+    "PROMOTE",
+    "PROPEL",
+    "ADVANCE"
+  ],
+  "movement_instability": [
+    "SHAKE",
+    "SHAKY",
+    "SHIFT",
+    "UNSTABLE"
+  ],
+  "movement_jumping": [
+    "SKIP",
+    "JUMP",
+    "HOP",
+    "LEAP"
+  ],
+  "movement_liquid": [
+    "FLOW",
+    "FLUID",
+    "FLUSH",
+    "FLUX"
+  ],
+  "movement_migration": [
+    "IMMIGRANT",
+    "IMMIGRATE",
+    "INCORPORATE",
+    "INHABIT"
+  ],
+  "movement_motion": [
+    "MOVE",
+    "MOVEMENT",
+    "MOTION",
+    "MIGRATE",
+    "MOBILE"
+  ],
+  "movement_sliding": [
+    "SLIDE",
+    "SLIP",
+    "GLIDE",
+    "MOVE"
+  ],
+  "movement_transport": [
+    "TRAIN",
+    "TRANSPORT",
+    "TRANSIT",
+    "TRANSITION",
+    "TRANSFER"
+  ],
+  "movement_travel": [
+    "EXIT",
+    "EXILE",
+    "EXPEL",
+    "FLEE",
+    "FLIGHT",
+    "FLOAT"
+  ],
+  "movement_upward": [
+    "UPBEAT",
+    "UPHEAVAL",
+    "UPLIFT",
+    "UPROAR",
+    "UPROOT"
+  ],
+  "movement_walking": [
+    "WALK",
+    "WANDER",
+    "VOYAGE",
+    "WAFT",
+    "WAVE"
+  ],
+  "mutual_exchange": [
+    "RECIPROCAL",
+    "RECIPROCATE",
+    "RELATE",
+    "RELATIONSHIP"
+  ],
+  "mystery_unclear": [
+    "ENIGMA",
+    "EERIE",
+    "ELUSIVE",
+    "ESOTERIC",
+    "EQUIVOCAL"
+  ],
+  "nationality_origin": [
+    "NATION",
+    "NATIONAL",
+    "NATIVE",
+    "NAVIGATE",
+    "NEAR"
+  ],
+  "natural_environment": [
+    "NATURE",
+    "NATURAL",
+    "MOUNTAIN",
+    "METEOR",
+    "MILD"
+  ],
+  "nature_environment": [
+    "DROUGHT",
+    "DUST",
+    "DUSK",
+    "EARTH",
+    "ECOLOGY",
+    "ECOSYSTEM"
+  ],
+  "nature_growth": [
+    "PLANT",
+    "PLANTATION",
+    "PORE",
+    "POROUS"
+  ],
+  "nature_rural": [
+    "BUCOLIC",
+    "CANINE",
+    "CARBON",
+    "CEREAL"
+  ],
+  "necessity_requirement": [
+    "NECESSITATE",
+    "NECESSITY",
+    "NEED",
+    "OBLIGATE",
+    "OBLIGATION",
+    "OBLIGATORY"
+  ],
+  "negation_behavior": [
+    "UNASSUMING",
+    "UNOBTRUSIVE",
+    "UNWAVERING",
+    "UNWILLING",
+    "UNDETERRED"
+  ],
+  "negation_certainty": [
+    "UNDENIABLE",
+    "UNDISPUTED",
+    "UNDOUBTEDLY",
+    "UNEQUIVOCAL",
+    "UNMISTAKABLE"
+  ],
+  "negation_ethics": [
+    "UNBIASED",
+    "UNETHICAL",
+    "UNFAIR",
+    "UNJUST",
+    "UNREASONABLE"
+  ],
+  "negation_opposition": [
+    "NEGATE",
+    "NEGATION",
+    "NEGATIVE",
+    "NULLIFY",
+    "OPPOSE",
+    "OPPOSITE"
+  ],
+  "negation_reliability": [
+    "UNCERTAIN",
+    "UNCERTAINTY",
+    "UNFOUNDED",
+    "UNRELIABLE",
+    "UNSTABLE"
+  ],
+  "negation_tolerance": [
+    "UNBEARABLE",
+    "UNDESIRABLE",
+    "UNRULY",
+    "VICIOUS",
+    "VILE"
+  ],
+  "negative_actions": [
+    "TRANSGRESS",
+    "TRESPASS",
+    "TRICK",
+    "TRAMPLE",
+    "TORMENT"
+  ],
+  "negative_emotions": [
+    "REGRET",
+    "REGRETTABLE",
+    "REMORSE",
+    "RESENTMENT",
+    "RESENT"
+  ],
+  "negative_qualities": [
+    "MEDIOCRE",
+    "MONOTONOUS",
+    "MUNDANE",
+    "MURKY",
+    "MUTABLE"
+  ],
+  "negative_qualities_2": [
+    "IMPROPER",
+    "IMPRUDENT",
+    "IMPUDENT",
+    "IMPATIENT",
+    "IMPETUOUS"
+  ],
+  "negative_qualities_3": [
+    "INADEQUATE",
+    "INCOMPETENT",
+    "INCORRECT",
+    "INEFFECTIVE",
+    "INEPT"
+  ],
+  "negative_qualities_4": [
+    "INDOLENT",
+    "INFAMOUS",
+    "INFERIOR",
+    "INJUSTICE",
+    "INSANE"
+  ],
+  "negativity_criticism_mockery": [
+    "RIDICULE",
+    "SARCASM",
+    "SARDONIC",
+    "SCORN",
+    "SATIRIZE"
+  ],
+  "networking_connection": [
+    "NETWORK",
+    "NODE",
+    "NUCLEUS",
+    "CONNECT",
+    "ORGANIZATION"
+  ],
+  "neutrality_balance": [
+    "NEUTRAL",
+    "NEUTRALITY",
+    "NEUTRALIZE",
+    "OFFSET"
+  ],
+  "norms_measures": [
+    "STANDARD",
+    "STATISTIC",
+    "STATISTICAL"
+  ],
+  "nourishment_care": [
+    "NOURISH",
+    "NURTURE",
+    "NUTRIENT",
+    "NUTRITION"
+  ],
+  "observation_watching": [
+    "SPECTACLE",
+    "SPECTACULAR",
+    "SPECTATOR"
+  ],
+  "obstruction_hindrance": [
+    "IMPEDE",
+    "IMPEDIMENT",
+    "IMPASSE",
+    "IMPAIR"
+  ],
+  "obtaining_acquiring": [
+    "OBTAIN",
+    "OCCUPY",
+    "OCCUR",
+    "OCCURRENCE"
+  ],
+  "opening_space": [
+    "SLOT",
+    "OPENING",
+    "SPACE",
+    "GAP"
+  ],
+  "opportunities_timing": [
+    "OPPORTUNE",
+    "OPPORTUNITY",
+    "OPTIMAL",
+    "OPTIMUM"
+  ],
+  "opposition_conflict": [
+    "REBEL",
+    "REBELLION",
+    "RESIST",
+    "OPPOSE",
+    "DEFY"
+  ],
+  "opposition_contrast": [
+    "ANTAGONIZE",
+    "ANTIPATHY",
+    "ANTITHESIS",
+    "ANTITHETICAL"
+  ],
+  "opposition_defiance": [
+    "RESIST",
+    "RESISTANCE",
+    "RECALCITRANT",
+    "REFUSE"
+  ],
+  "opposition_resistance": [
+    "DEFIANCE",
+    "DEFIANT",
+    "DEFEND",
+    "DEFENSE",
+    "DETER",
+    "DENY"
+  ],
+  "options_alternatives": [
+    "RESORT",
+    "RESOURCE",
+    "RECOURSE",
+    "REFUGE"
+  ],
+  "order_sequence": [
+    "SUBSEQUENT",
+    "SUCCESSION",
+    "SUCCESSIVE",
+    "SUCCESSOR",
+    "SUPERSEDE"
+  ],
+  "organization_arrangement": [
+    "STACK",
+    "STAGE",
+    "STATION"
+  ],
+  "ownership_possession": [
+    "POSSESS",
+    "POSSESSION",
+    "PRIVATE",
+    "PRIVILEGE",
+    "PROPERTY"
+  ],
+  "perception_senses": [
+    "SEE",
+    "SENSE",
+    "SENSATION",
+    "SIGHT",
+    "SMELL"
+  ],
+  "perception_understanding": [
+    "PERCEIVE",
+    "PERCEPTION",
+    "PERSPECTIVE",
+    "PERUSE",
+    "PENETRATE"
+  ],
+  "perfection_flawless": [
+    "IMMACULATE",
+    "IMPECCABLE",
+    "INFALLIBLE",
+    "PERFECT"
+  ],
+  "permanence_change": [
+    "IMMUTABLE",
+    "IMPERMANENT",
+    "INDELIBLE",
+    "INHERENT",
+    "INNATE"
+  ],
+  "persistence_continuity": [
+    "PERSEVERANCE",
+    "PERSEVERE",
+    "PERSIST",
+    "PERSISTENCE",
+    "PERPETUATE"
+  ],
+  "persistence_determination": [
+    "RELENTLESS",
+    "RESOLUTE",
+    "RESOLUTION",
+    "RESILIENT"
+  ],
+  "personality_traits_negative": [
+    "IMPASSIVE",
+    "INDIFFERENT",
+    "INDIGNANT",
+    "INSATIABLE",
+    "INSECURE"
+  ],
+  "personality_traits_positive": [
+    "ILLUSTRIOUS",
+    "IMPARTIAL",
+    "INDEPENDENT",
+    "INDUSTRIOUS",
+    "INGENIOUS"
+  ],
+  "physical_actions": [
+    "GRAZE",
+    "GRIP",
+    "GROAN",
+    "GROOM",
+    "GROPE",
+    "HAUL"
+  ],
+  "physical_appearance": [
+    "LIMB",
+    "LIMP",
+    "LIVID",
+    "LOOK",
+    "MASK"
+  ],
+  "physical_barriers": [
+    "BARRIER",
+    "BLOCK",
+    "BIND",
+    "BOUNDARY"
+  ],
+  "physical_damage": [
+    "ABRASION",
+    "ABRASIVE",
+    "ACHE",
+    "AFFLICTION"
+  ],
+  "physical_material": [
+    "METAL",
+    "MOLECULE",
+    "MUSCLE",
+    "MOISTURE",
+    "MEMBRANE"
+  ],
+  "physical_movement": [
+    "SURGE",
+    "SWAY",
+    "SWEEP",
+    "SWIM",
+    "SWING"
+  ],
+  "physical_objects": [
+    "PLASTIC",
+    "POTTERY",
+    "POCKET",
+    "PORTRAIT"
+  ],
+  "physical_pain": [
+    "SORE",
+    "STING",
+    "STRAIN"
+  ],
+  "physical_properties": [
+    "TANGIBLE",
+    "TACTILE",
+    "TEMPERATURE",
+    "TEXTURE",
+    "THICK"
+  ],
+  "physical_qualities": [
+    "LATERAL",
+    "LAYER",
+    "LEVEL",
+    "LINEAR",
+    "LIMBER",
+    "LITHE",
+    "MALLEABLE"
+  ],
+  "physical_states": [
+    "DORMANT",
+    "DROWSY",
+    "DULL",
+    "DURABLE",
+    "DURATION"
+  ],
+  "physical_textures": [
+    "TEXT",
+    "TEXTILE",
+    "TEXTURE",
+    "THICK",
+    "THIN",
+    "TISSUE"
+  ],
+  "physical_weakness": [
+    "FRAGILE",
+    "FRAIL",
+    "GAUNT",
+    "FRUGAL"
+  ],
+  "politics_governance": [
+    "POLITICAL",
+    "POLITICIAN",
+    "POLITICS",
+    "POLICY",
+    "POLL"
+  ],
+  "politics_government": [
+    "ELECT",
+    "ELECTION",
+    "EGALITARIAN",
+    "EMPIRE",
+    "EMANCIPATE"
+  ],
+  "position_below": [
+    "SUBMERGE",
+    "SUBORDINATE",
+    "SUBSERVIENT",
+    "SUBSIDIARY",
+    "SUBSIDE"
+  ],
+  "position_location": [
+    "SIDE",
+    "SITE",
+    "SITUATE",
+    "SITUATION"
+  ],
+  "position_viewpoint": [
+    "STANCE",
+    "STAND",
+    "STANDPOINT"
+  ],
+  "positioning_placement": [
+    "SIT",
+    "SITUATE",
+    "PLACE",
+    "POSITION"
+  ],
+  "positive_actions": [
+    "TREAT",
+    "TREASURE",
+    "TRUST",
+    "THRIVE",
+    "TRIUMPH"
+  ],
+  "positive_qualities": [
+    "HANDSOME",
+    "HANDY",
+    "HARDY",
+    "HARMONIOUS",
+    "HONEST"
+  ],
+  "positivity_hope": [
+    "OPTIMISM",
+    "OPTIMISTIC",
+    "OVATION",
+    "OUTSTANDING"
+  ],
+  "power_authority": [
+    "THRONE",
+    "TYRANNY",
+    "TYRANT",
+    "TRIBUNAL",
+    "TYCOON"
+  ],
+  "practice_preparation": [
+    "REHEARSE",
+    "REPEAT",
+    "REPLICATE",
+    "REPLICA"
+  ],
+  "praise_admiration": [
+    "LAUD",
+    "LAUDABLE",
+    "LAUDATORY",
+    "LIONIZE",
+    "LOVE",
+    "LOVELY",
+    "MAGNIFICENT"
+  ],
+  "praise_recognition": [
+    "ACCLAIM",
+    "ACCOLADE",
+    "ADMIRE",
+    "APPLAUD",
+    "APPLAUSE"
+  ],
+  "prediction_future": [
+    "PROPHECY",
+    "PROPHET",
+    "PROPHETIC",
+    "PROGNOSIS",
+    "PROSPECT"
+  ],
+  "prefix_dis_negative": [
+    "DISABLE",
+    "DISADVANTAGE",
+    "DISAPPEAR",
+    "DISAPPROVE",
+    "DISARRAY",
+    "DISASTER"
+  ],
+  "preparation_readiness": [
+    "PREPARATION",
+    "PREPARATORY",
+    "PREPARE",
+    "PREREQUISITE",
+    "PRECAUTION"
+  ],
+  "problems_difficulties": [
+    "PROBLEM",
+    "PREDICAMENT",
+    "PRECARIOUS",
+    "PREVENT",
+    "PREVENTION"
+  ],
+  "protection_covering": [
+    "SHEET",
+    "SHELTER",
+    "SHIELD",
+    "COVER"
+  ],
+  "protection_defense": [
+    "PROTECT",
+    "PROTECTION",
+    "SHIELD",
+    "GUARD"
+  ],
+  "protection_safety": [
+    "GUARD",
+    "GUARDIAN",
+    "GUARANTEE",
+    "HARBOR",
+    "HAVEN"
+  ],
+  "protection_safety_security": [
+    "SAFEGUARD",
+    "SAFETY",
+    "SANCTUARY",
+    "SALVATION",
+    "SAVE"
+  ],
+  "punishment_criticism": [
+    "CASTIGATE",
+    "CENSOR",
+    "CENSURE",
+    "CHAGRIN"
+  ],
+  "purity_cleanliness": [
+    "PURE",
+    "PURIFY",
+    "PURIST",
+    "PURITY",
+    "CLEAN"
+  ],
+  "qualities_boldness": [
+    "AUDACIOUS",
+    "BOLD",
+    "BRASH",
+    "BRAZEN"
+  ],
+  "qualities_brightness_glory": [
+    "RESPLENDENT",
+    "RICH",
+    "ROBUST",
+    "ROYAL"
+  ],
+  "qualities_difficult": [
+    "TOUGH",
+    "TROUBLESOME",
+    "TRICKY",
+    "TURBULENT",
+    "TRUCULENT"
+  ],
+  "qualities_difficulty": [
+    "DIFFICULT",
+    "DIRE",
+    "DRASTIC",
+    "DRASTICALLY",
+    "DREADFUL"
+  ],
+  "qualities_excellence": [
+    "EXCELLENT",
+    "EXCEPTIONAL",
+    "ELITE",
+    "EMINENCE",
+    "EMINENT"
+  ],
+  "qualities_harshness_difficulty": [
+    "RIGID",
+    "RIGOR",
+    "RIGOROUS",
+    "ROUGH",
+    "RUGGED"
+  ],
+  "qualities_hostile": [
+    "BELLICOSE",
+    "BELLIGERENT",
+    "ARROGANT",
+    "BOISTEROUS"
+  ],
+  "qualities_intelligence": [
+    "DEXTERITY",
+    "DISCERN",
+    "DISTINGUISH",
+    "DISTINCTIVE",
+    "DIAGNOSE"
+  ],
+  "qualities_intelligence_wisdom": [
+    "SAGACIOUS",
+    "SAGE",
+    "SAPIENT",
+    "SAVVY",
+    "SCHOLARLY"
+  ],
+  "qualities_moral_bad": [
+    "VIOLATION",
+    "WICKED",
+    "WANTON",
+    "WRONG"
+  ],
+  "qualities_moral_good": [
+    "VIRTUE",
+    "VIRTUOUS",
+    "WORTHY",
+    "WORTHWHILE"
+  ],
+  "qualities_negative": [
+    "POMPOUS",
+    "POOR",
+    "PRETENTIOUS",
+    "PRESUMPTUOUS"
+  ],
+  "qualities_negative_traits": [
+    "RUDE",
+    "RUTHLESS",
+    "RIDICULOUS",
+    "RUSTY"
+  ],
+  "qualities_old_hidden": [
+    "ARCHAIC",
+    "ARCANE",
+    "ANCIENT",
+    "ARTLESS"
+  ],
+  "qualities_personality": [
+    "TOLERANT",
+    "TRUSTWORTHY",
+    "THOUGHTFUL",
+    "TIMID",
+    "TRUCULENT"
+  ],
+  "qualities_personality_negative": [
+    "BRUSQUE",
+    "BRUTAL",
+    "CALLOUS",
+    "CAPRICIOUS",
+    "CAUSTIC"
+  ],
+  "qualities_personality_positive": [
+    "CALM",
+    "CANDID",
+    "CAPABLE",
+    "CAREFREE",
+    "CHARITABLE"
+  ],
+  "qualities_physical": [
+    "BRITTLE",
+    "BUMPY",
+    "CHILLY",
+    "COARSE"
+  ],
+  "qualities_positive": [
+    "POLISHED",
+    "POLITE",
+    "POPULAR",
+    "POTENT",
+    "POWERFUL"
+  ],
+  "qualities_size": [
+    "THICK",
+    "THIN",
+    "TINY",
+    "TREMENDOUS",
+    "TOTAL"
+  ],
+  "qualities_temperament": [
+    "TEMPERAMENT",
+    "TEMPER",
+    "TACITURN",
+    "TENACIOUS",
+    "TENDER"
+  ],
+  "quantities_amounts": [
+    "VOLUME",
+    "VOLUMINOUS",
+    "WEIGHT",
+    "WIDTH",
+    "WHOLESALE"
+  ],
+  "questions_inquiry": [
+    "QUERY",
+    "QUEST",
+    "QUESTION",
+    "QUESTIONABLE",
+    "DOUBT"
+  ],
+  "quickness_sudden": [
+    "SNAP",
+    "QUICK",
+    "SUDDEN",
+    "RAPID"
+  ],
+  "quietness_stillness": [
+    "SILENCE",
+    "SILENT",
+    "QUIET",
+    "STILL"
+  ],
+  "rarity_uniqueness": [
+    "RARE",
+    "RARELY",
+    "UNIQUE",
+    "UNCOMMON",
+    "SCARCE"
+  ],
+  "reality_truth": [
+    "REAL",
+    "REALISTIC",
+    "REALITY",
+    "REALIZE",
+    "ACTUAL"
+  ],
+  "recovery_regaining": [
+    "RECOVER",
+    "RECOVERY",
+    "RECOUP",
+    "REGAIN",
+    "RECLAIM"
+  ],
+  "reduction_diminishing": [
+    "SHRINK",
+    "SLIM",
+    "SLENDER",
+    "REDUCE"
+  ],
+  "refinement_delicacy": [
+    "SUBTLE",
+    "SUBTLETY",
+    "SUPPLE",
+    "SWEET",
+    "SYMPATHETIC"
+  ],
+  "religious_spiritual": [
+    "SERMON",
+    "SECULAR",
+    "SACRED",
+    "SPIRITUAL"
+  ],
+  "repetition_again": [
+    "RECUR",
+    "RECURRENCE",
+    "REPEAT",
+    "REPETITION",
+    "REITERATE"
+  ],
+  "replacement_change": [
+    "SUBSTITUTE",
+    "SUPPLANT",
+    "SWITCH",
+    "SWAP",
+    "SUPERSEDE"
+  ],
+  "reputation_fame": [
+    "NOTABLE",
+    "NOTABLY",
+    "NOTEWORTHY",
+    "NOTORIETY",
+    "NOTORIOUS"
+  ],
+  "reputation_status": [
+    "REPUTABLE",
+    "REPUTATION",
+    "REPUTE",
+    "RENOWNED"
+  ],
+  "requesting_asking": [
+    "SOLICIT",
+    "SOLICITOUS",
+    "REQUEST",
+    "ASK"
+  ],
+  "requests_appeals": [
+    "APPEAL",
+    "APPEAR",
+    "APPEASE",
+    "APPLICATION"
+  ],
+  "resemblance_likeness": [
+    "SIMILAR",
+    "SIMILARITY",
+    "SEMBLANCE",
+    "LIKE"
+  ],
+  "rest_sleep": [
+    "SLEEP",
+    "SLUMBER",
+    "REST",
+    "NAP"
+  ],
+  "results_consequences": [
+    "OUTCOME",
+    "OUTPUT",
+    "OUTSET",
+    "OUTBREAK"
+  ],
+  "revelation_display": [
+    "EXHIBIT",
+    "EXPOSE",
+    "EXPOSITION",
+    "EXPOSURE"
+  ],
+  "rigidity_hardness": [
+    "STIFF",
+    "STONE",
+    "STURDY"
+  ],
+  "rotation_movement": [
+    "SPIN",
+    "SPIRAL",
+    "SPURT"
+  ],
+  "safety_protection": [
+    "SECURE",
+    "SECURITY",
+    "SHELTER",
+    "SHIELD",
+    "SAFETY"
+  ],
+  "scarcity_limitation_lack": [
+    "SCARCE",
+    "SCARCELY",
+    "SCARCITY",
+    "SCANT"
+  ],
+  "scarcity_minimal": [
+    "SPARE",
+    "SPARSE",
+    "STINT"
+  ],
+  "scarcity_smallness": [
+    "MEAGER",
+    "MERE",
+    "MODEST",
+    "MODICUM",
+    "MORSEL"
+  ],
+  "selection_choice": [
+    "SELECT",
+    "SELECTION",
+    "SELECTIVE",
+    "CHOOSE",
+    "PICK"
+  ],
+  "self_control": [
+    "ABSTAIN",
+    "ABSTEMIOUS",
+    "ADAMANT",
+    "ALOOF"
+  ],
+  "selling_commerce": [
+    "SELL",
+    "TRADE",
+    "MARKET",
+    "COMMERCE"
+  ],
+  "separation_division": [
+    "SPLIT",
+    "SPREAD",
+    "SPRAWL"
+  ],
+  "seriousness_formal": [
+    "STAID",
+    "STATELY",
+    "STERN"
+  ],
+  "seriousness_formality": [
+    "SOLEMN",
+    "FORMAL",
+    "SERIOUS",
+    "GRAVE"
+  ],
+  "seriousness_gravity": [
+    "SOBER",
+    "SERIOUS",
+    "GRAVE",
+    "SOLEMN"
+  ],
+  "service_helping": [
+    "SERVE",
+    "SERVICE",
+    "SERVILE",
+    "HELP"
+  ],
+  "service_provision": [
+    "RENDER",
+    "REPAY",
+    "REPRESENT",
+    "REQUIRE"
+  ],
+  "servitude_bondage": [
+    "SLAVE",
+    "SLAVERY",
+    "BONDAGE",
+    "SERVITUDE"
+  ],
+  "severe_harsh": [
+    "STARK",
+    "STERN",
+    "STRICT"
+  ],
+  "sharpness_precision": [
+    "SHARP",
+    "SHARPEN",
+    "PRECISE",
+    "KEEN"
+  ],
+  "sight_vision": [
+    "VISIBLE",
+    "VISION",
+    "VISTA",
+    "VISUAL",
+    "WATCH",
+    "WITNESS"
+  ],
+  "significance_purpose": [
+    "MEAN",
+    "MEANING",
+    "MEANINGFUL",
+    "MEMORABLE",
+    "MOMENTOUS"
+  ],
+  "simplicity_ease": [
+    "SIMPLE",
+    "SIMPLICITY",
+    "SIMPLIFY",
+    "EASY"
+  ],
+  "size_abundance": [
+    "BOUNTIFUL",
+    "BEVY",
+    "BARRAGE",
+    "BREADTH"
+  ],
+  "size_large": [
+    "GIANT",
+    "GIGANTIC",
+    "GRAND",
+    "GRANDIOSE"
+  ],
+  "size_magnitude": [
+    "IMMENSE",
+    "INFINITE",
+    "INNUMERABLE",
+    "INCREDIBLE",
+    "IMPRESSIVE"
+  ],
+  "size_scale": [
+    "MICRO",
+    "MINUTE",
+    "MINIMAL",
+    "MASSIVE",
+    "MULTITUDE"
+  ],
+  "skill_ability": [
+    "DEFT",
+    "DEFTNESS",
+    "CUNNING",
+    "DEMANDING",
+    "DELICATE"
+  ],
+  "slipperiness_instability": [
+    "SLIPPERY",
+    "UNSTABLE",
+    "UNRELIABLE",
+    "SLICK"
+  ],
+  "slowness_delay": [
+    "SLOW",
+    "SLUGGISH",
+    "DELAYED",
+    "GRADUAL"
+  ],
+  "social_concepts": [
+    "POPULACE",
+    "POPULAR",
+    "POPULARIZE",
+    "PRESTIGE",
+    "PRESTIGIOUS"
+  ],
+  "social_groups": [
+    "CAMARADERIE",
+    "COALITION",
+    "COLLEAGUE",
+    "COMMUNITY"
+  ],
+  "social_interaction": [
+    "SOCIABLE",
+    "SOCIAL",
+    "SOCIETY",
+    "COMMUNITY"
+  ],
+  "sorting_filtering": [
+    "SIFT",
+    "SORT",
+    "FILTER",
+    "SEPARATE"
+  ],
+  "sound_communication": [
+    "HOWL",
+    "HARANGUE",
+    "HAIL",
+    "HEAR",
+    "HEARING"
+  ],
+  "sound_vibration": [
+    "RESONANCE",
+    "RECOIL",
+    "REFLECT",
+    "REPOSE"
+  ],
+  "sound_voice": [
+    "VOCAL",
+    "VOCIFEROUS",
+    "VOICE",
+    "WHISPER",
+    "YELL"
+  ],
+  "sounds_vocal": [
+    "SHRIEK",
+    "SIGH",
+    "SOB",
+    "VOCAL"
+  ],
+  "space_concepts": [
+    "VACANCY",
+    "VACANT",
+    "VACATE",
+    "VALLEY",
+    "VAST"
+  ],
+  "spatial_concepts": [
+    "OVERHEAD",
+    "OVERLAP",
+    "OVERSEAS",
+    "PARALLEL",
+    "PERIPHERAL"
+  ],
+  "spatial_position": [
+    "UNDER",
+    "UNDERGROUND",
+    "UPPER",
+    "UPRIGHT",
+    "VERTICAL"
+  ],
+  "speaking_communication": [
+    "ORAL",
+    "ORATION",
+    "ORATOR",
+    "OUTSPOKEN"
+  ],
+  "speed_quickness": [
+    "QUICK",
+    "RAPID",
+    "FAST",
+    "SWIFT",
+    "PROMPT"
+  ],
+  "staying_continuing": [
+    "REMAIN",
+    "REMAINDER",
+    "RESIDE",
+    "RESIDENCE"
+  ],
+  "stillness_inactivity": [
+    "SEDENTARY",
+    "SEDIMENT",
+    "SETTLE",
+    "SLOTH",
+    "SLUGGISH"
+  ],
+  "strength_concepts": [
+    "VALIANT",
+    "VALOR",
+    "VEHEMENT",
+    "VIGOR",
+    "VIGOROUS"
+  ],
+  "strength_toughness": [
+    "RESILIENCE",
+    "RESILIENT",
+    "RESOLUTE",
+    "RELENTLESS"
+  ],
+  "strength_weakness": [
+    "VITAL",
+    "VITALITY",
+    "WEAK",
+    "WEAKEN",
+    "WEAKNESS"
+  ],
+  "strengthen_support": [
+    "REINFORCE",
+    "REINSTATE",
+    "REPLENISH",
+    "REPLACE"
+  ],
+  "structural_foundation": [
+    "FOUNDATION",
+    "FRAMEWORK",
+    "FORM",
+    "FORMAT"
+  ],
+  "structure_framework": [
+    "SKELETON",
+    "FRAME",
+    "STRUCTURE",
+    "SUPPORT"
+  ],
+  "structure_organization": [
+    "ORGAN",
+    "ORGANIC",
+    "ORGANISM",
+    "ORGANIZE"
+  ],
+  "structures_buildings": [
+    "TOWER",
+    "TOWN",
+    "THRONE",
+    "TEMPLE",
+    "TRIBUNAL"
+  ],
+  "structures_organization": [
+    "HIERARCHY",
+    "HEADQUARTERS",
+    "HOUSE",
+    "HOUSEHOLD",
+    "HABITAT"
+  ],
+  "structures_surfaces": [
+    "PLATFORM",
+    "PLATE",
+    "PORTAL",
+    "PORT"
+  ],
+  "stubbornness_resistance": [
+    "OBDURATE",
+    "OBSTINATE",
+    "OBSTRUCT",
+    "OBSTACLE"
+  ],
+  "substitute_change": [
+    "REPLACE",
+    "REPLACEMENT",
+    "REPLICA",
+    "REPLICABLE"
+  ],
+  "sudden_sharp": [
+    "ABRUPT",
+    "ACUTE",
+    "ABRASIVE",
+    "ACRID"
+  ],
+  "summary_retelling": [
+    "RECAPITULATE",
+    "RECOUNT",
+    "RECITE",
+    "REPORT"
+  ],
+  "sun_related": [
+    "SOLAR",
+    "SUN",
+    "SUNNY",
+    "DAYLIGHT"
+  ],
+  "superficiality": [
+    "SHALLOW",
+    "SURFACE",
+    "SUPERFICIAL"
+  ],
+  "suppression_suffocation": [
+    "SMOTHER",
+    "SUPPRESS",
+    "SUFFOCATE",
+    "STIFLE"
+  ],
+  "surprise_impact": [
+    "SHOCK",
+    "SURPRISE",
+    "IMPACT",
+    "JOLT"
+  ],
+  "systems_organization": [
+    "SYSTEM",
+    "SYSTEMATIC",
+    "SYNTHESIS",
+    "SYNTHESIZE",
+    "SYNCHRONIZE"
+  ],
+  "temporary_brief": [
+    "FLEETING",
+    "FLASH",
+    "FLARE",
+    "FEW"
+  ],
+  "texture_smoothness": [
+    "SILK",
+    "SILKY",
+    "SMOOTH",
+    "SOFT"
+  ],
+  "theoretical_analysis": [
+    "SPECULATE",
+    "SPECULATION",
+    "SPECTRUM"
+  ],
+  "thinking_concepts": [
+    "THINK",
+    "THOUGHT",
+    "THOUGHTFUL",
+    "THEORY",
+    "THEORETICAL",
+    "THESIS"
+  ],
+  "thinness_narrowness": [
+    "SLENDER",
+    "SLIM",
+    "THIN",
+    "NARROW"
+  ],
+  "threat_danger": [
+    "MENACE",
+    "MAUL",
+    "MURDER",
+    "MISERY",
+    "MILITANT"
+  ],
+  "time_concepts": [
+    "TIME",
+    "TIMELY",
+    "TRANSIENT",
+    "TRADITIONAL",
+    "TREND"
+  ],
+  "time_duration": [
+    "WHILE",
+    "WEEK",
+    "WANE",
+    "WITHER"
+  ],
+  "time_early": [
+    "PREMATURE",
+    "PRECOCIOUS",
+    "PRELIMINARY",
+    "PRELUDE",
+    "PREFACE"
+  ],
+  "time_history": [
+    "HISTORIC",
+    "HISTORY",
+    "HERITAGE",
+    "HABITUAL",
+    "HACKNEYED"
+  ],
+  "time_related": [
+    "ANCIENT",
+    "ANCESTOR",
+    "ANTECEDENT",
+    "ANACHRONISM"
+  ],
+  "time_sequence": [
+    "PRECEDE",
+    "PRECEDENT",
+    "PREDECESSOR",
+    "PREVIOUS",
+    "PRIOR"
+  ],
+  "time_sequence_order": [
+    "RESPECTIVELY",
+    "ROUTINE",
+    "SCHEDULE",
+    "SEASON",
+    "SECONDARY"
+  ],
+  "time_temporal": [
+    "MOMENT",
+    "MOMENTARY",
+    "MEANTIME",
+    "MEDIEVAL",
+    "MILLENNIUM"
+  ],
+  "time_urgency": [
+    "IMMEDIATE",
+    "IMMINENT",
+    "IMMINENCE",
+    "IMPENDING",
+    "IMPERATIVE"
+  ],
+  "timing_synchronization": [
+    "SIMULTANEOUS",
+    "SYNC",
+    "TOGETHER",
+    "CONCURRENT"
+  ],
+  "transportation_vessels": [
+    "SHIP",
+    "VESSEL",
+    "TRANSPORT"
+  ],
+  "trapping_catching": [
+    "SNARE",
+    "TRAP",
+    "CATCH",
+    "CAPTURE"
+  ],
+  "treatment_healing": [
+    "REHABILITATE",
+    "REGENERATE",
+    "REFRESH",
+    "RENEWAL",
+    "RENEW"
+  ],
+  "truth_concepts": [
+    "VALID",
+    "VALIDITY",
+    "VERACITY",
+    "VERIFY",
+    "VERITABLE"
+  ],
+  "unclear_vague": [
+    "AMBIGUOUS",
+    "AMORPHOUS",
+    "ANOMALOUS",
+    "ABSTRACT"
+  ],
+  "understanding_logic": [
+    "RATIONAL",
+    "RATIONALE",
+    "RATIONALIZE",
+    "REASON",
+    "LOGICAL"
+  ],
+  "unique_concepts": [
+    "UNIQUE",
+    "UNIT",
+    "UNILATERAL",
+    "UNRIVALED",
+    "UNUSUAL"
+  ],
+  "uniqueness_individuality": [
+    "SINGULAR",
+    "UNIQUE",
+    "INDIVIDUAL",
+    "SOLO"
+  ],
+  "unity_concepts": [
+    "UNIFY",
+    "UNION",
+    "UNITE",
+    "UNITY",
+    "UNIVERSAL"
+  ],
+  "unity_togetherness": [
+    "SOLIDARITY",
+    "UNITY",
+    "TOGETHER",
+    "UNIFIED"
+  ],
+  "utility_concepts": [
+    "USE",
+    "USEFUL",
+    "USER",
+    "UTILITARIAN",
+    "UTILIZE"
+  ],
+  "value_concepts": [
+    "VALUABLE",
+    "VALUE",
+    "VANITY",
+    "VAIN",
+    "VENALITY"
+  ],
+  "viewpoints_beliefs": [
+    "OPINION",
+    "OPPONENT",
+    "OPPOSITION",
+    "ORTHODOX"
+  ],
+  "violence_aggression": [
+    "VIOLENCE",
+    "VIOLENT",
+    "WAR",
+    "WEAPON",
+    "WOUND",
+    "WRECK"
+  ],
+  "violence_force": [
+    "STRANGLE",
+    "STRIKE",
+    "STRUGGLE"
+  ],
+  "vision_concepts": [
+    "VIEW",
+    "VIEWPOINT",
+    "VIGILANCE",
+    "VIGILANT",
+    "VIDEO"
+  ],
+  "visual_perception": [
+    "GAZE",
+    "GLANCE",
+    "GLARE",
+    "GLIMPSE"
+  ],
+  "visual_representation": [
+    "ILLUSTRATE",
+    "IMAGE",
+    "IMAGINATION",
+    "IMAGINE",
+    "IMPRESS",
+    "IMPRESSION"
+  ],
+  "walking_movement": [
+    "AMBLE",
+    "ADVANCE",
+    "APPROACH",
+    "APPEAR"
+  ],
+  "water_flow": [
+    "TIDE",
+    "TORRENT",
+    "TRICKLE",
+    "TURBULENT",
+    "TURMOIL"
+  ],
+  "water_natural": [
+    "BAY",
+    "BEAM",
+    "BRIDGE",
+    "BRANCH"
+  ],
+  "water_nature": [
+    "CREEK",
+    "CURRENT",
+    "DELUGE",
+    "DAMP",
+    "CRYSTAL"
+  ],
+  "weakness_failure": [
+    "FEEBLE",
+    "FAIL",
+    "FAILURE",
+    "FLAW",
+    "FLIMSY"
+  ],
+  "wealth_luxury": [
+    "OPULENT",
+    "ORNATE",
+    "OSTENTATIOUS",
+    "OSTENTATION"
+  ],
+  "wealth_prosperity": [
+    "AFFLUENT",
+    "AFFORD",
+    "ABUNDANT",
+    "AMPLE"
+  ],
+  "weather_environment": [
+    "ARCTIC",
+    "ATMOSPHERE",
+    "BLIZZARD",
+    "ARID"
+  ],
+  "weather_nature": [
+    "WEATHER",
+    "WIND",
+    "WINTER",
+    "WILDERNESS",
+    "WATER"
+  ],
+  "work_career": [
+    "PROFESSION",
+    "PROFESSIONAL",
+    "PROFICIENCY",
+    "PROFICIENT",
+    "CAREER"
+  ],
+  "work_profession": [
+    "JOB",
+    "LABOR",
+    "LABORATORY",
+    "LABORIOUS",
+    "INSTRUMENT",
+    "INSTRUMENTAL"
+  ]
+}
