@@ -4,7 +4,7 @@ import React, { useCallback, useRef, useState } from 'react';
 import { StyleSheet, View, Dimensions, Platform } from 'react-native';
 import Cell from './Cell';
 import { colors } from '../styles/colors';
-import { GRID_SIZE, isAdjacent } from '../utils/puzzle';
+import { GRID_SIZE, isAdjacent, getDirection, isSameDirection } from '../utils/puzzle';
 
 const GRID_PADDING = 12;
 const GRID_MARGIN = 16;
@@ -19,6 +19,7 @@ export default function Grid({
   const gridRef = useRef(null);
   const [gridLayout, setGridLayout] = useState(null);
   const currentSelectionRef = useRef([]);
+  const currentDirectionRef = useRef(null);
   const isDraggingRef = useRef(false);
 
   // Calculate cell size based on screen width
@@ -59,6 +60,7 @@ export default function Grid({
     if (cell && !isCellInFoundCells(cell)) {
       isDraggingRef.current = true;
       currentSelectionRef.current = [cell];
+      currentDirectionRef.current = null;
       onSelectionChange([cell]);
     }
   }, [getCellFromPosition, isCellInFoundCells, onSelectionChange]);
@@ -76,6 +78,10 @@ export default function Grid({
       if (existingIndex < selection.length - 1) {
         const newSelection = selection.slice(0, existingIndex + 1);
         currentSelectionRef.current = newSelection;
+        // Reset direction if going back to first cell
+        if (newSelection.length === 1) {
+          currentDirectionRef.current = null;
+        }
         onSelectionChange(newSelection);
       }
       return;
@@ -84,9 +90,22 @@ export default function Grid({
     if (selection.length > 0) {
       const lastCell = selection[selection.length - 1];
       if (isAdjacent(lastCell, cell)) {
-        const newSelection = [...selection, cell];
-        currentSelectionRef.current = newSelection;
-        onSelectionChange(newSelection);
+        const newDirection = getDirection(lastCell, cell);
+
+        // If direction not established yet, set it
+        if (currentDirectionRef.current === null) {
+          currentDirectionRef.current = newDirection;
+          const newSelection = [...selection, cell];
+          currentSelectionRef.current = newSelection;
+          onSelectionChange(newSelection);
+        }
+        // If direction matches, allow the selection
+        else if (isSameDirection(currentDirectionRef.current, newDirection)) {
+          const newSelection = [...selection, cell];
+          currentSelectionRef.current = newSelection;
+          onSelectionChange(newSelection);
+        }
+        // Direction doesn't match - ignore this cell
       }
     }
   }, [getCellFromPosition, isCellInFoundCells, onSelectionChange]);
@@ -96,6 +115,7 @@ export default function Grid({
       isDraggingRef.current = false;
       onSelectionEnd(currentSelectionRef.current);
       currentSelectionRef.current = [];
+      currentDirectionRef.current = null;
     }
   }, [onSelectionEnd]);
 
@@ -131,13 +151,15 @@ export default function Grid({
     handleEnd();
   }, [handleEnd]);
 
-  const handleLayout = useCallback((e) => {
-    const { x, y, width, height } = e.nativeEvent.layout;
+  const handleLayout = useCallback(() => {
     if (Platform.OS === 'web' && gridRef.current) {
       const rect = gridRef.current.getBoundingClientRect();
       setGridLayout({ x: rect.left, y: rect.top, width: rect.width, height: rect.height });
-    } else {
-      setGridLayout({ x, y, width, height });
+    } else if (gridRef.current) {
+      // Use measure() to get absolute screen coordinates on native
+      gridRef.current.measure((x, y, width, height, pageX, pageY) => {
+        setGridLayout({ x: pageX, y: pageY, width, height });
+      });
     }
   }, []);
 

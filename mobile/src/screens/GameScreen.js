@@ -218,6 +218,7 @@ export default function GameScreen({ onCoinsChange }) {
         <View style={styles.statItem}>
           <Text style={styles.statIcon}>🔥</Text>
           <Text style={styles.statValue}>{streak}</Text>
+          <Text style={styles.statLabel}> day{streak !== 1 ? 's' : ''}</Text>
         </View>
 
         <View style={styles.titleContainer}>
@@ -336,6 +337,11 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: '700',
     color: colors.textPrimary,
+  },
+  statLabel: {
+    fontSize: 12,
+    fontWeight: '500',
+    color: colors.textSecondary,
   },
   coinAnimation: {
     position: 'absolute',

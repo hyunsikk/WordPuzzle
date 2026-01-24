@@ -3,12 +3,9 @@
 export const GRID_SIZE = 10;
 
 const DIRECTIONS = [
-  { dx: 1, dy: 0, name: 'horizontal' },      // right
-  { dx: 0, dy: 1, name: 'vertical' },        // down
-  { dx: 1, dy: 1, name: 'diagonal-down' },   // down-right
-  { dx: -1, dy: 1, name: 'diagonal-down' },  // down-left
-  { dx: 1, dy: -1, name: 'diagonal-up' },    // up-right
-  { dx: -1, dy: -1, name: 'diagonal-up' }    // up-left
+  { dx: 1, dy: 0, name: 'horizontal' },      // left to right
+  { dx: 0, dy: 1, name: 'vertical' },        // top to bottom
+  { dx: 1, dy: 1, name: 'diagonal' },        // top-left to bottom-right
 ];
 
 function createEmptyGrid() {
@@ -97,6 +94,17 @@ export function isAdjacent(pos1, pos2) {
   const dx = Math.abs(pos1.x - pos2.x);
   const dy = Math.abs(pos1.y - pos2.y);
   return dx <= 1 && dy <= 1 && (dx + dy > 0);
+}
+
+export function getDirection(pos1, pos2) {
+  return {
+    dx: Math.sign(pos2.x - pos1.x),
+    dy: Math.sign(pos2.y - pos1.y)
+  };
+}
+
+export function isSameDirection(dir1, dir2) {
+  return dir1.dx === dir2.dx && dir1.dy === dir2.dy;
 }
 
 export function positionsMatch(positions1, positions2) {
