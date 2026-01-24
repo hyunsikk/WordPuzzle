@@ -17,7 +17,12 @@
       "bundleIdentifier": "com.amstudio.vocabbubbles",
       "buildNumber": "1",
       "infoPlist": {
-        "ITSAppUsesNonExemptEncryption": false
+        "ITSAppUsesNonExemptEncryption": false,
+        "GADApplicationIdentifier": "ca-app-pub-7846673001617739~7101599854",
+        "SKAdNetworkItems": [
+          { "SKAdNetworkIdentifier": "cstr6suwn9.skadnetwork" }
+        ],
+        "NSUserTrackingUsageDescription": "This allows us to show you relevant ads and support free access to the app."
       }
     },
     "android": {
@@ -31,6 +36,15 @@
     "web": {
       "favicon": "./assets/favicon.png"
     },
+    "plugins": [
+      [
+        "react-native-google-mobile-ads",
+        {
+          "androidAppId": "ca-app-pub-7846673001617739~7101599854",
+          "iosAppId": "ca-app-pub-7846673001617739~7101599854"
+        }
+      ]
+    ],
     "extra": {
       "eas": {
         "projectId": "YOUR_EAS_PROJECT_ID"

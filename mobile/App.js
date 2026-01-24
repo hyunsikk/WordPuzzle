@@ -7,6 +7,7 @@ import HomeScreen from './src/screens/HomeScreen';
 import GameScreen from './src/screens/GameScreen';
 import { initializeCategories } from './src/utils/categories';
 import { initializeGameState, getCoins, getStreak } from './src/utils/gameState';
+import { initializeAds } from './src/utils/ads';
 
 export default function App() {
   const [screen, setScreen] = useState('home');
@@ -23,6 +24,10 @@ export default function App() {
       setInitialized(true);
     }
     init();
+
+    // Initialize ads
+    const unsubscribeAds = initializeAds();
+    return () => unsubscribeAds();
   }, []);
 
   const handlePlay = () => {

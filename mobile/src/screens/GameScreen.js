@@ -4,8 +4,8 @@ import React, { useState, useEffect, useCallback, useRef } from 'react';
 import { StyleSheet, Text, View, StatusBar, TouchableOpacity, Platform, Alert } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import { captureRef } from 'react-native-view-shot';
-import * as FileSystem from 'expo-file-system';
 import * as MediaLibrary from 'expo-media-library';
+import { BannerAd, BannerAdSize } from 'react-native-google-mobile-ads';
 import Grid from '../components/Grid';
 import WordList from '../components/WordList';
 import Celebration from '../components/Celebration';
@@ -22,6 +22,15 @@ import {
   COIN_PER_PUZZLE,
   HINT_COST,
 } from '../utils/gameState';
+import {
+  showInterstitialAd,
+  showRewardedAd,
+  isRewardedReady,
+  onPuzzleCompleted,
+  BANNER_AD_UNIT_ID,
+} from '../utils/ads';
+
+const REWARDED_COINS = 50; // Coins given for watching a rewarded ad
 
 export default function GameScreen({ onCoinsChange }) {
   const gameAreaRef = useRef(null);
@@ -121,29 +130,71 @@ export default function GameScreen({ onCoinsChange }) {
     setSelectedCells([]);
   }, [puzzle, foundWords, onCoinsChange]);
 
-  const handleCelebrationComplete = useCallback(() => {
+  const handleCelebrationComplete = useCallback(async () => {
+    // Check if we should show an interstitial ad
+    if (onPuzzleCompleted()) {
+      await showInterstitialAd();
+    }
     loadNewPuzzle();
   }, [loadNewPuzzle]);
 
-  const handleHint = useCallback(async () => {
-    if (coins < HINT_COST || !puzzle) return;
+  const showHint = useCallback((unfoundWord) => {
+    // Highlight a random cell from the unfound word briefly
+    const hintCell = unfoundWord.positions[0];
+    setSelectedCells([hintCell]);
+    setTimeout(() => setSelectedCells([]), 1500);
+  }, []);
 
-    // Find an unfound word and reveal a random letter
+  const handleHint = useCallback(async () => {
+    if (!puzzle) return;
+
+    // Find an unfound word
     const unfoundWord = puzzle.placements.find(p => !foundWords.includes(p.word));
     if (!unfoundWord) return;
 
-    const success = await spendCoins(HINT_COST);
-    if (success) {
-      const newCoins = getCoins();
-      setCoins(newCoins);
-      if (onCoinsChange) onCoinsChange(newCoins);
-
-      // Highlight a random cell from the unfound word briefly
-      const hintCell = unfoundWord.positions[0];
-      setSelectedCells([hintCell]);
-      setTimeout(() => setSelectedCells([]), 1500);
+    // If user has enough coins, use them
+    if (coins >= HINT_COST) {
+      const success = await spendCoins(HINT_COST);
+      if (success) {
+        const newCoins = getCoins();
+        setCoins(newCoins);
+        if (onCoinsChange) onCoinsChange(newCoins);
+        showHint(unfoundWord);
+      }
+    } else {
+      // Offer to watch a rewarded ad for coins
+      if (isRewardedReady()) {
+        Alert.alert(
+          'Need more coins!',
+          `Watch a short video to earn ${REWARDED_COINS} coins?`,
+          [
+            { text: 'No thanks', style: 'cancel' },
+            {
+              text: 'Watch Video',
+              onPress: async () => {
+                const shown = await showRewardedAd(async () => {
+                  // Reward callback - give coins
+                  const newCoins = await addCoins(REWARDED_COINS);
+                  setCoins(newCoins);
+                  if (onCoinsChange) onCoinsChange(newCoins);
+                  setCoinAnimation(`+${REWARDED_COINS}`);
+                  setTimeout(() => setCoinAnimation(null), 1000);
+                });
+                if (!shown) {
+                  Alert.alert('Oops', 'Video not ready. Try again later.');
+                }
+              },
+            },
+          ]
+        );
+      } else {
+        Alert.alert(
+          'Not enough coins',
+          `You need ${HINT_COST} coins for a hint. Keep finding words to earn more!`
+        );
+      }
     }
-  }, [coins, puzzle, foundWords, onCoinsChange]);
+  }, [coins, puzzle, foundWords, onCoinsChange, showHint]);
 
   const handleSnapshot = useCallback(async () => {
     try {
@@ -253,9 +304,8 @@ export default function GameScreen({ onCoinsChange }) {
         {/* Button Row */}
         <View style={styles.buttonRow}>
           <TouchableOpacity
-            style={[styles.actionButton, coins < HINT_COST && styles.actionButtonDisabled]}
+            style={styles.actionButton}
             onPress={handleHint}
-            disabled={coins < HINT_COST}
           >
             <Text style={styles.buttonIcon}>💡</Text>
             <Text style={styles.buttonText}>Hint ({HINT_COST})</Text>
@@ -283,6 +333,17 @@ export default function GameScreen({ onCoinsChange }) {
         visible={showCelebration}
         onComplete={handleCelebrationComplete}
       />
+
+      {/* Banner Ad */}
+      <View style={styles.bannerContainer}>
+        <BannerAd
+          unitId={BANNER_AD_UNIT_ID}
+          size={BannerAdSize.ANCHORED_ADAPTIVE_BANNER}
+          requestOptions={{
+            requestNonPersonalizedAdsOnly: true,
+          }}
+        />
+      </View>
     </LinearGradient>
   );
 }
@@ -400,5 +461,13 @@ const styles = StyleSheet.create({
     fontSize: 14,
     fontWeight: '600',
     color: colors.textPrimary,
+  },
+  bannerContainer: {
+    position: 'absolute',
+    bottom: 0,
+    left: 0,
+    right: 0,
+    alignItems: 'center',
+    backgroundColor: 'transparent',
   },
 });
