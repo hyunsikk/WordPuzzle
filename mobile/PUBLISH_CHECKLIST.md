@@ -1,4 +1,4 @@
-# Publishing Checklist - Word Search by AprilMay
+# Publishing Checklist - Vocab Bubbles by AM Studio
 
 ## Prerequisites
 
@@ -51,10 +51,10 @@ After `eas init`, update `eas.json` with your Apple credentials:
 2. Click "My Apps" → "+" → "New App"
 3. Fill in:
    - Platform: iOS
-   - Name: Word Search by AprilMay
+   - Name: Vocab Bubbles
    - Primary Language: English (US)
-   - Bundle ID: com.aprilmay.wordsearch
-   - SKU: wordsearch-aprilmay-001
+   - Bundle ID: com.amstudio.vocabbubbles
+   - SKU: vocabbubbles-amstudio-001
 
 ## Step 5: Build for iOS
 

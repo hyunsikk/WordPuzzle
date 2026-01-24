@@ -1,21 +1,22 @@
-# App Store Listing - Word Search by AprilMay
+# App Store Listing - Vocab Bubbles
 
 ## App Information
 
-- **App Name:** Word Search by AprilMay
-- **Subtitle:** Relaxing Ocean Word Puzzles
-- **Bundle ID:** com.aprilmay.wordsearch
+- **App Name:** Vocab Bubbles
+- **Subtitle:** SAT & GRE Word Puzzles
+- **Bundle ID:** com.amstudio.vocabbubbles
 - **Category:** Games > Word
 - **Age Rating:** 12+
 - **Price:** Free
 
 ## Description
 
-Dive into relaxing word puzzles! Find hidden words in beautiful ocean-themed grids.
+Build your vocabulary while having fun! Find SAT & GRE words hidden in beautiful ocean-themed grids.
 
-Swipe through letters to discover words from 100+ themed categories - from ocean life to space exploration, emotions to cuisines. No pressure, no timers - just pure word-finding fun.
+Swipe through letters to discover words from 100+ themed categories featuring vocabulary from standardized tests. Perfect for test prep or keeping your mind sharp - no pressure, no timers.
 
 Features:
+• SAT & GRE vocabulary words
 • Soothing ocean-inspired design
 • 100+ word categories
 • Swipe-to-select gameplay
@@ -23,15 +24,15 @@ Features:
 • Works completely offline
 • No ads, no interruptions
 
-Perfect for unwinding after a long day or keeping your mind sharp during a commute. No internet required - play anywhere, anytime.
+Perfect for test prep, commutes, or anytime learning. No internet required - play anywhere, anytime.
 
 ## Keywords
 
-word search, puzzle, word game, brain game, offline, relaxing, word find
+word search, SAT vocab, GRE prep, vocabulary, puzzle, word game, offline, test prep
 
 ## What's New (Version 1.0.0)
 
-Initial release! Enjoy 100+ word categories with our beautiful ocean-themed interface.
+Initial release! Enjoy 100+ SAT/GRE vocabulary categories with our beautiful ocean-themed interface.
 
 ## Screenshots Required
 

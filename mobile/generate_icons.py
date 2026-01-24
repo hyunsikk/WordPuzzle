@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Generate app icons for Word Search by AprilMay"""
+"""Generate app icons for Vocab Bubbles by AM Studio"""
 
 from PIL import Image, ImageDraw, ImageFont
 import os
@@ -25,7 +25,7 @@ def create_gradient(size, color1, color2):
     return img
 
 def create_icon(size=1024):
-    """Create the WS bubble icon"""
+    """Create the VB bubble icon"""
     # Create gradient background
     img = create_gradient(size, SKY_BLUE, TURQUOISE)
     draw = ImageDraw.Draw(img)
@@ -88,7 +88,7 @@ def create_icon(size=1024):
         font = ImageFont.load_default()
 
     # Draw letters
-    for letter, bx in [("W", left_x), ("S", right_x)]:
+    for letter, bx in [("V", left_x), ("B", right_x)]:
         # Get text bounding box for centering
         bbox = draw.textbbox((0, 0), letter, font=font)
         text_width = bbox[2] - bbox[0]

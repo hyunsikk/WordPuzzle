@@ -1,4 +1,4 @@
-// Ocean Bubbles color palette for Word Search by AprilMay
+// Ocean Bubbles color palette for Vocab Bubbles by AM Studio
 
 export const colors = {
   // Background gradient

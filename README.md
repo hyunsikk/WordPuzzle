@@ -1,6 +1,6 @@
-# MoodWords
+# Vocab Bubbles
 
-A mood-based word search puzzle game. Describe your feelings and find words that match your mood!
+A word search puzzle game featuring SAT/GRE vocabulary words. Build your vocabulary while having fun - works offline!
 
 ## Features
 

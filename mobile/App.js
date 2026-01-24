@@ -1,4 +1,4 @@
-// App.js - Word Search by AprilMay
+// App.js - Vocab Bubbles by AM Studio
 
 import React, { useState, useEffect } from 'react';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';

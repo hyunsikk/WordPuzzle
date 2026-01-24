@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
-"""Test script for MoodWords web application using Playwright."""
+"""Test script for Vocab Bubbles web application using Playwright."""
 
 from playwright.sync_api import sync_playwright
 import os
 
 HTML_PATH = os.path.abspath('/home/hsik/Desktop/Projects/WordPuzzle/index.html')
-SCREENSHOT_DIR = '/tmp/moodwords_tests'
+SCREENSHOT_DIR = '/tmp/vocabbubbles_tests'
 
 os.makedirs(SCREENSHOT_DIR, exist_ok=True)
 
@@ -20,14 +20,14 @@ def test_page_loads():
 
         # Check title
         title = page.title()
-        assert 'MoodWords' in title, f"Expected 'MoodWords' in title, got '{title}'"
+        assert 'Vocab Bubbles' in title, f"Expected 'MoodWords' in title, got '{title}'"
         print(f"✓ Page title: {title}")
 
         # Check header is visible
         header = page.locator('h1')
         assert header.is_visible(), "Header should be visible"
         header_text = header.text_content()
-        assert 'MoodWords' in header_text, f"Expected 'MoodWords' in header, got '{header_text}'"
+        assert 'Vocab Bubbles' in header_text, f"Expected 'MoodWords' in header, got '{header_text}'"
         print(f"✓ Header text: {header_text}")
 
         # Check mood input section is visible
@@ -512,7 +512,7 @@ def test_responsive_layout():
 
 if __name__ == '__main__':
     print("=" * 60)
-    print("MoodWords Web Application Tests")
+    print("Vocab Bubbles Web Application Tests")
     print("=" * 60)
 
     tests = [

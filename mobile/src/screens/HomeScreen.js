@@ -40,8 +40,8 @@ export default function HomeScreen({ onPlay, coins, streak }) {
         </View>
 
         <View style={styles.titleContainer}>
-          <Text style={styles.title}>Word Search</Text>
-          <Text style={styles.subtitle}>by AprilMay</Text>
+          <Text style={styles.title}>Vocab Bubbles</Text>
+          <Text style={styles.subtitle}>by AM Studio</Text>
         </View>
 
         <TouchableOpacity

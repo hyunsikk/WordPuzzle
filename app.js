@@ -432,7 +432,7 @@ async function handleSaveImage() {
         });
 
         const link = document.createElement('a');
-        link.download = 'moodwords-puzzle.jpg';
+        link.download = 'vocabbubbles-puzzle.jpg';
         link.href = canvas.toDataURL('image/jpeg', 0.9);
         link.click();
     } catch (error) {

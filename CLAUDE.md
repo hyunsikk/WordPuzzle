@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-MoodWords is a browser-based word search puzzle game. Users describe their mood, and Claude API generates themed words that are hidden in a 10x10 letter grid.
+Vocab Bubbles is a word search puzzle game featuring SAT/GRE vocabulary words. The mobile app works offline with curated word lists, while the web version can also generate AI-powered puzzles via Claude API.
 
 ## Tech Stack
 

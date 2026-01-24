@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "Word Search by AprilMay",
-    "slug": "word-search-aprilmay",
+    "name": "Vocab Bubbles",
+    "slug": "vocab-bubbles",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -14,7 +14,7 @@
     },
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.aprilmay.wordsearch",
+      "bundleIdentifier": "com.amstudio.vocabbubbles",
       "buildNumber": "1",
       "infoPlist": {
         "ITSAppUsesNonExemptEncryption": false
@@ -26,7 +26,7 @@
         "backgroundColor": "#87CEEB"
       },
       "edgeToEdgeEnabled": true,
-      "package": "com.aprilmay.wordsearch"
+      "package": "com.amstudio.vocabbubbles"
     },
     "web": {
       "favicon": "./assets/favicon.png"
@@ -36,7 +36,7 @@
         "projectId": "YOUR_EAS_PROJECT_ID"
       }
     },
-    "owner": "aprilmay",
+    "owner": "amstudio",
     "runtimeVersion": {
       "policy": "appVersion"
     },
