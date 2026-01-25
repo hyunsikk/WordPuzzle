@@ -39,7 +39,12 @@ export default function WordList({ words, foundWords, bonusCount = 0 }) {
           </View>
         </View>
       </View>
-      <View style={styles.wordGrid}>
+      <ScrollView
+        style={styles.wordScrollView}
+        contentContainerStyle={styles.wordGrid}
+        showsVerticalScrollIndicator={true}
+        nestedScrollEnabled={true}
+      >
         {words.map((word, index) => (
           <WordItem
             key={`${word}-${index}`}
@@ -47,7 +52,7 @@ export default function WordList({ words, foundWords, bonusCount = 0 }) {
             isFound={foundWords.includes(word)}
           />
         ))}
-      </View>
+      </ScrollView>
     </View>
   );
 }
@@ -59,11 +64,15 @@ const styles = StyleSheet.create({
     marginTop: 20,
     borderRadius: 16,
     padding: 16,
+    maxHeight: 225,
     shadowColor: colors.shadowColor,
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.1,
     shadowRadius: 8,
     elevation: 3,
+  },
+  wordScrollView: {
+    flexGrow: 0,
   },
   header: {
     flexDirection: 'row',
