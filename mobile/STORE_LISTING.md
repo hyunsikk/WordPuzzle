@@ -6,8 +6,12 @@
 - **Subtitle:** SAT & GRE Word Puzzles
 - **Bundle ID:** com.amstudio.vocabbubbles
 - **Category:** Games > Word
-- **Age Rating:** 12+
+- **Age Rating:** 4+
 - **Price:** Free
+
+## Promotional Text (170 char max)
+
+Master SAT & GRE vocabulary the fun way! New word categories added regularly. Perfect for students, lifelong learners, and puzzle enthusiasts.
 
 ## Description
 
@@ -21,10 +25,9 @@ Features:
 • 100+ word categories
 • Swipe-to-select gameplay
 • Daily streaks & coin rewards
-• Works completely offline
-• No ads, no interruptions
+• Works offline - no internet needed to play
 
-Perfect for test prep, commutes, or anytime learning. No internet required - play anywhere, anytime.
+Perfect for test prep, commutes, or anytime learning. Play anywhere, anytime.
 
 ## Keywords
 
@@ -50,15 +53,32 @@ Recommended screenshot content:
 
 ## Privacy Policy
 
-Since the app:
-- Does NOT collect any user data
-- Does NOT use analytics
-- Does NOT require internet
-- Stores data locally only (AsyncStorage)
+The app uses Google AdMob for advertising, which may collect:
+- Device identifiers for ad personalization
+- Ad interaction data
 
-You can use a simple privacy policy stating "This app does not collect any personal data."
+You need a privacy policy that discloses this. Host it on GitHub Pages or your website.
 
-Host it at: https://yourwebsite.com/privacy or use a free service like GitHub Pages.
+Sample privacy policy text:
+```
+Privacy Policy for Vocab Bubbles
+
+Last updated: [DATE]
+
+Vocab Bubbles is a word puzzle game by AM Studio.
+
+Data Collection:
+- Game progress (coins, streaks, completed puzzles) is stored locally on your device
+- We use Google AdMob to display advertisements, which may collect device identifiers and ad interaction data
+
+Third-Party Services:
+- Google AdMob: https://policies.google.com/privacy
+
+Contact:
+[Your email]
+```
+
+Host it at: https://[username].github.io/vocabbubbles-privacy
 
 ## App Review Notes
 

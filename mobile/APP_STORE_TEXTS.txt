@@ -1,0 +1,64 @@
+============================================================
+VOCAB BUBBLES - APP STORE LISTING TEXTS
+============================================================
+Copy and paste these directly into App Store Connect.
+============================================================
+
+------------------------------------------------------------
+APP NAME
+------------------------------------------------------------
+Vocab Bubbles
+
+------------------------------------------------------------
+SUBTITLE (30 characters max)
+------------------------------------------------------------
+SAT & GRE Word Puzzles
+
+------------------------------------------------------------
+PROMOTIONAL TEXT (170 characters max)
+------------------------------------------------------------
+Master SAT & GRE vocabulary the fun way! New word categories added regularly. Perfect for students, lifelong learners, and puzzle enthusiasts.
+
+------------------------------------------------------------
+DESCRIPTION
+------------------------------------------------------------
+Build your vocabulary while having fun! Find SAT & GRE words hidden in beautiful ocean-themed grids.
+
+Swipe through letters to discover words from 100+ themed categories featuring vocabulary from standardized tests. Perfect for test prep or keeping your mind sharp - no pressure, no timers.
+
+Features:
+• SAT & GRE vocabulary words
+• Soothing ocean-inspired design
+• 100+ word categories
+• Swipe-to-select gameplay
+• Daily streaks & coin rewards
+• Works offline - no internet needed to play
+
+Perfect for test prep, commutes, or anytime learning. Play anywhere, anytime.
+
+------------------------------------------------------------
+KEYWORDS (100 characters max, comma-separated)
+------------------------------------------------------------
+word search,SAT vocab,GRE prep,vocabulary,puzzle,word game,offline,test prep
+
+------------------------------------------------------------
+WHAT'S NEW (Version 1.0.0)
+------------------------------------------------------------
+Initial release! Enjoy 100+ SAT/GRE vocabulary categories with our beautiful ocean-themed interface.
+
+------------------------------------------------------------
+APP REVIEW NOTES
+------------------------------------------------------------
+This is an offline word search puzzle game. No login required. Tap Play to start, swipe letters to find words. Ads are shown via Google AdMob.
+
+------------------------------------------------------------
+SUPPORT URL (optional)
+------------------------------------------------------------
+https://github.com/hyunsikk/WordPuzzle
+
+------------------------------------------------------------
+COPYRIGHT
+------------------------------------------------------------
+AM Studio
+
+============================================================
