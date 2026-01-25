@@ -396,7 +396,9 @@ export default function GameScreen({ onCoinsChange, onBack }) {
         <View style={styles.buttonRow}>
           <View style={styles.hintButtonContainer}>
             {!usedHint && (
-              <Text style={styles.noHintBonusText}>+{NO_HINT_BONUS} if no hints!</Text>
+              <View style={styles.noHintBadge}>
+                <Text style={styles.noHintBonusText}>+{NO_HINT_BONUS} bonus</Text>
+              </View>
             )}
             <TouchableOpacity
               style={styles.actionButton}
@@ -597,11 +599,22 @@ const styles = StyleSheet.create({
   hintButtonContainer: {
     alignItems: 'center',
   },
+  noHintBadge: {
+    backgroundColor: '#FFD700',
+    paddingHorizontal: 12,
+    paddingVertical: 6,
+    borderRadius: 12,
+    marginBottom: 8,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.2,
+    shadowRadius: 3,
+    elevation: 3,
+  },
   noHintBonusText: {
-    fontSize: 11,
-    fontWeight: '600',
-    color: colors.coinGold,
-    marginBottom: 4,
+    fontSize: 13,
+    fontWeight: '800',
+    color: '#333333',
   },
   actionButton: {
     flexDirection: 'row',

@@ -90,7 +90,7 @@ const styles = StyleSheet.create({
   bubble: {
     justifyContent: 'center',
     alignItems: 'center',
-    margin: 2,
+    margin: 1,
     borderWidth: 2,
     shadowColor: colors.shadowColor,
     shadowOffset: { width: 0, height: 2 },

@@ -6,12 +6,14 @@ import Cell from './Cell';
 import { colors } from '../styles/colors';
 import { GRID_SIZE, isAdjacent, getDirection, isSameDirection } from '../utils/puzzle';
 
-const GRID_PADDING = 12;
-const GRID_MARGIN = 16;
+const GRID_PADDING = 10;
+const GRID_MARGIN = 12;
+const CELL_MARGIN = 1; // Reduced from 2 for tighter grid
 
 function calculateGridDimensions(screenWidth) {
-  const gridWidth = Math.min(screenWidth - (GRID_MARGIN * 2), 400);
-  const cellSize = (gridWidth - (GRID_PADDING * 2) - (GRID_SIZE * 4)) / GRID_SIZE;
+  // Use 90% of screen width, with max of 480px
+  const gridWidth = Math.min(screenWidth * 0.9, 480);
+  const cellSize = (gridWidth - (GRID_PADDING * 2) - (GRID_SIZE * CELL_MARGIN * 2)) / GRID_SIZE;
   return { gridWidth, cellSize };
 }
 
@@ -52,15 +54,15 @@ export default function Grid({
     const relX = clientX - gridLayout.x - GRID_PADDING;
     const relY = clientY - gridLayout.y - GRID_PADDING;
 
-    const cellTotalSize = cellSize + 4;
+    const cellTotalSize = cellSize + (CELL_MARGIN * 2);
 
     // Calculate which cell the touch is over (basic grid lookup)
     const col = Math.floor(relX / cellTotalSize);
     const row = Math.floor(relY / cellTotalSize);
 
     // For better diagonal swiping, use distance-from-center detection
-    // with a more forgiving radius
-    const hitRadius = cellTotalSize * 0.65; // 65% of cell size for hit area
+    // with a very forgiving radius
+    const hitRadius = cellTotalSize * 0.85; // 85% of cell size for generous hit area
 
     // Check the touched cell and its neighbors for closest center
     let bestCell = null;
@@ -111,7 +113,38 @@ export default function Grid({
 
   const startPositionRef = useRef({ x: 0, y: 0 });
   const hasDraggedRef = useRef(false);
+  const swipeDirectionRef = useRef(null); // Track overall swipe direction angle
   const DRAG_THRESHOLD = 10; // pixels to consider as drag vs tap
+
+  // Get predicted next cell based on current direction
+  const getPredictedCell = useCallback((lastCell, direction) => {
+    if (!direction) return null;
+    const nextX = lastCell.x + direction.dx;
+    const nextY = lastCell.y + direction.dy;
+    if (nextX >= 0 && nextX < GRID_SIZE && nextY >= 0 && nextY < GRID_SIZE) {
+      return { x: nextX, y: nextY };
+    }
+    return null;
+  }, []);
+
+  // Calculate swipe angle and determine if it matches a direction
+  const getSwipeDirection = useCallback((dx, dy) => {
+    const angle = Math.atan2(dy, dx) * (180 / Math.PI);
+    // Normalize angle to 0-360
+    const normalizedAngle = (angle + 360) % 360;
+
+    // Map angles to 8 directions with 45-degree sectors
+    // Right: -22.5 to 22.5 (or 337.5 to 360 and 0 to 22.5)
+    if (normalizedAngle >= 337.5 || normalizedAngle < 22.5) return { dx: 1, dy: 0 };
+    if (normalizedAngle >= 22.5 && normalizedAngle < 67.5) return { dx: 1, dy: 1 };
+    if (normalizedAngle >= 67.5 && normalizedAngle < 112.5) return { dx: 0, dy: 1 };
+    if (normalizedAngle >= 112.5 && normalizedAngle < 157.5) return { dx: -1, dy: 1 };
+    if (normalizedAngle >= 157.5 && normalizedAngle < 202.5) return { dx: -1, dy: 0 };
+    if (normalizedAngle >= 202.5 && normalizedAngle < 247.5) return { dx: -1, dy: -1 };
+    if (normalizedAngle >= 247.5 && normalizedAngle < 292.5) return { dx: 0, dy: -1 };
+    if (normalizedAngle >= 292.5 && normalizedAngle < 337.5) return { dx: 1, dy: -1 };
+    return null;
+  }, []);
 
   const tryAddCell = useCallback((cell, selection) => {
     if (selection.length === 0) {
@@ -218,14 +251,52 @@ export default function Grid({
     if (distance > DRAG_THRESHOLD) {
       hasDraggedRef.current = true;
       isTapModeRef.current = false; // Switch to drag mode
+      // Update swipe direction based on overall movement
+      swipeDirectionRef.current = getSwipeDirection(dx, dy);
     }
 
     if (!hasDraggedRef.current) return; // Don't update selection until drag threshold met
 
+    const selection = currentSelectionRef.current;
+    if (selection.length === 0) return;
+
+    const lastCell = selection[selection.length - 1];
+
+    // If direction is established, try to auto-advance along that direction
+    // This makes diagonal swiping much smoother
+    if (currentDirectionRef.current !== null && gridLayout) {
+      const predictedCell = getPredictedCell(lastCell, currentDirectionRef.current);
+      if (predictedCell) {
+        // Check if user has moved far enough toward the predicted cell
+        const cellTotalSize = cellSize + (CELL_MARGIN * 2);
+        const lastCenterX = gridLayout.x + GRID_PADDING + lastCell.x * cellTotalSize + cellTotalSize / 2;
+        const lastCenterY = gridLayout.y + GRID_PADDING + lastCell.y * cellTotalSize + cellTotalSize / 2;
+
+        // Calculate movement from last cell center
+        const touchDx = clientX - lastCenterX;
+        const touchDy = clientY - lastCenterY;
+        const touchDistance = Math.sqrt(touchDx * touchDx + touchDy * touchDy);
+
+        // Check if touch has moved at least 15% of cell size away from last cell center
+        // AND is moving in roughly the right direction
+        if (touchDistance > cellTotalSize * 0.15) {
+          const movementDir = getSwipeDirection(touchDx, touchDy);
+          if (movementDir &&
+              movementDir.dx === currentDirectionRef.current.dx &&
+              movementDir.dy === currentDirectionRef.current.dy) {
+            const newSelection = [...selection, predictedCell];
+            currentSelectionRef.current = newSelection;
+            onSelectionChange(newSelection);
+            return;
+          }
+        }
+      }
+    }
+
+    // Fall back to cell-based detection
     const cell = getCellFromPosition(clientX, clientY);
     if (!cell) return;
 
-    const selection = currentSelectionRef.current;
     const existingIndex = selection.findIndex(s => s.x === cell.x && s.y === cell.y);
 
     if (existingIndex !== -1) {
@@ -235,34 +306,33 @@ export default function Grid({
         // Reset direction if going back to first cell
         if (newSelection.length === 1) {
           currentDirectionRef.current = null;
+          swipeDirectionRef.current = null;
         }
         onSelectionChange(newSelection);
       }
       return;
     }
 
-    if (selection.length > 0) {
-      const lastCell = selection[selection.length - 1];
-      if (isAdjacent(lastCell, cell)) {
-        const newDirection = getDirection(lastCell, cell);
+    // Check if cell is adjacent to last cell
+    if (isAdjacent(lastCell, cell)) {
+      const newDirection = getDirection(lastCell, cell);
 
-        // If direction not established yet, set it
-        if (currentDirectionRef.current === null) {
-          currentDirectionRef.current = newDirection;
-          const newSelection = [...selection, cell];
-          currentSelectionRef.current = newSelection;
-          onSelectionChange(newSelection);
-        }
-        // If direction matches, allow the selection
-        else if (isSameDirection(currentDirectionRef.current, newDirection)) {
-          const newSelection = [...selection, cell];
-          currentSelectionRef.current = newSelection;
-          onSelectionChange(newSelection);
-        }
-        // Direction doesn't match - ignore this cell
+      // If direction not established yet, set it
+      if (currentDirectionRef.current === null) {
+        currentDirectionRef.current = newDirection;
+        const newSelection = [...selection, cell];
+        currentSelectionRef.current = newSelection;
+        onSelectionChange(newSelection);
       }
+      // If direction matches, allow the selection
+      else if (isSameDirection(currentDirectionRef.current, newDirection)) {
+        const newSelection = [...selection, cell];
+        currentSelectionRef.current = newSelection;
+        onSelectionChange(newSelection);
+      }
+      // Direction doesn't match - ignore this cell
     }
-  }, [getCellFromPosition, onSelectionChange]);
+  }, [getCellFromPosition, onSelectionChange, getSwipeDirection, getPredictedCell, cellSize, gridLayout]);
 
   const handleEnd = useCallback((clientX, clientY) => {
     if (!isDraggingRef.current) return;
@@ -279,6 +349,7 @@ export default function Grid({
 
     // Drag ended - submit selection
     isTapModeRef.current = false;
+    swipeDirectionRef.current = null;
     onSelectionEnd(currentSelectionRef.current);
     currentSelectionRef.current = [];
     currentDirectionRef.current = null;
