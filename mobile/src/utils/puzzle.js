@@ -3,9 +3,14 @@
 export const GRID_SIZE = 10;
 
 const DIRECTIONS = [
-  { dx: 1, dy: 0, name: 'horizontal' },      // left to right
-  { dx: 0, dy: 1, name: 'vertical' },        // top to bottom
-  { dx: 1, dy: 1, name: 'diagonal' },        // top-left to bottom-right
+  { dx: 1, dy: 0, name: 'horizontal' },       // left to right
+  { dx: -1, dy: 0, name: 'horizontal-rev' },  // right to left
+  { dx: 0, dy: 1, name: 'vertical' },         // top to bottom
+  { dx: 0, dy: -1, name: 'vertical-rev' },    // bottom to top
+  { dx: 1, dy: 1, name: 'diagonal' },         // top-left to bottom-right
+  { dx: -1, dy: -1, name: 'diagonal-rev' },   // bottom-right to top-left
+  { dx: 1, dy: -1, name: 'diagonal-up' },     // bottom-left to top-right
+  { dx: -1, dy: 1, name: 'diagonal-down' },   // top-right to bottom-left
 ];
 
 function createEmptyGrid() {
@@ -28,6 +33,19 @@ function canPlaceWord(grid, word, startX, startY, direction) {
   return true;
 }
 
+// Count how many letters would overlap with existing letters
+function countOverlaps(grid, word, startX, startY, direction) {
+  let overlaps = 0;
+  for (let i = 0; i < word.length; i++) {
+    const x = startX + i * direction.dx;
+    const y = startY + i * direction.dy;
+    if (grid[y][x] === word[i]) {
+      overlaps++;
+    }
+  }
+  return overlaps;
+}
+
 function placeWord(grid, word, startX, startY, direction) {
   const positions = [];
   for (let i = 0; i < word.length; i++) {
@@ -39,18 +57,46 @@ function placeWord(grid, word, startX, startY, direction) {
   return positions;
 }
 
-function tryPlaceWord(grid, word, maxAttempts = 100) {
-  for (let attempt = 0; attempt < maxAttempts; attempt++) {
-    const direction = DIRECTIONS[Math.floor(Math.random() * DIRECTIONS.length)];
-    const startX = Math.floor(Math.random() * GRID_SIZE);
-    const startY = Math.floor(Math.random() * GRID_SIZE);
+// Find all valid placements and prefer those with overlaps
+function tryPlaceWord(grid, word) {
+  const validPlacements = [];
 
-    if (canPlaceWord(grid, word, startX, startY, direction)) {
-      const positions = placeWord(grid, word, startX, startY, direction);
-      return { success: true, positions };
+  // Try all positions and directions
+  for (const direction of DIRECTIONS) {
+    for (let startY = 0; startY < GRID_SIZE; startY++) {
+      for (let startX = 0; startX < GRID_SIZE; startX++) {
+        if (canPlaceWord(grid, word, startX, startY, direction)) {
+          const overlaps = countOverlaps(grid, word, startX, startY, direction);
+          validPlacements.push({ startX, startY, direction, overlaps });
+        }
+      }
     }
   }
-  return { success: false, positions: [] };
+
+  if (validPlacements.length === 0) {
+    return { success: false, positions: [] };
+  }
+
+  // Sort by overlaps (most overlaps first) and pick from top candidates
+  validPlacements.sort((a, b) => b.overlaps - a.overlaps);
+
+  // If there are placements with overlaps, strongly prefer them
+  const maxOverlaps = validPlacements[0].overlaps;
+  let candidates;
+
+  if (maxOverlaps > 0) {
+    // Pick from placements that have overlaps (at least 1)
+    candidates = validPlacements.filter(p => p.overlaps > 0);
+  } else {
+    // No overlaps possible, pick randomly from all valid placements
+    candidates = validPlacements;
+  }
+
+  // Pick a random placement from top candidates
+  const chosen = candidates[Math.floor(Math.random() * candidates.length)];
+  const positions = placeWord(grid, word, chosen.startX, chosen.startY, chosen.direction);
+
+  return { success: true, positions, overlaps: chosen.overlaps };
 }
 
 function fillEmptyCells(grid) {

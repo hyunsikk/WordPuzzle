@@ -5,7 +5,7 @@ import { StyleSheet, Text, View, TouchableOpacity, StatusBar } from 'react-nativ
 import { LinearGradient } from 'expo-linear-gradient';
 import { colors } from '../styles/colors';
 
-export default function HomeScreen({ onPlay, coins, streak }) {
+export default function HomeScreen({ onPlay }) {
   return (
     <LinearGradient
       colors={[colors.backgroundStart, colors.backgroundEnd]}
@@ -14,22 +14,6 @@ export default function HomeScreen({ onPlay, coins, streak }) {
       end={{ x: 1, y: 1 }}
     >
       <StatusBar barStyle="dark-content" />
-
-      {/* Stats Bar */}
-      {(streak > 0 || coins > 0) && (
-        <View style={styles.statsBar}>
-          {streak > 0 && (
-            <View style={styles.statItem}>
-              <Text style={styles.statIcon}>🔥</Text>
-              <Text style={styles.statValue}>{streak}</Text>
-            </View>
-          )}
-          <View style={styles.statItem}>
-            <Text style={styles.statIcon}>💰</Text>
-            <Text style={styles.statValue}>{coins}</Text>
-          </View>
-        </View>
-      )}
 
       <View style={styles.content}>
         {/* Decorative bubbles */}
@@ -48,17 +32,11 @@ export default function HomeScreen({ onPlay, coins, streak }) {
           style={styles.playButton}
           onPress={onPlay}
           activeOpacity={0.8}
+          accessibilityLabel="Start playing Vocab Bubbles"
+          accessibilityRole="button"
         >
           <Text style={styles.playButtonText}>Play</Text>
         </TouchableOpacity>
-
-        {streak > 0 && (
-          <View style={styles.streakBadge}>
-            <Text style={styles.streakText}>
-              🔥 {streak} day streak!
-            </Text>
-          </View>
-        )}
       </View>
     </LinearGradient>
   );
@@ -67,29 +45,6 @@ export default function HomeScreen({ onPlay, coins, streak }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-  },
-  statsBar: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    paddingHorizontal: 20,
-    paddingTop: 60,
-  },
-  statItem: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    backgroundColor: 'rgba(255, 255, 255, 0.3)',
-    paddingHorizontal: 12,
-    paddingVertical: 6,
-    borderRadius: 20,
-  },
-  statIcon: {
-    fontSize: 18,
-    marginRight: 4,
-  },
-  statValue: {
-    fontSize: 16,
-    fontWeight: '700',
-    color: colors.textPrimary,
   },
   content: {
     flex: 1,
@@ -162,17 +117,5 @@ const styles = StyleSheet.create({
     fontWeight: '700',
     color: colors.textLight,
     letterSpacing: 2,
-  },
-  streakBadge: {
-    marginTop: 30,
-    backgroundColor: 'rgba(255, 140, 0, 0.2)',
-    paddingHorizontal: 20,
-    paddingVertical: 10,
-    borderRadius: 20,
-  },
-  streakText: {
-    fontSize: 16,
-    fontWeight: '600',
-    color: colors.streakFire,
   },
 });

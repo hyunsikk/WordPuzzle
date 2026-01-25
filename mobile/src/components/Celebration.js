@@ -4,24 +4,45 @@ import React, { useEffect } from 'react';
 import { StyleSheet, View, Text, Dimensions } from 'react-native';
 import { colors } from '../styles/colors';
 
-export default function Celebration({ visible, onComplete }) {
+export default function Celebration({
+  visible,
+  onComplete,
+  bonusCoins = 50,
+  noHintBonus = 0,
+  comboBonus = 0,
+}) {
   useEffect(() => {
     if (visible && onComplete) {
       const timer = setTimeout(() => {
         onComplete();
-      }, 2000);
+      }, 2500);
       return () => clearTimeout(timer);
     }
   }, [visible, onComplete]);
 
   if (!visible) return null;
 
+  const totalBonus = bonusCoins + noHintBonus + comboBonus;
+
   return (
-    <View style={styles.container}>
+    <View
+      style={styles.container}
+      accessibilityLabel={`Puzzle complete! You earned ${totalBonus} bonus coins`}
+      accessibilityRole="alert"
+    >
       <View style={styles.messageContainer}>
         <Text style={styles.emoji}>🎉</Text>
         <Text style={styles.message}>Amazing!</Text>
-        <Text style={styles.subMessage}>+50 coins bonus</Text>
+        <View style={styles.bonusContainer}>
+          <Text style={styles.subMessage}>+{bonusCoins} completion</Text>
+          {noHintBonus > 0 && (
+            <Text style={styles.bonusLine}>+{noHintBonus} no hints!</Text>
+          )}
+          {comboBonus > 0 && (
+            <Text style={styles.bonusLine}>+{comboBonus} combos!</Text>
+          )}
+          <Text style={styles.totalMessage}>Total: +{totalBonus} 💎</Text>
+        </View>
         <View style={styles.nextHint}>
           <Text style={styles.nextHintText}>Next puzzle loading...</Text>
         </View>
@@ -59,11 +80,27 @@ const styles = StyleSheet.create({
     fontWeight: '800',
     color: colors.textPrimary,
   },
+  bonusContainer: {
+    alignItems: 'center',
+    marginTop: 12,
+  },
   subMessage: {
-    fontSize: 18,
+    fontSize: 16,
+    fontWeight: '600',
+    color: colors.textSecondary,
+    marginTop: 4,
+  },
+  bonusLine: {
+    fontSize: 16,
     fontWeight: '600',
     color: colors.coinGold,
-    marginTop: 8,
+    marginTop: 4,
+  },
+  totalMessage: {
+    fontSize: 20,
+    fontWeight: '700',
+    color: colors.coinGold,
+    marginTop: 12,
   },
   nextHint: {
     marginTop: 20,

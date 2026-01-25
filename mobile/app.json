@@ -15,12 +15,14 @@
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "com.amstudio.vocabbubbles",
-      "buildNumber": "1",
+      "buildNumber": "2",
       "infoPlist": {
         "ITSAppUsesNonExemptEncryption": false,
         "GADApplicationIdentifier": "ca-app-pub-7846673001617739~7101599854",
         "SKAdNetworkItems": [
-          { "SKAdNetworkIdentifier": "cstr6suwn9.skadnetwork" }
+          {
+            "SKAdNetworkIdentifier": "cstr6suwn9.skadnetwork"
+          }
         ],
         "NSUserTrackingUsageDescription": "This allows us to show you relevant ads and support free access to the app."
       }
@@ -45,17 +47,14 @@
         }
       ]
     ],
-    "extra": {
-      "eas": {
-        "projectId": "YOUR_EAS_PROJECT_ID"
-      }
-    },
-    "owner": "amstudio",
     "runtimeVersion": {
       "policy": "appVersion"
     },
-    "updates": {
-      "url": "https://u.expo.dev/YOUR_EAS_PROJECT_ID"
-    }
+    "extra": {
+      "eas": {
+        "projectId": "4513de0d-33b1-41f3-ae09-5eb762c437c9"
+      }
+    },
+    "owner": "hsikk"
   }
 }

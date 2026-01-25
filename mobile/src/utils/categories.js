@@ -57,7 +57,7 @@ async function saveQueueState() {
   }
 }
 
-export async function getNextCategory() {
+export async function getNextCategory(maxAttempts = 50) {
   if (currentIndex >= categoryQueue.length) {
     await reshuffleQueue();
   }
@@ -68,16 +68,24 @@ export async function getNextCategory() {
   currentIndex++;
   await saveQueueState();
 
-  // Filter words to 3-8 letters, max 7 words
-  let filteredWords = words.filter(w => w.length >= 3 && w.length <= 8);
+  // Filter words to 3-8 letters, max 10 words, ensure unique
+  let filteredWords = [...new Set(words.filter(w => w.length >= 3 && w.length <= 8))];
 
   if (filteredWords.length < 3) {
-    // Skip this category and get next
-    return getNextCategory();
+    // Skip this category and get next, with recursion limit
+    if (maxAttempts <= 1) {
+      // Fallback: use whatever words we have, or generate a default category
+      console.warn('Could not find category with enough valid words');
+      return {
+        name: 'word challenge',
+        words: ['WORD', 'FIND', 'SEARCH', 'PUZZLE', 'GAME'].slice(0, Math.max(3, filteredWords.length))
+      };
+    }
+    return getNextCategory(maxAttempts - 1);
   }
 
-  if (filteredWords.length > 7) {
-    filteredWords = shuffleArray(filteredWords).slice(0, 7);
+  if (filteredWords.length > 10) {
+    filteredWords = shuffleArray(filteredWords).slice(0, 10);
   }
 
   return {

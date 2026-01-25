@@ -3,80 +3,106 @@
     "ABANDON",
     "ABSCOND",
     "ABDICATE",
-    "ABJURE"
+    "ABJURE",
+    "DESERT",
+    "FORSAKE",
+    "FLEE",
+    "QUIT"
   ],
   "ability_expertise": [
     "SKILL",
-    "SKILLED",
     "EXPERT",
-    "ABLE"
+    "ABLE",
+    "ADEPT",
+    "TALENT",
+    "CAPABLE",
+    "PROFICIENT"
   ],
   "abundance_excess": [
     "PROFUSE",
-    "PROFUSION",
-    "PROLIFERATE",
     "PROLIFIC",
-    "RAMPANT"
+    "RAMPANT",
+    "COPIOUS",
+    "LAVISH",
+    "SURPLUS"
   ],
   "abundance_plenty": [
     "FEAST",
     "FERTILE",
     "FLOURISH",
-    "FLOOD"
+    "FLOOD",
+    "BOUNTY",
+    "AMPLE",
+    "RICH"
   ],
   "abundance_quantity": [
     "PLENTIFUL",
     "PLENTY",
     "PLETHORA",
-    "PLURALITY",
-    "POPULATION"
+    "PLURAL",
+    "POPULATE"
   ],
   "academic_learning": [
     "ACADEMIC",
     "ACADEMY",
     "ANALYZE",
-    "ANNOTATE"
+    "ANNOTATE",
+    "STUDY",
+    "SCHOLAR",
+    "RESEARCH"
   ],
   "academic_topics": [
     "THEME",
-    "THEMATIC",
     "TOPIC",
-    "TOPICAL",
     "THESIS",
-    "THEORY"
+    "THEORY",
+    "SUBJECT",
+    "CONCEPT"
   ],
   "acceptance_openness": [
     "RECEIVE",
     "RECEPTIVE",
-    "RECIPIENT",
-    "REGARD"
+    "REGARD",
+    "ACCEPT",
+    "WELCOME",
+    "EMBRACE",
+    "ADOPT"
   ],
   "accuracy_exactness": [
     "PRECISE",
-    "PRECISION",
     "PRISTINE",
     "PRIMARY",
-    "PRIME"
+    "PRIME",
+    "EXACT",
+    "ACCURATE",
+    "CORRECT"
   ],
   "achievement_success": [
     "SUCCEED",
     "SUCCESS",
-    "SUCCESSFUL",
     "SURPASS",
-    "SUMMIT"
+    "SUMMIT",
+    "TRIUMPH",
+    "ATTAIN",
+    "ACHIEVE"
   ],
   "actions_calculation": [
     "CALCULATE",
     "CALIBRATE",
     "CATEGORIZE",
-    "CHART"
+    "CHART",
+    "COMPUTE",
+    "COUNT",
+    "MEASURE"
   ],
   "actions_change": [
     "UNDERGO",
     "UNDERTAKE",
     "UPDATE",
     "UPGRADE",
-    "VARY"
+    "VARY",
+    "MODIFY",
+    "ALTER"
   ],
   "actions_change_modify": [
     "REVISE",
@@ -146,13 +172,19 @@
     "VOLUNTEER",
     "VOUCH",
     "VOW",
-    "YIELD"
+    "YIELD",
+    "DONATE",
+    "GRANT",
+    "BESTOW"
   ],
   "actions_growth": [
     "BROADEN",
     "BURGEON",
     "BUILD",
-    "CAPITALIZE"
+    "EXPAND",
+    "GROW",
+    "DEVELOP",
+    "THRIVE"
   ],
   "actions_improvement": [
     "ENHANCE",
@@ -177,22 +209,30 @@
   ],
   "actions_movement": [
     "EMERGE",
-    "EMERGE",
     "EMIGRATE",
     "ESCAPE",
     "EVACUATE",
-    "EVADE"
+    "EVADE",
+    "DEPART",
+    "EXIT"
   ],
   "actions_movement_down": [
     "PLUMMET",
     "PLUNGE",
-    "PRECIPITATE"
+    "DESCEND",
+    "DROP",
+    "FALL",
+    "SINK",
+    "DIVE"
   ],
   "actions_movement_general": [
     "PLOD",
     "POISE",
     "POSE",
-    "POSTURE"
+    "POSTURE",
+    "STRIDE",
+    "STEP",
+    "MARCH"
   ],
   "actions_movement_travel": [
     "ROAM",
@@ -248,7 +288,10 @@
     "PLUNDER",
     "PLUCK",
     "POISON",
-    "POLLUTE"
+    "POLLUTE",
+    "HARM",
+    "RAVAGE",
+    "ASSAULT"
   ],
   "actions_violent_conflict": [
     "RETALIATE",
@@ -268,7 +311,11 @@
     "RESPECT",
     "REGARD",
     "REPUTATION",
-    "REPUTABLE"
+    "REPUTABLE",
+    "ADMIRE",
+    "HONOR",
+    "ESTEEM",
+    "REVERE"
   ],
   "agreement_consensus": [
     "CONCUR",
@@ -297,25 +344,37 @@
     "SOLITARY",
     "SOLITUDE",
     "ALONE",
-    "ISOLATED"
+    "ISOLATED",
+    "ISOLATE",
+    "SECLUDE",
+    "HERMIT"
   ],
   "angle_perspective": [
     "SLANT",
     "ANGLE",
     "TILT",
-    "PERSPECTIVE"
+    "PERSPECTIVE",
+    "VIEW",
+    "ASPECT",
+    "OUTLOOK"
   ],
   "answers_resolution": [
     "SOLUTION",
     "SOLVE",
     "ANSWER",
-    "RESOLVE"
+    "RESOLVE",
+    "FIX",
+    "SETTLE",
+    "REMEDY"
   ],
   "approval_support": [
     "APPROVE",
     "APPROVAL",
     "BOLSTER",
-    "BOOST"
+    "BOOST",
+    "ENDORSE",
+    "SANCTION",
+    "FAVOR"
   ],
   "argument_debate": [
     "REBUT",
@@ -328,7 +387,10 @@
     "SMUG",
     "ARROGANT",
     "PROUD",
-    "CONCEITED"
+    "CONCEITED",
+    "HAUGHTY",
+    "VAIN",
+    "EGOTIST"
   ],
   "artistic_creative": [
     "MUSIC",
@@ -341,7 +403,11 @@
     "ASSEMBLE",
     "ASSEMBLY",
     "AUDIENCE",
-    "BANQUET"
+    "BANQUET",
+    "GATHER",
+    "CONVENE",
+    "MEET",
+    "RALLY"
   ],
   "assistance_provision": [
     "SUPPORT",
@@ -361,13 +427,19 @@
     "REGIME",
     "REIGN",
     "REGULATE",
-    "REGULATION"
+    "REGULATION",
+    "GOVERN",
+    "RULE",
+    "COMMAND"
   ],
   "authority_official": [
     "OFFICE",
     "OFFICER",
     "OFFICIAL",
-    "ORDER"
+    "ORDER",
+    "FORMAL",
+    "AUTHORITY",
+    "GOVERN"
   ],
   "authority_power": [
     "SUPREMACY",
@@ -380,37 +452,57 @@
     "SHIRK",
     "SHUN",
     "AVOID",
-    "EVADE"
+    "EVADE",
+    "DODGE",
+    "ESCAPE",
+    "FLEE"
   ],
   "awareness_perception": [
     "OBSERVABLE",
     "OBSERVANT",
     "OBSERVATION",
-    "OBSERVE"
+    "OBSERVE",
+    "AWARE",
+    "NOTICE",
+    "SENSE",
+    "PERCEIVE"
   ],
   "backward_movement": [
     "REGRESS",
     "REGRESSION",
     "RECEDE",
-    "RECOIL"
+    "RECOIL",
+    "RETREAT",
+    "REVERSE"
   ],
   "basic_fundamental": [
     "BASE",
     "BASIC",
     "BASIS",
-    "BENCHMARK"
+    "BENCHMARK",
+    "CORE",
+    "ROOT",
+    "ESSENTIAL",
+    "PRIMARY"
   ],
   "beginner_new": [
     "NOVICE",
     "NOVEL",
     "NOVELTY",
-    "NEWFOUND"
+    "NEWFOUND",
+    "AMATEUR",
+    "ROOKIE",
+    "NEOPHYTE"
   ],
   "beginning_new": [
     "FLEDGLING",
     "FRESH",
     "FIRST",
-    "FABRICATE"
+    "FABRICATE",
+    "START",
+    "BEGIN",
+    "NASCENT",
+    "NOVEL"
   ],
   "beginning_start": [
     "INAUGURATE",
@@ -423,36 +515,54 @@
     "ORIGIN",
     "ORIGINAL",
     "ORIGINATE",
-    "ONSET"
+    "ONSET",
+    "SOURCE",
+    "ROOT",
+    "GENESIS"
   ],
   "belief_trust": [
     "CREDENCE",
     "CREDIBLE",
     "CREDIT",
-    "CREDULOUS"
+    "CREDULOUS",
+    "FAITH",
+    "BELIEVE",
+    "TRUST"
   ],
   "betrayal_breaking": [
     "RENEGE",
     "REPEAL",
     "RESCIND",
-    "REPUDIATE"
+    "REPUDIATE",
+    "BETRAY",
+    "DEFECT",
+    "BREACH"
   ],
   "body_parts": [
     "THROAT",
     "TONGUE",
     "TISSUE",
-    "TRUNK"
+    "TRUNK",
+    "LIMB",
+    "ORGAN",
+    "BONE"
   ],
   "body_physical": [
     "STOMACH",
     "STRENGTH",
-    "STRENGTHEN"
+    "MUSCLE",
+    "BONE",
+    "LIMB",
+    "TORSO",
+    "SPINE"
   ],
   "brevity_shortness": [
     "SHORT",
-    "SHORTAGE",
-    "SHORTCOMING",
-    "BRIEF"
+    "BRIEF",
+    "CONCISE",
+    "TERSE",
+    "CURT",
+    "PITHY"
   ],
   "brightness_clarity": [
     "LIGHT",
@@ -466,7 +576,10 @@
     "SHINE",
     "BRIGHT",
     "ILLUMINATE",
-    "GLOW"
+    "GLOW",
+    "RADIANT",
+    "GLEAM",
+    "LUMINOUS"
   ],
   "business_commerce": [
     "PACKAGE",
@@ -515,19 +628,28 @@
   "calming_comfort": [
     "SOOTHE",
     "STILL",
-    "STEADY"
+    "STEADY",
+    "CALM",
+    "PACIFY",
+    "RELAX",
+    "EASE"
   ],
   "calmness_soothing": [
     "ALLAY",
     "ALLEVIATE",
-    "AMELIORATE",
-    "APPEASE"
+    "APPEASE",
+    "MOLLIFY",
+    "PLACATE",
+    "RELIEVE"
   ],
   "calmness_stillness": [
     "QUIET",
     "QUIESCENT",
     "PEACEFUL",
-    "TRANQUIL"
+    "TRANQUIL",
+    "SERENE",
+    "PLACID",
+    "CALM"
   ],
   "calmness_tranquility": [
     "SEDATE",
@@ -547,18 +669,28 @@
     "NEGLECT",
     "NEGLIGENT",
     "OBLIVIOUS",
-    "NONCHALANT"
+    "NONCHALANT",
+    "IGNORE",
+    "DISREGARD",
+    "OVERLOOK"
   ],
   "cessation_halt": [
     "STOP",
     "STRAND",
-    "STRANDED"
+    "HALT",
+    "CEASE",
+    "PAUSE",
+    "END",
+    "QUIT"
   ],
   "change_adjustment": [
     "ADAPT",
     "ADJUST",
     "ALTER",
-    "ALTERNATE"
+    "ALTERNATE",
+    "MODIFY",
+    "SHIFT",
+    "REVISE"
   ],
   "change_concepts": [
     "VARIABLE",
@@ -571,13 +703,19 @@
     "REDIRECT",
     "REFLECT",
     "REFLECTION",
-    "REFRAIN"
+    "REFRAIN",
+    "DIVERT",
+    "REROUTE",
+    "DEFLECT"
   ],
   "change_variation": [
     "FLUCTUATE",
     "FLUX",
     "FRACTURE",
-    "FRAGMENT"
+    "FRAGMENT",
+    "DIFFER",
+    "DEVIATE",
+    "DIVERGE"
   ],
   "characteristics_intrinsic": [
     "INSTINCT",
@@ -591,43 +729,66 @@
     "PRONE",
     "PROPENSITY",
     "TENDENCY",
-    "INCLINATION"
+    "INCLINATION",
+    "TRAIT",
+    "QUALITY",
+    "FEATURE"
   ],
   "claims_statements": [
     "ALLEGE",
     "ALLEGIANCE",
     "ALLUSION",
-    "ANNOUNCE"
+    "ANNOUNCE",
+    "ASSERT",
+    "CLAIM",
+    "STATE",
+    "DECLARE"
   ],
   "cleanliness_health_purity": [
     "SANITARY",
     "SALUBRIOUS",
     "SACRED",
-    "SANE"
+    "SANE",
+    "CLEAN",
+    "HYGIENIC",
+    "STERILE"
   ],
   "cleverness_cunning": [
     "SHREWD",
     "SLY",
     "CUNNING",
-    "CLEVER"
+    "CLEVER",
+    "WILY",
+    "CRAFTY",
+    "ASTUTE"
   ],
   "closeness_connection": [
     "ADHERE",
     "ADJACENT",
     "AFFILIATION",
-    "AFFINITY"
+    "AFFINITY",
+    "BOND",
+    "ATTACH",
+    "LINK",
+    "TIE"
   ],
   "closure_ending": [
     "SHUT",
     "CLOSE",
     "END",
-    "SEAL"
+    "SEAL",
+    "FINISH",
+    "CONCLUDE",
+    "TERMINATE"
   ],
   "collection_variety": [
     "REPERTOIRE",
     "RESERVOIR",
     "RESOURCE",
-    "RESOURCEFUL"
+    "RESOURCEFUL",
+    "ARRAY",
+    "ASSORTMENT",
+    "RANGE"
   ],
   "communication_expression": [
     "IMPART",
@@ -640,7 +801,11 @@
     "APPRISE",
     "ASSERT",
     "AVER",
-    "ANNOUNCE"
+    "ANNOUNCE",
+    "NOTIFY",
+    "TELL",
+    "BRIEF",
+    "ADVISE"
   ],
   "communication_interaction": [
     "INTERACT",
@@ -675,13 +840,20 @@
     "SIGN",
     "SIGNAL",
     "SIGNATURE",
-    "COMMUNICATE"
+    "COMMUNICATE",
+    "CUE",
+    "GESTURE",
+    "INDICATE"
   ],
   "communication_speaking": [
     "REMARK",
     "REPLY",
     "REPORT",
-    "REPRESENT"
+    "REPRESENT",
+    "SPEAK",
+    "SAY",
+    "STATE",
+    "UTTER"
   ],
   "communication_speech": [
     "VOCABULARY",
@@ -722,13 +894,20 @@
     "SHEER",
     "PURE",
     "COMPLETE",
-    "ABSOLUTE"
+    "ABSOLUTE",
+    "ENTIRE",
+    "UTTER",
+    "TOTAL"
   ],
   "completeness_totality": [
     "SET",
     "SETTLEMENT",
     "SEVERAL",
-    "COMPLETE"
+    "COMPLETE",
+    "WHOLE",
+    "ENTIRE",
+    "FULL",
+    "TOTAL"
   ],
   "completeness_wholeness": [
     "INTACT",
@@ -742,13 +921,19 @@
     "FULFILL",
     "FULL",
     "FRUITFUL",
-    "FUNCTION"
+    "FUNCTION",
+    "ACHIEVE",
+    "ACCOMPLISH",
+    "REALIZE"
   ],
   "completion_fulfillment_satisfaction": [
     "SATISFY",
     "SATISFACTORY",
     "SATISFACTION",
-    "SATIATE"
+    "SATIATE",
+    "GRATIFY",
+    "CONTENT",
+    "PLEASE"
   ],
   "completion_wholeness": [
     "COMPLETE",
@@ -768,12 +953,19 @@
     "OBEDIENT",
     "OBEY",
     "OBLIGE",
-    "OBLIGATORY"
+    "OBLIGATORY",
+    "CONFORM",
+    "SUBMIT",
+    "YIELD"
   ],
   "compression_pressure": [
     "SQUASH",
     "SQUEEZE",
-    "STIFLE"
+    "STIFLE",
+    "COMPRESS",
+    "PRESS",
+    "CRUSH",
+    "COMPACT"
   ],
   "compulsion_force": [
     "COMPEL",
@@ -793,7 +985,11 @@
   "condition_status": [
     "STATE",
     "STATUS",
-    "STATUTE"
+    "STATUTE",
+    "CONDITION",
+    "SITUATION",
+    "STANDING",
+    "POSITION"
   ],
   "confidence_certainty": [
     "CONFIDENT",
@@ -806,7 +1002,10 @@
     "OFFEND",
     "OFFENSE",
     "OFFENSIVE",
-    "ONSLAUGHT"
+    "ONSLAUGHT",
+    "ASSAULT",
+    "RAID",
+    "STRIKE"
   ],
   "conflict_concepts": [
     "VENDETTA",
@@ -826,13 +1025,19 @@
     "SIEGE",
     "SLAUGHTER",
     "BATTLE",
-    "WAR"
+    "WAR",
+    "COMBAT",
+    "FIGHT",
+    "CONFLICT"
   ],
   "conflicted_feelings": [
     "AMBIVALENT",
     "AMORAL",
     "APATHY",
-    "ANXIOUS"
+    "ANXIOUS",
+    "TORN",
+    "UNCERTAIN",
+    "MIXED"
   ],
   "connection_relationship": [
     "LINK",
@@ -845,7 +1050,10 @@
     "SPIRIT",
     "SPIRITED",
     "SPIRITUAL",
-    "SOUL"
+    "SOUL",
+    "PSYCHE",
+    "MIND",
+    "AWARE"
   ],
   "consideration_thoughtfulness": [
     "CONSIDER",
@@ -858,7 +1066,10 @@
     "REGULAR",
     "RELIABLE",
     "RELIABILITY",
-    "RELIANCE"
+    "RELIANCE",
+    "UNIFORM",
+    "STEADY",
+    "CONSTANT"
   ],
   "construction_building": [
     "RECONSTRUCT",
@@ -878,7 +1089,10 @@
     "SNEER",
     "CONTEMPT",
     "DISDAIN",
-    "SCORN"
+    "SCORN",
+    "DESPISE",
+    "LOATHE",
+    "DETEST"
   ],
   "control_management": [
     "CONTROL",
@@ -905,31 +1119,48 @@
     "COLLABORATE",
     "COLLECTIVE",
     "COMBINE",
-    "COEXIST"
+    "COEXIST",
+    "UNITE",
+    "ALLY",
+    "PARTNER",
+    "TEAM"
   ],
   "correctness_appropriateness": [
     "PROPER",
     "PROPRIETY",
     "APPROPRIATE",
-    "SUITABLE"
+    "SUITABLE",
+    "FIT",
+    "APT",
+    "RIGHT",
+    "DUE"
   ],
   "corruption_harm": [
     "ADULTERATE",
     "ADVERSE",
     "ABUSE",
-    "AFFLICTION"
+    "AFFLICTION",
+    "TAINT",
+    "SPOIL",
+    "DEFILE"
   ],
   "covering_concealing": [
     "SHROUD",
     "COVER",
     "CONCEAL",
-    "WRAP"
+    "WRAP",
+    "HIDE",
+    "MASK",
+    "VEIL"
   ],
   "covering_surface": [
     "SKIN",
     "SURFACE",
     "COVER",
-    "EXTERIOR"
+    "EXTERIOR",
+    "LAYER",
+    "COAT",
+    "SHELL"
   ],
   "creation_construction": [
     "COMPOSE",
@@ -967,13 +1198,19 @@
     "SLICE",
     "CUT",
     "DIVIDE",
-    "SECTION"
+    "SECTION",
+    "SEVER",
+    "CARVE",
+    "CLEAVE"
   ],
   "darkness_opacity": [
     "SHADE",
     "SHADOW",
     "SHADY",
-    "DARK"
+    "DARK",
+    "DIM",
+    "MURKY",
+    "GLOOMY"
   ],
   "deception_dishonesty": [
     "MENDACITY",
@@ -986,19 +1223,28 @@
     "SHAM",
     "SHAME",
     "FALSE",
-    "DECEPTIVE"
+    "DECEPTIVE",
+    "FAKE",
+    "FRAUD",
+    "PHONY"
   ],
   "deception_pretense": [
     "PRETEND",
     "PRETENSE",
     "PREVARICATE",
-    "PRESUMPTUOUS"
+    "PRESUMPTUOUS",
+    "FEIGN",
+    "FAKE",
+    "BLUFF"
   ],
   "deception_stealth": [
     "SNEAKY",
     "DECEPTIVE",
     "STEALTHY",
-    "CUNNING"
+    "CUNNING",
+    "COVERT",
+    "SLY",
+    "FURTIVE"
   ],
   "decision_choice": [
     "DECIDE",
@@ -1012,13 +1258,19 @@
     "RESOLUTION",
     "RESOLVE",
     "RECONCILE",
-    "RECTIFY"
+    "RECTIFY",
+    "SETTLE",
+    "DETERMINE",
+    "FIX"
   ],
   "decline_depression": [
     "SLUMP",
     "DECLINE",
     "DEPRESSION",
-    "DROP"
+    "DROP",
+    "DOWNTURN",
+    "PLUNGE",
+    "SAG"
   ],
   "decline_deterioration": [
     "DECAY",
@@ -1030,14 +1282,21 @@
   ],
   "decoration_beauty": [
     "ORNAMENT",
-    "ORNAMENTAL",
-    "ORNATE"
+    "ORNATE",
+    "DECORATE",
+    "ADORN",
+    "EMBELLISH",
+    "BEAUTIFY",
+    "GARNISH"
   ],
   "defamation_accusation": [
     "SLANDER",
     "ACCUSE",
     "DEFAME",
-    "LIBEL"
+    "LIBEL",
+    "SMEAR",
+    "MALIGN",
+    "IMPUGN"
   ],
   "defeat_overcome": [
     "SUCCUMB",
@@ -1049,13 +1308,20 @@
   "demanding_severe": [
     "STRICT",
     "STRIDENT",
-    "STRINGENT"
+    "STRINGENT",
+    "HARSH",
+    "RIGOROUS",
+    "EXACTING",
+    "STERN"
   ],
   "demands_needs": [
     "REQUEST",
     "REQUIRE",
     "REQUIREMENT",
-    "REQUISITE"
+    "REQUISITE",
+    "NEED",
+    "NECESSITY",
+    "MANDATE"
   ],
   "description_explanation": [
     "DESCRIBE",
@@ -1069,18 +1335,28 @@
     "WANT",
     "WISH",
     "YEARN",
-    "VORACIOUS"
+    "VORACIOUS",
+    "CRAVE",
+    "LONG",
+    "COVET"
   ],
   "destruction_breaking": [
     "SHATTER",
     "SHEAR",
     "SMASH",
-    "BREAK"
+    "BREAK",
+    "WRECK",
+    "DEMOLISH",
+    "RUIN"
   ],
   "deterioration_ruin": [
     "SPOIL",
     "SQUANDER",
-    "STALE"
+    "STALE",
+    "DECAY",
+    "ROT",
+    "WITHER",
+    "CRUMBLE"
   ],
   "development_growth": [
     "MATURE",
@@ -1092,24 +1368,38 @@
   "difficulty_tension": [
     "STRAIN",
     "STRESS",
-    "STRIFE"
+    "STRIFE",
+    "TENSION",
+    "BURDEN",
+    "PRESSURE",
+    "HARDSHIP"
   ],
   "dimensions_area": [
     "SPACE",
     "SPACIOUS",
     "SPAN",
-    "SPATIAL"
+    "SPATIAL",
+    "EXTENT",
+    "RANGE",
+    "SCOPE"
   ],
   "dimensions_measurement": [
     "SIZE",
     "MEASURE",
     "DIMENSION",
-    "SCALE"
+    "SCALE",
+    "GAUGE",
+    "ASSESS",
+    "EVALUATE"
   ],
   "directness_linear": [
     "STRAIGHT",
     "STREAMLINE",
-    "STREET"
+    "DIRECT",
+    "LINEAR",
+    "FRANK",
+    "CANDID",
+    "BLUNT"
   ],
   "disasters_negative_events": [
     "CATACLYSM",
@@ -1122,36 +1412,55 @@
     "VIRUS",
     "VIRULENT",
     "VITRIOLIC",
-    "WOUNDED"
+    "WOUNDED",
+    "AILMENT",
+    "MALADY",
+    "PLAGUE"
   ],
   "disgust_aversion": [
     "REPEL",
     "REPUGNANT",
     "REPUDIATE",
-    "RESIST"
+    "RESIST",
+    "LOATHE",
+    "ABHOR",
+    "DETEST"
   ],
   "dismissive_gestures": [
     "SHRUG",
     "SHUFFLE",
     "DISMISS",
-    "GESTURE"
+    "GESTURE",
+    "BRUSH",
+    "WAVE",
+    "DISCARD"
   ],
   "disorder_chaos": [
     "ANARCHY",
     "ANOMALY",
     "ABERRANT",
-    "ABNORMAL"
+    "ABNORMAL",
+    "TURMOIL",
+    "HAVOC",
+    "MAYHEM"
   ],
   "display_presentation": [
     "SHOW",
     "DISPLAY",
     "PRESENT",
-    "EXHIBIT"
+    "EXHIBIT",
+    "REVEAL",
+    "DEMONSTRATE",
+    "EXPOSE"
   ],
   "distribution_sharing": [
     "SHARE",
     "DISTRIBUTE",
-    "DIVIDE"
+    "DIVIDE",
+    "ALLOCATE",
+    "DISPENSE",
+    "SPREAD",
+    "ALLOT"
   ],
   "diversity_concepts": [
     "VARIEGATED",
@@ -1172,31 +1481,47 @@
     "SKEPTIC",
     "SKEPTICAL",
     "DOUBT",
-    "QUESTION"
+    "QUESTION",
+    "QUERY",
+    "SUSPECT",
+    "DISTRUST"
   ],
   "downward_movement": [
     "SINK",
     "FALL",
     "DROP",
-    "DESCEND"
+    "DESCEND",
+    "LOWER",
+    "DECLINE",
+    "PLUMMET"
   ],
   "drawing_representation": [
     "SKETCH",
     "DRAW",
     "REPRESENT",
-    "ILLUSTRATE"
+    "ILLUSTRATE",
+    "DEPICT",
+    "PORTRAY",
+    "RENDER"
   ],
   "dwellings_places": [
     "ABODE",
     "ACADEMY",
     "ABYSS",
-    "APERTURE"
+    "APERTURE",
+    "HOME",
+    "SHELTER",
+    "HAVEN",
+    "REFUGE"
   ],
   "earth_ground": [
     "SOIL",
     "EARTH",
     "GROUND",
-    "DIRT"
+    "DIRT",
+    "LAND",
+    "TERRAIN",
+    "CLAY"
   ],
   "economic_terms": [
     "ECONOMIC",
@@ -1216,7 +1541,10 @@
     "SEMINAR",
     "SESSION",
     "STUDY",
-    "LEARN"
+    "LEARN",
+    "TEACH",
+    "TRAIN",
+    "EDUCATE"
   ],
   "effectiveness_results": [
     "EFFECT",
@@ -1228,19 +1556,29 @@
   "effort_attempt": [
     "STRIVE",
     "STRUGGLE",
-    "STRUT"
+    "ATTEMPT",
+    "ENDEAVOR",
+    "TRY",
+    "EXERT",
+    "LABOR"
   ],
   "elegance_refinement": [
     "SLEEK",
     "ELEGANT",
     "REFINED",
-    "POLISHED"
+    "POLISHED",
+    "GRACEFUL",
+    "STYLISH",
+    "CHIC"
   ],
   "emotions_anger": [
     "RAGE",
     "RANT",
     "RANKLE",
-    "FURY"
+    "FURY",
+    "IRE",
+    "WRATH",
+    "TEMPER"
   ],
   "emotions_attitudes": [
     "DISDAIN",
@@ -1284,18 +1622,28 @@
     "REVERE",
     "REVERENCE",
     "REVERENT",
-    "RIGHTEOUS"
+    "RIGHTEOUS",
+    "HONOR",
+    "ESTEEM",
+    "VENERATE"
   ],
   "emotions_silence_withdrawal": [
     "RETICENCE",
     "RETICENT",
     "RETREAT",
-    "SECLUDE"
+    "SECLUDE",
+    "SHY",
+    "RESERVE",
+    "WITHDRAW"
   ],
   "encouragement_motivation": [
     "STIMULATE",
-    "STIMULUS",
-    "SPUR"
+    "SPUR",
+    "MOTIVATE",
+    "INSPIRE",
+    "ENCOURAGE",
+    "URGE",
+    "PROMPT"
   ],
   "ending_completion": [
     "EXPIRE",
@@ -1307,7 +1655,11 @@
   "endurance_persistence": [
     "STAMINA",
     "STEADFAST",
-    "STRENUOUS"
+    "ENDURE",
+    "PERSIST",
+    "TENACITY",
+    "RESILIENT",
+    "DURABLE"
   ],
   "enhancement_betterment": [
     "IMPROVE",
@@ -1327,7 +1679,10 @@
     "RECYCLE",
     "REDEEM",
     "REDUCE",
-    "REDUCTION"
+    "REDUCTION",
+    "RENEW",
+    "RESTORE",
+    "SALVAGE"
   ],
   "equality_fairness": [
     "EQUAL",
@@ -1362,7 +1717,10 @@
     "SINISTER",
     "EVIL",
     "DARK",
-    "MALEVOLENT"
+    "MALEVOLENT",
+    "WICKED",
+    "VILE",
+    "FIENDISH"
   ],
   "evil_harmful": [
     "NEFARIOUS",
@@ -1383,7 +1741,10 @@
     "PROBE",
     "PORE",
     "POLL",
-    "PREVIEW"
+    "PREVIEW",
+    "EXAMINE",
+    "INSPECT",
+    "ANALYZE"
   ],
   "excess_beyond": [
     "EXCEED",
@@ -1396,19 +1757,28 @@
     "OUTGROW",
     "OUTSTANDING",
     "OUTSTRIP",
-    "OUTWEIGH"
+    "OUTWEIGH",
+    "EXCEED",
+    "SURPASS",
+    "EXCEL"
   ],
   "exchange_trade": [
     "BARGAIN",
     "BARTER",
     "BORROW",
-    "BOND"
+    "BOND",
+    "SWAP",
+    "TRADE",
+    "DEAL"
   ],
   "exclusion_removal": [
     "OSTRACIZE",
     "OUST",
     "OUTLAW",
-    "OBLITERATE"
+    "OBLITERATE",
+    "EXPEL",
+    "BANISH",
+    "EJECT"
   ],
   "exclusion_separation": [
     "EXCLUDE",
@@ -1421,7 +1791,10 @@
     "SOLE",
     "SOLELY",
     "ONLY",
-    "EXCLUSIVE"
+    "EXCLUSIVE",
+    "LONE",
+    "SINGULAR",
+    "UNIQUE"
   ],
   "expansion_growth": [
     "EXPAND",
@@ -1435,13 +1808,19 @@
     "ANTICIPATE",
     "APPARENT",
     "APPLY",
-    "APPRAISE"
+    "APPRAISE",
+    "FORECAST",
+    "FORESEE",
+    "EXPECT"
   ],
   "expertise_specialization": [
     "SPECIAL",
     "SPECIALIST",
     "SPECIALIZE",
-    "SPECIFIC"
+    "SPECIFIC",
+    "EXPERT",
+    "MASTER",
+    "VIRTUOSO"
   ],
   "extremes_limits": [
     "MAXIMUM",
@@ -1454,19 +1833,28 @@
     "RELIGION",
     "RELIGIOUS",
     "RELIANCE",
-    "RELY"
+    "RELY",
+    "DEVOUT",
+    "PIOUS",
+    "BELIEF"
   ],
   "family_connection": [
     "RELATE",
     "RELATION",
     "RELATIONSHIP",
-    "RELATIVE"
+    "RELATIVE",
+    "KIN",
+    "BOND",
+    "AFFINITY"
   ],
   "family_generations": [
     "PROGENITOR",
     "PROGENY",
     "OFFSPRING",
-    "DESCENDANT"
+    "DESCENDANT",
+    "LINEAGE",
+    "HEIR",
+    "ANCESTRY"
   ],
   "family_relationships": [
     "KIN",
@@ -1480,13 +1868,19 @@
     "VULNERABLE",
     "WARY",
     "WORRIED",
-    "XENOPHOBIA"
+    "XENOPHOBIA",
+    "DREAD",
+    "ALARM",
+    "PANIC"
   ],
   "feeling_emotion": [
     "SENTIMENT",
     "SENTIMENTAL",
     "EMOTION",
-    "FEELING"
+    "FEELING",
+    "MOOD",
+    "AFFECT",
+    "PASSION"
   ],
   "financial_money": [
     "RECEIPT",
@@ -1506,25 +1900,35 @@
     "STABILITY",
     "STABLE",
     "STEADFAST",
-    "STAUNCH"
+    "STAUNCH",
+    "SOLID",
+    "SECURE",
+    "DEPENDABLE"
   ],
   "firmness_strength": [
     "SOLID",
     "FIRM",
     "STRONG",
-    "STURDY"
+    "STURDY",
+    "ROBUST",
+    "TOUGH",
+    "STOUT"
   ],
   "flying_rising": [
     "SOAR",
     "FLY",
     "RISE",
-    "ASCEND"
+    "ASCEND",
+    "ELEVATE"
   ],
   "foolishness_lack_wisdom": [
     "FOLLY",
     "FOOLISH",
     "FOOLHARDY",
-    "FRIVOLOUS"
+    "FRIVOLOUS",
+    "ABSURD",
+    "SILLY",
+    "INANE"
   ],
   "force_motivation": [
     "IMPEL",
@@ -1537,24 +1941,37 @@
     "ABSOLVE",
     "ALLEVIATE",
     "AMELIORATE",
-    "AMEND"
+    "AMEND",
+    "PARDON",
+    "FORGIVE",
+    "EXCUSE"
   ],
   "form_structure": [
     "SHAPE",
     "FORM",
-    "STRUCTURE"
+    "STRUCTURE",
+    "FRAME",
+    "BUILD",
+    "MOLD",
+    "DESIGN"
   ],
   "fragrance_scent": [
     "SMELL",
     "SCENT",
     "FRAGRANCE",
-    "AROMA"
+    "AROMA",
+    "ODOR",
+    "PERFUME",
+    "ESSENCE"
   ],
   "freedom_liberation": [
     "RELEASE",
     "RELIEVE",
     "RELIEF",
-    "RELAX"
+    "RELAX",
+    "FREE",
+    "LIBERATE",
+    "EMANCIPATE"
   ],
   "frequency_occurrence": [
     "INCESSANT",
@@ -1567,25 +1984,37 @@
     "AFFABLE",
     "AMIABLE",
     "AMICABLE",
-    "AMENABLE"
+    "AMENABLE",
+    "GENIAL",
+    "WARM",
+    "CORDIAL"
   ],
   "friendship_relationships": [
     "FRIEND",
     "FRATERNAL",
     "FOLK",
-    "FOSTER"
+    "FOSTER",
+    "ALLY",
+    "COMPANION",
+    "COMRADE"
   ],
   "gathering_collecting": [
     "ACCUMULATE",
     "ACCRUE",
     "ACQUIRE",
-    "AMASS"
+    "AMASS",
+    "COMPILE",
+    "ASSEMBLE",
+    "GARNER"
   ],
   "gentleness_softening": [
     "SOFTEN",
     "GENTLE",
     "MILD",
-    "TENDER"
+    "TENDER",
+    "DELICATE",
+    "LIGHT",
+    "SUBTLE"
   ],
   "geographical_areas": [
     "SUBURB",
@@ -1605,13 +2034,19 @@
     "RELINQUISH",
     "RENOUNCE",
     "RESIGN",
-    "RELUCTANT"
+    "RELUCTANT",
+    "SURRENDER",
+    "YIELD",
+    "CONCEDE"
   ],
   "government_authority": [
     "SENATE",
     "SENIOR",
     "AUTHORITY",
-    "OFFICIAL"
+    "OFFICIAL",
+    "GOVERN",
+    "RULE",
+    "ADMINISTER"
   ],
   "government_political": [
     "MUNICIPAL",
@@ -1624,7 +2059,10 @@
     "REPUBLIC",
     "REPUBLICAN",
     "REFERENDUM",
-    "REGIME"
+    "REGIME",
+    "POLITY",
+    "STATE",
+    "CIVIC"
   ],
   "guidance_direction": [
     "GUIDANCE",
@@ -1644,13 +2082,19 @@
     "REPENT",
     "REMORSE",
     "REGRET",
-    "REPROACH"
+    "REPROACH",
+    "SHAME",
+    "PENITENT",
+    "CONTRITE"
   ],
   "happiness_joy": [
     "SMILE",
     "HAPPY",
     "JOY",
-    "CHEERFUL"
+    "CHEERFUL",
+    "DELIGHT",
+    "BLISS",
+    "ELATION"
   ],
   "harm_damage": [
     "MAR",
@@ -1663,13 +2107,19 @@
     "ACERBIC",
     "ACID",
     "ACRID",
-    "ACRIMONIOUS"
+    "ACRIMONIOUS",
+    "SHARP",
+    "BITING",
+    "SEVERE"
   ],
   "harshness_intensity": [
     "SEVERE",
     "SEVERITY",
     "HARSH",
-    "INTENSE"
+    "INTENSE",
+    "EXTREME",
+    "ACUTE",
+    "FIERCE"
   ],
   "health_wellness": [
     "HEAL",
@@ -1689,66 +2139,100 @@
     "ACCOMMODATE",
     "ACCOMPANY",
     "AID",
-    "ADVOCATE"
+    "ADVOCATE",
+    "ASSIST",
+    "BACK",
+    "BOLSTER"
   ],
   "hesitation_unwillingness": [
     "RELUCTANCE",
     "RELUCTANT",
     "REMISS",
-    "RESIST"
+    "RESIST",
+    "LOATH",
+    "HESITANT",
+    "AVERSE"
   ],
   "hiding_concealing": [
     "OBSCURE",
     "OBFUSCATE",
     "OCCLUDE",
-    "OPAQUE"
+    "OPAQUE",
+    "CLOAK",
+    "SCREEN",
+    "CAMOUFLAGE"
   ],
   "hiring_employment": [
     "RECRUIT",
     "REGISTER",
     "REFER",
-    "REFEREE"
+    "REFEREE",
+    "EMPLOY",
+    "HIRE",
+    "ENLIST"
   ],
   "historical_cultural": [
     "RENAISSANCE",
     "REPUBLIC",
     "REPUBLICAN",
-    "RENOWNED"
+    "RENOWNED",
+    "HERITAGE",
+    "LEGACY",
+    "TRADITION"
   ],
   "honesty_authenticity": [
     "SINCERE",
     "SINCERITY",
     "HONEST",
-    "GENUINE"
+    "GENUINE",
+    "CANDID",
+    "FRANK",
+    "TRUE"
   ],
   "hostility_conflict": [
     "AGGRESSIVE",
     "ALIENATE",
     "ANIMOSITY",
-    "ANTAGONIZE"
+    "ANTAGONIZE",
+    "HOSTILE",
+    "BELLIGERENT",
+    "COMBATIVE"
   ],
   "ignition_energy": [
     "SPARK",
     "STIMULATE",
     "STIMULUS",
-    "STOKE"
+    "STOKE",
+    "KINDLE",
+    "IGNITE",
+    "FUEL"
   ],
   "illness_health": [
     "SICK",
     "HEALTHY",
     "ILL",
-    "WELL"
+    "WELL",
+    "AILMENT",
+    "DISEASE",
+    "MALADY"
   ],
   "imitation_copying": [
     "SIMULATE",
     "SIMULATION",
     "IMITATE",
-    "COPY"
+    "COPY",
+    "MIMIC",
+    "REPLICATE",
+    "EMULATE"
   ],
   "immobility_calmness": [
     "STILL",
     "STOIC",
-    "STOLID"
+    "STOLID",
+    "STATIC",
+    "INERT",
+    "FIXED",
+    "STABLE"
   ],
   "implementation_action": [
     "IMPLEMENT",
@@ -1761,19 +2245,28 @@
     "SIGNIFICANCE",
     "SIGNIFICANT",
     "SIGNIFY",
-    "IMPORTANT"
+    "IMPORTANT",
+    "CRUCIAL",
+    "VITAL",
+    "KEY"
   ],
   "importance_significance": [
     "RELEVANCE",
     "RELEVANT",
     "REMARKABLE",
-    "RENOWN"
+    "RENOWN",
+    "NOTABLE",
+    "PROMINENT",
+    "EMINENT"
   ],
   "improvement_betterment": [
     "AMELIORATE",
     "AMEND",
     "APPRECIATE",
-    "APPLAUD"
+    "APPLAUD",
+    "REFINE",
+    "PERFECT",
+    "UPGRADE"
   ],
   "improvement_fixing": [
     "RECTIFY",
@@ -1793,19 +2286,28 @@
     "SLOPE",
     "INCLINE",
     "GRADIENT",
-    "HILL"
+    "HILL",
+    "RAMP",
+    "SLANT",
+    "TILT"
   ],
   "influence_impact": [
     "AFFECT",
     "AFFECTATION",
     "AGGRESSIVE",
-    "AGITATE"
+    "AGITATE",
+    "SWAY",
+    "SHAPE",
+    "MOLD"
   ],
   "insignificance_smallness": [
     "SLIGHT",
     "SMALL",
     "MINOR",
-    "TINY"
+    "TINY",
+    "PETTY",
+    "TRIVIAL",
+    "PALTRY"
   ],
   "installation_setup": [
     "INSTALL",
@@ -1826,7 +2328,10 @@
     "SMART",
     "CLEVER",
     "INTELLIGENT",
-    "BRIGHT"
+    "BRIGHT",
+    "SHARP",
+    "KEEN",
+    "ASTUTE"
   ],
   "intelligence_skill": [
     "ABILITY",
@@ -1839,7 +2344,10 @@
     "WISDOM",
     "WISE",
     "WIT",
-    "WITTY"
+    "WITTY",
+    "SAGE",
+    "PRUDENT",
+    "JUDICIOUS"
   ],
   "intensity_extreme": [
     "EXTREME",
@@ -1866,13 +2374,18 @@
     "SLAUGHTER",
     "KILL",
     "MURDER",
-    "VIOLENCE"
+    "VIOLENCE",
+    "SLAY",
+    "EXECUTE",
+    "ASSASSINATE"
   ],
   "knowledge_awareness": [
     "COGNITION",
     "COGNIZANT",
     "CHRONICLE",
-    "CITATION"
+    "CITATION",
+    "AWARE",
+    "INFORMED"
   ],
   "knowledge_concepts": [
     "UNDERSTAND",
@@ -1950,7 +2463,10 @@
     "RESIDUE",
     "REMAINDER",
     "RESERVE",
-    "RESERVATION"
+    "RESERVATION",
+    "REMNANT",
+    "SURPLUS",
+    "EXCESS"
   ],
   "legal_business": [
     "LEASE",
@@ -2020,7 +2536,10 @@
     "GLEAM",
     "GLIMMER",
     "GLITTER",
-    "GLOW"
+    "GLOW",
+    "RADIANCE",
+    "SHINE",
+    "LUSTER"
   ],
   "likelihood_chance": [
     "POSSIBILITY",
@@ -2033,19 +2552,28 @@
     "SOLVENT",
     "DISSOLVE",
     "LIQUID",
-    "FLUID"
+    "FLUID",
+    "MELT",
+    "THAW",
+    "LIQUEFY"
   ],
   "literary_devices": [
     "ALLEGORY",
     "ANALOGY",
     "ANECDOTE",
-    "ANTITHESIS"
+    "ANTITHESIS",
+    "IRONY",
+    "SATIRE",
+    "HYPERBOLE"
   ],
   "living_dwelling": [
     "RESIDE",
     "RESIDENCE",
     "RESIDENT",
-    "RESIDENTIAL"
+    "RESIDENTIAL",
+    "INHABIT",
+    "OCCUPY",
+    "DWELL"
   ],
   "location_geography": [
     "REGION",
@@ -2058,7 +2586,10 @@
     "SLACK",
     "LOOSE",
     "RELAXED",
-    "LAX"
+    "LAX",
+    "LENIENT",
+    "EASY",
+    "FLEXIBLE"
   ],
   "loyalty_faithfulness": [
     "FAITH",
@@ -2080,12 +2611,19 @@
     "ADMINISTER",
     "ALLOCATE",
     "ALLOT",
-    "APPOINT"
+    "APPOINT",
+    "DIRECT",
+    "SUPERVISE",
+    "OVERSEE"
   ],
   "marking_blemish": [
     "STAIN",
     "STIGMA",
-    "STREAK"
+    "STREAK",
+    "BLEMISH",
+    "MARK",
+    "SPOT",
+    "SCAR"
   ],
   "measurement_evaluation": [
     "MEASURE",
@@ -2148,7 +2686,10 @@
     "BEFUDDLE",
     "BEMUSE",
     "BEWILDER",
-    "BLUR"
+    "BLUR",
+    "PERPLEX",
+    "BAFFLE",
+    "PUZZLE"
   ],
   "mental_faculties": [
     "INTELLECT",
@@ -2169,13 +2710,19 @@
     "AMALGAMATE",
     "AMASS",
     "AGGREGATE",
-    "APPEND"
+    "APPEND",
+    "BLEND",
+    "MERGE",
+    "FUSE"
   ],
   "money_finance": [
     "FUND",
     "FUNDING",
     "FORTUNE",
-    "GAIN"
+    "GAIN",
+    "CAPITAL",
+    "ASSET",
+    "INCOME"
   ],
   "moral_ethical": [
     "MORAL",
@@ -2187,12 +2734,20 @@
   "morality_corruption": [
     "SORDID",
     "SPURIOUS",
-    "SPECIOUS"
+    "SPECIOUS",
+    "CORRUPT",
+    "DEPRAVED",
+    "IMMORAL",
+    "WICKED"
   ],
   "motionless_unchanging": [
     "STAGNANT",
     "STATIC",
-    "STATIONARY"
+    "STATIONARY",
+    "IMMOBILE",
+    "FIXED",
+    "IDLE",
+    "INERT"
   ],
   "movement_action": [
     "INVADE",
@@ -2228,19 +2783,29 @@
   "movement_agitation": [
     "STIR",
     "STORM",
-    "STORMY"
+    "AGITATE",
+    "CHURN",
+    "SHAKE",
+    "TURMOIL",
+    "BUSTLE"
   ],
   "movement_air": [
     "FLUTTER",
     "FLY",
     "GLIDE",
-    "GALLOP"
+    "GALLOP",
+    "DRIFT",
+    "HOVER",
+    "WAFT"
   ],
   "movement_approach": [
     "APPROACH",
     "APPROXIMATE",
     "ATTACH",
-    "ATTEND"
+    "ATTEND",
+    "NEAR",
+    "ADVANCE",
+    "CLOSE"
   ],
   "movement_direction": [
     "DESCEND",
@@ -2261,25 +2826,37 @@
     "SHAKE",
     "SHAKY",
     "SHIFT",
-    "UNSTABLE"
+    "UNSTABLE",
+    "WOBBLE",
+    "SWAY",
+    "TOTTER"
   ],
   "movement_jumping": [
     "SKIP",
     "JUMP",
     "HOP",
-    "LEAP"
+    "LEAP",
+    "BOUND",
+    "SPRING",
+    "VAULT"
   ],
   "movement_liquid": [
     "FLOW",
     "FLUID",
     "FLUSH",
-    "FLUX"
+    "FLUX",
+    "STREAM",
+    "POUR",
+    "GUSH"
   ],
   "movement_migration": [
     "IMMIGRANT",
     "IMMIGRATE",
     "INCORPORATE",
-    "INHABIT"
+    "INHABIT",
+    "MOVE",
+    "RELOCATE",
+    "TRANSFER"
   ],
   "movement_motion": [
     "MOVE",
@@ -2292,7 +2869,10 @@
     "SLIDE",
     "SLIP",
     "GLIDE",
-    "MOVE"
+    "MOVE",
+    "SKID",
+    "COAST",
+    "SKIM"
   ],
   "movement_transport": [
     "TRAIN",
@@ -2327,7 +2907,10 @@
     "RECIPROCAL",
     "RECIPROCATE",
     "RELATE",
-    "RELATIONSHIP"
+    "RELATIONSHIP",
+    "SHARE",
+    "SWAP",
+    "TRADE"
   ],
   "mystery_unclear": [
     "ENIGMA",
@@ -2362,13 +2945,19 @@
     "PLANT",
     "PLANTATION",
     "PORE",
-    "POROUS"
+    "POROUS",
+    "SPROUT",
+    "BUD",
+    "BLOOM"
   ],
   "nature_rural": [
     "BUCOLIC",
     "CANINE",
     "CARBON",
-    "CEREAL"
+    "CEREAL",
+    "PASTORAL",
+    "RUSTIC",
+    "AGRARIAN"
   ],
   "necessity_requirement": [
     "NECESSITATE",
@@ -2481,47 +3070,73 @@
     "NEUTRAL",
     "NEUTRALITY",
     "NEUTRALIZE",
-    "OFFSET"
+    "OFFSET",
+    "IMPARTIAL",
+    "UNBIASED",
+    "FAIR"
   ],
   "norms_measures": [
     "STANDARD",
     "STATISTIC",
-    "STATISTICAL"
+    "NORM",
+    "METRIC",
+    "BENCHMARK",
+    "CRITERIA",
+    "GAUGE"
   ],
   "nourishment_care": [
     "NOURISH",
     "NURTURE",
     "NUTRIENT",
-    "NUTRITION"
+    "NUTRITION",
+    "FEED",
+    "SUSTAIN",
+    "FOSTER"
   ],
   "observation_watching": [
     "SPECTACLE",
-    "SPECTACULAR",
-    "SPECTATOR"
+    "SPECTATOR",
+    "OBSERVE",
+    "WATCH",
+    "VIEW",
+    "WITNESS",
+    "SURVEY"
   ],
   "obstruction_hindrance": [
     "IMPEDE",
     "IMPEDIMENT",
     "IMPASSE",
-    "IMPAIR"
+    "IMPAIR",
+    "HINDER",
+    "HAMPER",
+    "BLOCK"
   ],
   "obtaining_acquiring": [
     "OBTAIN",
     "OCCUPY",
     "OCCUR",
-    "OCCURRENCE"
+    "OCCURRENCE",
+    "GET",
+    "ATTAIN",
+    "SECURE"
   ],
   "opening_space": [
     "SLOT",
     "OPENING",
     "SPACE",
-    "GAP"
+    "GAP",
+    "VOID",
+    "CAVITY",
+    "APERTURE"
   ],
   "opportunities_timing": [
     "OPPORTUNE",
     "OPPORTUNITY",
     "OPTIMAL",
-    "OPTIMUM"
+    "OPTIMUM",
+    "CHANCE",
+    "OCCASION",
+    "PROSPECT"
   ],
   "opposition_conflict": [
     "REBEL",
@@ -2534,13 +3149,19 @@
     "ANTAGONIZE",
     "ANTIPATHY",
     "ANTITHESIS",
-    "ANTITHETICAL"
+    "ANTITHETICAL",
+    "OPPOSE",
+    "COUNTER",
+    "CONFLICT"
   ],
   "opposition_defiance": [
     "RESIST",
     "RESISTANCE",
     "RECALCITRANT",
-    "REFUSE"
+    "REFUSE",
+    "DEFY",
+    "REBEL",
+    "DISOBEY"
   ],
   "opposition_resistance": [
     "DEFIANCE",
@@ -2554,7 +3175,10 @@
     "RESORT",
     "RESOURCE",
     "RECOURSE",
-    "REFUGE"
+    "REFUGE",
+    "CHOICE",
+    "OPTION",
+    "ALTERNATIVE"
   ],
   "order_sequence": [
     "SUBSEQUENT",
@@ -2566,7 +3190,11 @@
   "organization_arrangement": [
     "STACK",
     "STAGE",
-    "STATION"
+    "STATION",
+    "ARRANGE",
+    "ORGANIZE",
+    "ORDER",
+    "SORT"
   ],
   "ownership_possession": [
     "POSSESS",
@@ -2593,7 +3221,10 @@
     "IMMACULATE",
     "IMPECCABLE",
     "INFALLIBLE",
-    "PERFECT"
+    "PERFECT",
+    "IDEAL",
+    "PRISTINE",
+    "FLAWLESS"
   ],
   "permanence_change": [
     "IMMUTABLE",
@@ -2613,7 +3244,10 @@
     "RELENTLESS",
     "RESOLUTE",
     "RESOLUTION",
-    "RESILIENT"
+    "RESILIENT",
+    "DOGGED",
+    "TENACIOUS",
+    "STEADFAST"
   ],
   "personality_traits_negative": [
     "IMPASSIVE",
@@ -2648,13 +3282,19 @@
     "BARRIER",
     "BLOCK",
     "BIND",
-    "BOUNDARY"
+    "BOUNDARY",
+    "WALL",
+    "FENCE",
+    "OBSTACLE"
   ],
   "physical_damage": [
     "ABRASION",
     "ABRASIVE",
     "ACHE",
-    "AFFLICTION"
+    "AFFLICTION",
+    "INJURY",
+    "WOUND",
+    "TRAUMA"
   ],
   "physical_material": [
     "METAL",
@@ -2674,12 +3314,19 @@
     "PLASTIC",
     "POTTERY",
     "POCKET",
-    "PORTRAIT"
+    "PORTRAIT",
+    "ITEM",
+    "ARTIFACT",
+    "OBJECT"
   ],
   "physical_pain": [
     "SORE",
     "STING",
-    "STRAIN"
+    "STRAIN",
+    "ACHE",
+    "HURT",
+    "THROB",
+    "WOUND"
   ],
   "physical_properties": [
     "TANGIBLE",
@@ -2716,7 +3363,10 @@
     "FRAGILE",
     "FRAIL",
     "GAUNT",
-    "FRUGAL"
+    "FRUGAL",
+    "FEEBLE",
+    "DELICATE",
+    "WEAK"
   ],
   "politics_governance": [
     "POLITICAL",
@@ -2743,18 +3393,28 @@
     "SIDE",
     "SITE",
     "SITUATE",
-    "SITUATION"
+    "SITUATION",
+    "PLACE",
+    "SPOT",
+    "LOCALE"
   ],
   "position_viewpoint": [
     "STANCE",
     "STAND",
-    "STANDPOINT"
+    "STANDPOINT",
+    "VIEWPOINT",
+    "POSITION",
+    "ANGLE",
+    "OUTLOOK"
   ],
   "positioning_placement": [
     "SIT",
     "SITUATE",
     "PLACE",
-    "POSITION"
+    "POSITION",
+    "LOCATE",
+    "SET",
+    "ARRANGE"
   ],
   "positive_actions": [
     "TREAT",
@@ -2774,7 +3434,10 @@
     "OPTIMISM",
     "OPTIMISTIC",
     "OVATION",
-    "OUTSTANDING"
+    "OUTSTANDING",
+    "HOPEFUL",
+    "SANGUINE",
+    "BUOYANT"
   ],
   "power_authority": [
     "THRONE",
@@ -2787,7 +3450,10 @@
     "REHEARSE",
     "REPEAT",
     "REPLICATE",
-    "REPLICA"
+    "REPLICA",
+    "DRILL",
+    "TRAIN",
+    "EXERCISE"
   ],
   "praise_admiration": [
     "LAUD",
@@ -2838,13 +3504,19 @@
     "SHEET",
     "SHELTER",
     "SHIELD",
-    "COVER"
+    "COVER",
+    "CANOPY",
+    "AWNING",
+    "ROOF"
   ],
   "protection_defense": [
     "PROTECT",
     "PROTECTION",
     "SHIELD",
-    "GUARD"
+    "GUARD",
+    "DEFEND",
+    "SAFEGUARD",
+    "SECURE"
   ],
   "protection_safety": [
     "GUARD",
@@ -2864,7 +3536,10 @@
     "CASTIGATE",
     "CENSOR",
     "CENSURE",
-    "CHAGRIN"
+    "CHAGRIN",
+    "PENALIZE",
+    "DISCIPLINE",
+    "REPROACH"
   ],
   "purity_cleanliness": [
     "PURE",
@@ -2877,13 +3552,19 @@
     "AUDACIOUS",
     "BOLD",
     "BRASH",
-    "BRAZEN"
+    "BRAZEN",
+    "DARING",
+    "FEARLESS",
+    "INTREPID"
   ],
   "qualities_brightness_glory": [
     "RESPLENDENT",
     "RICH",
     "ROBUST",
-    "ROYAL"
+    "ROYAL",
+    "RADIANT",
+    "SPLENDID",
+    "GLORIOUS"
   ],
   "qualities_difficult": [
     "TOUGH",
@@ -2917,7 +3598,10 @@
     "BELLICOSE",
     "BELLIGERENT",
     "ARROGANT",
-    "BOISTEROUS"
+    "BOISTEROUS",
+    "FIERCE",
+    "COMBATIVE",
+    "MILITANT"
   ],
   "qualities_intelligence": [
     "DEXTERITY",
@@ -2937,31 +3621,46 @@
     "VIOLATION",
     "WICKED",
     "WANTON",
-    "WRONG"
+    "WRONG",
+    "SINFUL",
+    "DEPRAVED",
+    "CORRUPT"
   ],
   "qualities_moral_good": [
     "VIRTUE",
     "VIRTUOUS",
     "WORTHY",
-    "WORTHWHILE"
+    "WORTHWHILE",
+    "NOBLE",
+    "RIGHTEOUS",
+    "UPRIGHT"
   ],
   "qualities_negative": [
     "POMPOUS",
     "POOR",
     "PRETENTIOUS",
-    "PRESUMPTUOUS"
+    "PRESUMPTUOUS",
+    "VAIN",
+    "SNOBBISH",
+    "ARROGANT"
   ],
   "qualities_negative_traits": [
     "RUDE",
     "RUTHLESS",
     "RIDICULOUS",
-    "RUSTY"
+    "RUSTY",
+    "CRUDE",
+    "CRUEL",
+    "HARSH"
   ],
   "qualities_old_hidden": [
     "ARCHAIC",
     "ARCANE",
     "ANCIENT",
-    "ARTLESS"
+    "ARTLESS",
+    "ANTIQUE",
+    "VINTAGE",
+    "RELIC"
   ],
   "qualities_personality": [
     "TOLERANT",
@@ -2988,7 +3687,9 @@
     "BRITTLE",
     "BUMPY",
     "CHILLY",
-    "COARSE"
+    "COARSE",
+    "ROUGH",
+    "SMOOTH"
   ],
   "qualities_positive": [
     "POLISHED",
@@ -3029,13 +3730,19 @@
     "SNAP",
     "QUICK",
     "SUDDEN",
-    "RAPID"
+    "RAPID",
+    "ABRUPT",
+    "SWIFT",
+    "INSTANT"
   ],
   "quietness_stillness": [
     "SILENCE",
     "SILENT",
     "QUIET",
-    "STILL"
+    "STILL",
+    "HUSH",
+    "MUTE",
+    "CALM"
   ],
   "rarity_uniqueness": [
     "RARE",
@@ -3062,7 +3769,10 @@
     "SHRINK",
     "SLIM",
     "SLENDER",
-    "REDUCE"
+    "REDUCE",
+    "DECREASE",
+    "LESSEN",
+    "DIMINISH"
   ],
   "refinement_delicacy": [
     "SUBTLE",
@@ -3075,7 +3785,10 @@
     "SERMON",
     "SECULAR",
     "SACRED",
-    "SPIRITUAL"
+    "SPIRITUAL",
+    "HOLY",
+    "DIVINE",
+    "DEVOUT"
   ],
   "repetition_again": [
     "RECUR",
@@ -3102,53 +3815,82 @@
     "REPUTABLE",
     "REPUTATION",
     "REPUTE",
-    "RENOWNED"
+    "RENOWNED",
+    "PRESTIGE",
+    "STANDING",
+    "ESTEEM"
   ],
   "requesting_asking": [
     "SOLICIT",
     "SOLICITOUS",
     "REQUEST",
-    "ASK"
+    "ASK",
+    "PLEAD",
+    "BEG",
+    "IMPLORE"
   ],
   "requests_appeals": [
     "APPEAL",
     "APPEAR",
     "APPEASE",
-    "APPLICATION"
+    "APPLICATION",
+    "PETITION",
+    "ENTREAT",
+    "BESEECH"
   ],
   "resemblance_likeness": [
     "SIMILAR",
     "SIMILARITY",
     "SEMBLANCE",
-    "LIKE"
+    "LIKE",
+    "AKIN",
+    "ALIKE",
+    "COMPARABLE"
   ],
   "rest_sleep": [
     "SLEEP",
     "SLUMBER",
     "REST",
-    "NAP"
+    "NAP",
+    "REPOSE",
+    "DORMANT",
+    "DOZE"
   ],
   "results_consequences": [
     "OUTCOME",
     "OUTPUT",
     "OUTSET",
-    "OUTBREAK"
+    "OUTBREAK",
+    "RESULT",
+    "EFFECT",
+    "UPSHOT"
   ],
   "revelation_display": [
     "EXHIBIT",
     "EXPOSE",
     "EXPOSITION",
-    "EXPOSURE"
+    "EXPOSURE",
+    "REVEAL",
+    "DISCLOSE",
+    "UNVEIL"
   ],
   "rigidity_hardness": [
     "STIFF",
     "STONE",
-    "STURDY"
+    "STURDY",
+    "RIGID",
+    "HARD",
+    "SOLID",
+    "FIRM"
   ],
   "rotation_movement": [
     "SPIN",
     "SPIRAL",
-    "SPURT"
+    "ROTATE",
+    "TURN",
+    "WHIRL",
+    "REVOLVE",
+    "TWIST"
   ],
   "safety_protection": [
     "SECURE",
@@ -3161,12 +3903,19 @@
     "SCARCE",
     "SCARCELY",
     "SCARCITY",
-    "SCANT"
+    "SCANT",
+    "DEARTH",
+    "PAUCITY",
+    "DEFICIT"
   ],
   "scarcity_minimal": [
     "SPARE",
     "SPARSE",
-    "STINT"
+    "STINT",
+    "SCARCE",
+    "MEAGER",
+    "SCANTY",
+    "RARE"
   ],
   "scarcity_smallness": [
     "MEAGER",
@@ -3186,64 +3935,100 @@
     "ABSTAIN",
     "ABSTEMIOUS",
     "ADAMANT",
-    "ALOOF"
+    "ALOOF",
+    "RESTRAIN",
+    "DISCIPLINE",
+    "MODERATE"
   ],
   "selling_commerce": [
     "SELL",
     "TRADE",
     "MARKET",
-    "COMMERCE"
+    "COMMERCE",
+    "RETAIL",
+    "VEND",
+    "PEDDLE"
   ],
   "separation_division": [
     "SPLIT",
     "SPREAD",
-    "SPRAWL"
+    "SPRAWL",
+    "SEPARATE",
+    "DIVIDE",
+    "PART",
+    "DETACH"
   ],
   "seriousness_formal": [
     "STAID",
     "STATELY",
-    "STERN"
+    "STERN",
+    "FORMAL",
+    "SOLEMN",
+    "GRAVE",
+    "AUSTERE"
   ],
   "seriousness_formality": [
     "SOLEMN",
     "FORMAL",
     "SERIOUS",
-    "GRAVE"
+    "GRAVE",
+    "STIFF",
+    "PROPER",
+    "PRIM"
   ],
   "seriousness_gravity": [
     "SOBER",
     "SERIOUS",
     "GRAVE",
-    "SOLEMN"
+    "SOLEMN",
+    "EARNEST",
+    "WEIGHTY",
+    "SOMBER"
   ],
   "service_helping": [
     "SERVE",
     "SERVICE",
     "SERVILE",
-    "HELP"
+    "HELP",
+    "AID",
+    "ASSIST",
+    "ATTEND"
   ],
   "service_provision": [
     "RENDER",
     "REPAY",
     "REPRESENT",
-    "REQUIRE"
+    "REQUIRE",
+    "DELIVER",
+    "FURNISH",
+    "SUPPLY"
   ],
   "servitude_bondage": [
     "SLAVE",
     "SLAVERY",
     "BONDAGE",
-    "SERVITUDE"
+    "SERVITUDE",
+    "CAPTIVE",
+    "ENSLAVE",
+    "BOUND"
   ],
   "severe_harsh": [
     "STARK",
     "STERN",
-    "STRICT"
+    "STRICT",
+    "HARSH",
+    "SEVERE",
+    "BRUTAL",
+    "RIGID"
   ],
   "sharpness_precision": [
     "SHARP",
     "SHARPEN",
     "PRECISE",
-    "KEEN"
+    "KEEN",
+    "ACUTE",
+    "FINE",
+    "EXACT"
   ],
   "sight_vision": [
     "VISIBLE",
@@ -3264,19 +4049,28 @@
     "SIMPLE",
     "SIMPLICITY",
     "SIMPLIFY",
-    "EASY"
+    "EASY",
+    "PLAIN",
+    "BASIC",
+    "ELEMENTARY"
   ],
   "size_abundance": [
     "BOUNTIFUL",
     "BEVY",
     "BARRAGE",
-    "BREADTH"
+    "BREADTH",
+    "COPIOUS",
+    "AMPLE",
+    "PLENTIFUL"
   ],
   "size_large": [
     "GIANT",
     "GIGANTIC",
     "GRAND",
-    "GRANDIOSE"
+    "GRANDIOSE",
+    "HUGE",
+    "VAST",
+    "IMMENSE"
   ],
   "size_magnitude": [
     "IMMENSE",
@@ -3303,13 +4097,19 @@
     "SLIPPERY",
     "UNSTABLE",
     "UNRELIABLE",
-    "SLICK"
+    "SLICK",
+    "PRECARIOUS",
+    "RISKY",
+    "SHAKY"
   ],
   "slowness_delay": [
     "SLOW",
     "SLUGGISH",
     "DELAYED",
-    "GRADUAL"
+    "GRADUAL",
+    "LAG",
+    "LINGER",
+    "TARDY"
   ],
   "social_concepts": [
     "POPULACE",
@@ -3322,19 +4122,28 @@
     "CAMARADERIE",
     "COALITION",
     "COLLEAGUE",
-    "COMMUNITY"
+    "COMMUNITY",
+    "CLAN",
+    "TRIBE",
+    "FACTION"
   ],
   "social_interaction": [
     "SOCIABLE",
     "SOCIAL",
     "SOCIETY",
-    "COMMUNITY"
+    "COMMUNITY",
+    "MINGLE",
+    "ASSOCIATE",
+    "COMMUNE"
   ],
   "sorting_filtering": [
     "SIFT",
     "SORT",
     "FILTER",
-    "SEPARATE"
+    "SEPARATE",
+    "CLASSIFY",
+    "ARRANGE",
+    "ORGANIZE"
   ],
   "sound_communication": [
     "HOWL",
@@ -3347,7 +4156,10 @@
     "RESONANCE",
     "RECOIL",
     "REFLECT",
-    "REPOSE"
+    "REPOSE",
+    "ECHO",
+    "RING",
+    "REVERBERATE"
   ],
   "sound_voice": [
     "VOCAL",
@@ -3360,7 +4172,10 @@
     "SHRIEK",
     "SIGH",
     "SOB",
-    "VOCAL"
+    "VOCAL",
+    "CRY",
+    "CALL",
+    "SHOUT"
   ],
   "space_concepts": [
     "VACANCY",
@@ -3387,7 +4202,10 @@
     "ORAL",
     "ORATION",
     "ORATOR",
-    "OUTSPOKEN"
+    "OUTSPOKEN",
+    "VOICE",
+    "SPEECH",
+    "ARTICULATE"
   ],
   "speed_quickness": [
     "QUICK",
@@ -3400,7 +4218,10 @@
     "REMAIN",
     "REMAINDER",
     "RESIDE",
-    "RESIDENCE"
+    "RESIDENCE",
+    "LINGER",
+    "PERSIST",
+    "ENDURE"
   ],
   "stillness_inactivity": [
     "SEDENTARY",
@@ -3420,7 +4241,10 @@
     "RESILIENCE",
     "RESILIENT",
     "RESOLUTE",
-    "RELENTLESS"
+    "RELENTLESS",
+    "HARDY",
+    "ROBUST",
+    "STOUT"
   ],
   "strength_weakness": [
     "VITAL",
@@ -3433,25 +4257,37 @@
     "REINFORCE",
     "REINSTATE",
     "REPLENISH",
-    "REPLACE"
+    "REPLACE",
+    "FORTIFY",
+    "BOLSTER",
+    "BRACE"
   ],
   "structural_foundation": [
     "FOUNDATION",
     "FRAMEWORK",
     "FORM",
-    "FORMAT"
+    "FORMAT",
+    "BASE",
+    "GROUND",
+    "SUPPORT"
   ],
   "structure_framework": [
     "SKELETON",
     "FRAME",
     "STRUCTURE",
-    "SUPPORT"
+    "SUPPORT",
+    "SCAFFOLD",
+    "LATTICE",
+    "MATRIX"
   ],
   "structure_organization": [
     "ORGAN",
     "ORGANIC",
     "ORGANISM",
-    "ORGANIZE"
+    "ORGANIZE",
+    "BODY",
+    "ENTITY",
+    "SYSTEM"
   ],
   "structures_buildings": [
     "TOWER",
@@ -3471,54 +4307,82 @@
     "PLATFORM",
     "PLATE",
     "PORTAL",
-    "PORT"
+    "PORT",
+    "DECK",
+    "FLOOR",
+    "TERRACE"
   ],
   "stubbornness_resistance": [
     "OBDURATE",
     "OBSTINATE",
     "OBSTRUCT",
-    "OBSTACLE"
+    "OBSTACLE",
+    "DEFIANT",
+    "UNYIELDING",
+    "ADAMANT"
   ],
   "substitute_change": [
     "REPLACE",
     "REPLACEMENT",
     "REPLICA",
-    "REPLICABLE"
+    "REPLICABLE",
+    "ALTER",
+    "EXCHANGE",
+    "CONVERT"
   ],
   "sudden_sharp": [
     "ABRUPT",
     "ACUTE",
     "ABRASIVE",
-    "ACRID"
+    "ACRID",
+    "KEEN",
+    "PIERCING",
+    "STARK"
   ],
   "summary_retelling": [
     "RECAPITULATE",
     "RECOUNT",
     "RECITE",
-    "REPORT"
+    "REPORT",
+    "RECAP",
+    "SUMMARIZE",
+    "CONDENSE"
   ],
   "sun_related": [
     "SOLAR",
     "SUN",
     "SUNNY",
-    "DAYLIGHT"
+    "DAYLIGHT",
+    "RADIANT",
+    "BRIGHT",
+    "WARM"
   ],
   "superficiality": [
     "SHALLOW",
     "SURFACE",
-    "SUPERFICIAL"
+    "TRIVIAL",
+    "CURSORY",
+    "SLIGHT",
+    "FLIMSY",
+    "FACILE"
   ],
   "suppression_suffocation": [
     "SMOTHER",
     "SUPPRESS",
     "SUFFOCATE",
-    "STIFLE"
+    "STIFLE",
+    "REPRESS",
+    "QUELL",
+    "SQUELCH"
   ],
   "surprise_impact": [
     "SHOCK",
     "SURPRISE",
     "IMPACT",
-    "JOLT"
+    "JOLT",
+    "STARTLE",
+    "STUN",
+    "ASTONISH"
   ],
   "systems_organization": [
     "SYSTEM",
@@ -3531,18 +4395,28 @@
     "FLEETING",
     "FLASH",
     "FLARE",
-    "FEW"
+    "FEW",
+    "TRANSIENT",
+    "EPHEMERAL",
+    "MOMENTARY"
   ],
   "texture_smoothness": [
     "SILK",
     "SILKY",
     "SMOOTH",
-    "SOFT"
+    "SOFT",
+    "SLEEK",
+    "GLOSSY",
+    "POLISHED"
   ],
   "theoretical_analysis": [
     "SPECULATE",
-    "SPECULATION",
-    "SPECTRUM"
+    "SPECTRUM",
+    "THEORY",
+    "HYPOTHESIZE",
+    "CONJECTURE",
+    "SURMISE",
+    "POSTULATE"
   ],
   "thinking_concepts": [
     "THINK",
@@ -3556,7 +4430,9 @@
     "SLENDER",
     "SLIM",
     "THIN",
-    "NARROW"
+    "NARROW",
+    "LEAN",
+    "GAUNT"
   ],
   "threat_danger": [
     "MENACE",
@@ -3576,7 +4452,10 @@
     "WHILE",
     "WEEK",
     "WANE",
-    "WITHER"
+    "WITHER",
+    "SPAN",
+    "PERIOD",
+    "INTERVAL"
   ],
   "time_early": [
     "PREMATURE",
@@ -3596,7 +4475,10 @@
     "ANCIENT",
     "ANCESTOR",
     "ANTECEDENT",
-    "ANACHRONISM"
+    "ANACHRONISM",
+    "PREDECESSOR",
+    "ARCHAIC",
+    "PRIMEVAL"
   ],
   "time_sequence": [
     "PRECEDE",
@@ -3630,18 +4512,28 @@
     "SIMULTANEOUS",
     "SYNC",
     "TOGETHER",
-    "CONCURRENT"
+    "CONCURRENT",
+    "COINCIDE",
+    "ALIGN",
+    "HARMONIZE"
   ],
   "transportation_vessels": [
     "SHIP",
     "VESSEL",
-    "TRANSPORT"
+    "TRANSPORT",
+    "BOAT",
+    "FERRY",
+    "CARGO",
+    "FREIGHT"
   ],
   "trapping_catching": [
     "SNARE",
     "TRAP",
     "CATCH",
-    "CAPTURE"
+    "CAPTURE",
+    "SNAG",
+    "SEIZE",
+    "GRAB"
   ],
   "treatment_healing": [
     "REHABILITATE",
@@ -3661,7 +4553,10 @@
     "AMBIGUOUS",
     "AMORPHOUS",
     "ANOMALOUS",
-    "ABSTRACT"
+    "ABSTRACT",
+    "HAZY",
+    "NEBULOUS",
+    "OBSCURE"
   ],
   "understanding_logic": [
     "RATIONAL",
@@ -3681,7 +4576,10 @@
     "SINGULAR",
     "UNIQUE",
     "INDIVIDUAL",
-    "SOLO"
+    "SOLO",
+    "DISTINCT",
+    "PECULIAR",
+    "SPECIAL"
   ],
   "unity_concepts": [
     "UNIFY",
@@ -3694,7 +4592,10 @@
     "SOLIDARITY",
     "UNITY",
     "TOGETHER",
-    "UNIFIED"
+    "UNIFIED",
+    "COHESION",
+    "BOND",
+    "HARMONY"
   ],
   "utility_concepts": [
     "USE",
@@ -3714,7 +4615,10 @@
     "OPINION",
     "OPPONENT",
     "OPPOSITION",
-    "ORTHODOX"
+    "ORTHODOX",
+    "VIEW",
+    "STANCE",
+    "DOCTRINE"
   ],
   "violence_aggression": [
     "VIOLENCE",
@@ -3727,7 +4631,11 @@
   "violence_force": [
     "STRANGLE",
     "STRIKE",
-    "STRUGGLE"
+    "STRUGGLE",
+    "FORCE",
+    "COERCE",
+    "ASSAULT",
+    "ATTACK"
   ],
   "vision_concepts": [
     "VIEW",
@@ -3740,7 +4648,10 @@
     "GAZE",
     "GLANCE",
     "GLARE",
-    "GLIMPSE"
+    "GLIMPSE",
+    "STARE",
+    "PEER",
+    "GAWK"
   ],
   "visual_representation": [
     "ILLUSTRATE",
@@ -3754,7 +4665,10 @@
     "AMBLE",
     "ADVANCE",
     "APPROACH",
-    "APPEAR"
+    "APPEAR",
+    "STROLL",
+    "SAUNTER",
+    "STRIDE"
   ],
   "water_flow": [
     "TIDE",
@@ -3767,7 +4681,10 @@
     "BAY",
     "BEAM",
     "BRIDGE",
-    "BRANCH"
+    "BRANCH",
+    "STREAM",
+    "LAKE",
+    "POND"
   ],
   "water_nature": [
     "CREEK",
@@ -3787,19 +4704,28 @@
     "OPULENT",
     "ORNATE",
     "OSTENTATIOUS",
-    "OSTENTATION"
+    "OSTENTATION",
+    "AFFLUENT",
+    "RICH",
+    "LAVISH"
   ],
   "wealth_prosperity": [
     "AFFLUENT",
     "AFFORD",
     "ABUNDANT",
-    "AMPLE"
+    "AMPLE",
+    "THRIVE",
+    "FLOURISH",
+    "PROSPER"
   ],
   "weather_environment": [
     "ARCTIC",
     "ATMOSPHERE",
     "BLIZZARD",
-    "ARID"
+    "ARID",
+    "CLIMATE",
+    "TEMPERATE",
+    "TROPICAL"
   ],
   "weather_nature": [
     "WEATHER",

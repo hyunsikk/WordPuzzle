@@ -1,15 +1,29 @@
 // Cell.js - Bubble letter cell component
 
-import React from 'react';
+import React, { memo } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { colors } from '../styles/colors';
 
-export default function Cell({ letter, isSelected, isFound, cellSize }) {
+function Cell({ letter, isSelected, isFound, isHint, cellSize, foundColorIndex }) {
   const getBubbleStyle = () => {
-    if (isFound) {
+    // Hint takes highest priority - shows yellow even on found cells
+    if (isHint) {
       return {
-        backgroundColor: colors.bubbleFound,
-        borderColor: '#7AC87A',
+        backgroundColor: colors.bubbleSelected,
+        borderColor: '#E6CC30',
+        transform: [{ scale: 1.2 }],
+        shadowOpacity: 0.4,
+        shadowRadius: 10,
+        elevation: 10,
+      };
+    }
+    if (isFound) {
+      // Use color based on which word this cell belongs to
+      const colorPalette = colors.foundWordColors;
+      const colorSet = colorPalette[foundColorIndex % colorPalette.length];
+      return {
+        backgroundColor: colorSet.bg,
+        borderColor: colorSet.border,
         transform: [{ scale: 1 }],
       };
     }
@@ -30,6 +44,20 @@ export default function Cell({ letter, isSelected, isFound, cellSize }) {
     };
   };
 
+  const getTextColor = () => {
+    if (isHint) {
+      return { color: colors.textPrimary };
+    }
+    if (isFound) {
+      const colorPalette = colors.foundWordColors;
+      const colorSet = colorPalette[foundColorIndex % colorPalette.length];
+      return { color: colorSet.text };
+    }
+    return null;
+  };
+
+  const accessibilityState = isFound ? 'found' : isSelected ? 'selected' : 'available';
+
   return (
     <View
       style={[
@@ -41,12 +69,15 @@ export default function Cell({ letter, isSelected, isFound, cellSize }) {
         },
         getBubbleStyle(),
       ]}
+      accessible={true}
+      accessibilityLabel={`Letter ${letter}, ${accessibilityState}`}
+      accessibilityRole="button"
     >
       <Text
         style={[
           styles.letter,
           { fontSize: Math.max(14, cellSize * 0.5) },
-          isFound && styles.letterFound,
+          getTextColor(),
         ]}
       >
         {letter}
@@ -71,7 +102,6 @@ const styles = StyleSheet.create({
     fontWeight: '700',
     color: colors.textPrimary,
   },
-  letterFound: {
-    color: '#2D5A2D',
-  },
 });
+
+export default memo(Cell);

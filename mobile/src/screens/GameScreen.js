@@ -1,11 +1,10 @@
 // GameScreen.js - Ocean Bubbles game screen
 
 import React, { useState, useEffect, useCallback, useRef } from 'react';
-import { StyleSheet, Text, View, StatusBar, TouchableOpacity, Platform, Alert } from 'react-native';
+import { StyleSheet, Text, View, StatusBar, TouchableOpacity, Platform, Alert, Vibration } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import { captureRef } from 'react-native-view-shot';
 import * as MediaLibrary from 'expo-media-library';
-import { BannerAd, BannerAdSize } from 'react-native-google-mobile-ads';
 import Grid from '../components/Grid';
 import WordList from '../components/WordList';
 import Celebration from '../components/Celebration';
@@ -14,10 +13,8 @@ import { generatePuzzle, positionsMatch } from '../utils/puzzle';
 import { getNextCategory } from '../utils/categories';
 import {
   getCoins,
-  getStreak,
   addCoins,
   spendCoins,
-  recordPlay,
   COIN_PER_WORD,
   COIN_PER_PUZZLE,
   HINT_COST,
@@ -28,11 +25,16 @@ import {
   isRewardedReady,
   onPuzzleCompleted,
   BANNER_AD_UNIT_ID,
+  BANNER_SIZE,
+  BannerAd,
 } from '../utils/ads';
 
 const REWARDED_COINS = 50; // Coins given for watching a rewarded ad
+const NO_HINT_BONUS = 25; // Bonus for completing without hints
+const COMBO_WINDOW = 5000; // 5 seconds window for combo
+const COMBO_BASE_BONUS = 5; // Base bonus per combo level
 
-export default function GameScreen({ onCoinsChange }) {
+export default function GameScreen({ onCoinsChange, onBack }) {
   const gameAreaRef = useRef(null);
   const [puzzle, setPuzzle] = useState(null);
   const [categoryName, setCategoryName] = useState('');
@@ -43,13 +45,17 @@ export default function GameScreen({ onCoinsChange }) {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [coins, setCoins] = useState(0);
-  const [streak, setStreak] = useState(0);
-  const [bonusCount, setBonusCount] = useState(0);
   const [coinAnimation, setCoinAnimation] = useState(null);
+  const [hintCells, setHintCells] = useState([]);
+  const [usedHint, setUsedHint] = useState(false);
+  const [comboCount, setComboCount] = useState(0);
+  const [totalComboBonus, setTotalComboBonus] = useState(0);
+  const [comboTimeLeft, setComboTimeLeft] = useState(0); // 0-100 percentage
+  const lastWordTimeRef = useRef(null);
+  const comboTimerRef = useRef(null);
 
   useEffect(() => {
     setCoins(getCoins());
-    setStreak(getStreak());
   }, []);
 
   const loadNewPuzzle = useCallback(async () => {
@@ -58,8 +64,17 @@ export default function GameScreen({ onCoinsChange }) {
     setSelectedCells([]);
     setFoundWords([]);
     setFoundCells([]);
+    setHintCells([]);
     setShowCelebration(false);
-    setBonusCount(0);
+    setUsedHint(false);
+    setComboCount(0);
+    setTotalComboBonus(0);
+    setComboTimeLeft(0);
+    lastWordTimeRef.current = null;
+    if (comboTimerRef.current) {
+      clearInterval(comboTimerRef.current);
+      comboTimerRef.current = null;
+    }
 
     try {
       const category = await getNextCategory();
@@ -67,10 +82,6 @@ export default function GameScreen({ onCoinsChange }) {
 
       const newPuzzle = generatePuzzle(category.words);
       setPuzzle(newPuzzle);
-
-      // Record play for streak
-      const newStreak = await recordPlay();
-      setStreak(newStreak);
     } catch (err) {
       console.error('Error loading puzzle:', err);
       setError(err.message || 'Failed to load puzzle');
@@ -98,23 +109,82 @@ export default function GameScreen({ onCoinsChange }) {
       if (foundWords.includes(placement.word)) continue;
 
       if (positionsMatch(cells, placement.positions)) {
-        // Found a word!
+        // Found a word! Vibrate for feedback
+        if (Platform.OS !== 'web') {
+          Vibration.vibrate(50);
+        }
+
+        const wordIndex = foundWords.length; // Index of this word (0-based)
         setFoundWords(prev => [...prev, placement.word]);
-        setFoundCells(prev => [...prev, ...placement.positions]);
+        setFoundCells(prev => [
+          ...prev,
+          ...placement.positions.map(pos => ({ ...pos, wordIndex })),
+        ]);
         setSelectedCells([]);
 
-        // Add coins
-        const newCoins = await addCoins(COIN_PER_WORD);
+        // Check for combo
+        const now = Date.now();
+        let comboBonus = 0;
+        let newComboCount = 0;
+
+        if (lastWordTimeRef.current && (now - lastWordTimeRef.current) < COMBO_WINDOW) {
+          // Within combo window - increment combo
+          newComboCount = comboCount + 1;
+          comboBonus = newComboCount * COMBO_BASE_BONUS;
+          setComboCount(newComboCount);
+          setTotalComboBonus(prev => prev + comboBonus);
+        } else {
+          // Reset combo (this is first word or too slow)
+          setComboCount(1);
+          newComboCount = 1;
+        }
+        lastWordTimeRef.current = now;
+
+        // Start/reset combo timer
+        if (comboTimerRef.current) {
+          clearInterval(comboTimerRef.current);
+        }
+        setComboTimeLeft(100);
+        comboTimerRef.current = setInterval(() => {
+          setComboTimeLeft(prev => {
+            if (prev <= 2) {
+              clearInterval(comboTimerRef.current);
+              comboTimerRef.current = null;
+              return 0;
+            }
+            return prev - 2; // Decrements every 100ms, 50 steps = 5 seconds
+          });
+        }, 100);
+
+        // Add coins (base + combo bonus)
+        const totalEarned = COIN_PER_WORD + comboBonus;
+        const newCoins = await addCoins(totalEarned);
         setCoins(newCoins);
-        setCoinAnimation(`+${COIN_PER_WORD}`);
-        setTimeout(() => setCoinAnimation(null), 1000);
+
+        // Show animation with combo info
+        if (comboBonus > 0) {
+          setCoinAnimation(`+${COIN_PER_WORD} +${comboBonus} combo!`);
+        } else {
+          setCoinAnimation(`+${COIN_PER_WORD}`);
+        }
+        setTimeout(() => setCoinAnimation(null), 1500);
 
         if (onCoinsChange) onCoinsChange(newCoins);
 
         // Check if all words found
         if (foundWords.length + 1 === puzzle.words.length) {
-          // Puzzle complete bonus
-          const finalCoins = await addCoins(COIN_PER_PUZZLE);
+          // Puzzle complete - celebration vibration pattern
+          if (Platform.OS !== 'web') {
+            Vibration.vibrate([0, 100, 50, 100, 50, 200]);
+          }
+
+          // Puzzle complete bonus + no-hint bonus if applicable
+          let completionBonus = COIN_PER_PUZZLE;
+          if (!usedHint) {
+            completionBonus += NO_HINT_BONUS;
+          }
+
+          const finalCoins = await addCoins(completionBonus);
           setCoins(finalCoins);
           if (onCoinsChange) onCoinsChange(finalCoins);
 
@@ -128,7 +198,7 @@ export default function GameScreen({ onCoinsChange }) {
 
     // No match, clear selection
     setSelectedCells([]);
-  }, [puzzle, foundWords, onCoinsChange]);
+  }, [puzzle, foundWords, onCoinsChange, comboCount, usedHint]);
 
   const handleCelebrationComplete = useCallback(async () => {
     // Check if we should show an interstitial ad
@@ -139,10 +209,10 @@ export default function GameScreen({ onCoinsChange }) {
   }, [loadNewPuzzle]);
 
   const showHint = useCallback((unfoundWord) => {
-    // Highlight a random cell from the unfound word briefly
+    // Highlight the first cell of the unfound word briefly with yellow
     const hintCell = unfoundWord.positions[0];
-    setSelectedCells([hintCell]);
-    setTimeout(() => setSelectedCells([]), 1500);
+    setHintCells([hintCell]);
+    setTimeout(() => setHintCells([]), 1500);
   }, []);
 
   const handleHint = useCallback(async () => {
@@ -156,6 +226,7 @@ export default function GameScreen({ onCoinsChange }) {
     if (coins >= HINT_COST) {
       const success = await spendCoins(HINT_COST);
       if (success) {
+        setUsedHint(true); // Mark that hint was used
         const newCoins = getCoins();
         setCoins(newCoins);
         if (onCoinsChange) onCoinsChange(newCoins);
@@ -266,24 +337,43 @@ export default function GameScreen({ onCoinsChange }) {
 
       {/* Header */}
       <View style={styles.header}>
-        <View style={styles.statItem}>
-          <Text style={styles.statIcon}>🔥</Text>
-          <Text style={styles.statValue}>{streak}</Text>
-          <Text style={styles.statLabel}> day{streak !== 1 ? 's' : ''}</Text>
-        </View>
+        <TouchableOpacity
+          style={styles.backButton}
+          onPress={onBack}
+          accessibilityLabel="Go back to home screen"
+          accessibilityRole="button"
+        >
+          <Text style={styles.backButtonText}>←</Text>
+        </TouchableOpacity>
 
         <View style={styles.titleContainer}>
           <Text style={styles.categoryName}>{categoryName}</Text>
         </View>
 
-        <View style={styles.statItem}>
-          <Text style={styles.statIcon}>💰</Text>
-          <Text style={styles.statValue}>{coins}</Text>
-          {coinAnimation && (
-            <Text style={styles.coinAnimation}>{coinAnimation}</Text>
+        <View style={styles.headerStats}>
+          {comboCount > 1 && (
+            <View style={styles.comboIndicator}>
+              <Text style={styles.comboText}>🔥 x{comboCount}</Text>
+              {comboTimeLeft > 0 && (
+                <View style={styles.comboTimerBar}>
+                  <View style={[styles.comboTimerFill, { width: `${comboTimeLeft}%` }]} />
+                </View>
+              )}
+            </View>
           )}
+          <View style={styles.statItem}>
+            <Text style={styles.statIcon}>💎</Text>
+            <Text style={styles.statValue}>{coins}</Text>
+          </View>
         </View>
       </View>
+
+      {/* Coin Toast */}
+      {coinAnimation && (
+        <View style={styles.coinToast}>
+          <Text style={styles.coinToastText}>{coinAnimation}</Text>
+        </View>
+      )}
 
       {/* Game Area */}
       <View style={styles.gameArea} ref={gameAreaRef} dataSet={{ gameArea: true }}>
@@ -291,6 +381,7 @@ export default function GameScreen({ onCoinsChange }) {
           grid={puzzle.grid}
           selectedCells={selectedCells}
           foundCells={foundCells}
+          hintCells={hintCells}
           onSelectionChange={handleSelectionChange}
           onSelectionEnd={handleSelectionEnd}
         />
@@ -298,22 +389,31 @@ export default function GameScreen({ onCoinsChange }) {
         <WordList
           words={puzzle.words}
           foundWords={foundWords}
-          bonusCount={bonusCount}
+          bonusCount={totalComboBonus}
         />
 
         {/* Button Row */}
         <View style={styles.buttonRow}>
-          <TouchableOpacity
-            style={styles.actionButton}
-            onPress={handleHint}
-          >
-            <Text style={styles.buttonIcon}>💡</Text>
-            <Text style={styles.buttonText}>Hint ({HINT_COST})</Text>
-          </TouchableOpacity>
+          <View style={styles.hintButtonContainer}>
+            {!usedHint && (
+              <Text style={styles.noHintBonusText}>+{NO_HINT_BONUS} if no hints!</Text>
+            )}
+            <TouchableOpacity
+              style={styles.actionButton}
+              onPress={handleHint}
+              accessibilityLabel={`Get hint for ${HINT_COST} coins`}
+              accessibilityRole="button"
+            >
+              <Text style={styles.buttonIcon}>💡</Text>
+              <Text style={styles.buttonText}>Hint ({HINT_COST})</Text>
+            </TouchableOpacity>
+          </View>
 
           <TouchableOpacity
             style={styles.actionButton}
             onPress={handleSnapshot}
+            accessibilityLabel="Take a screenshot of the puzzle"
+            accessibilityRole="button"
           >
             <Text style={styles.buttonIcon}>📸</Text>
             <Text style={styles.buttonText}>Snapshot</Text>
@@ -322,6 +422,8 @@ export default function GameScreen({ onCoinsChange }) {
           <TouchableOpacity
             style={styles.actionButton}
             onPress={handleSkip}
+            accessibilityLabel="Skip to next puzzle"
+            accessibilityRole="button"
           >
             <Text style={styles.buttonIcon}>⏭️</Text>
             <Text style={styles.buttonText}>Skip</Text>
@@ -332,18 +434,23 @@ export default function GameScreen({ onCoinsChange }) {
       <Celebration
         visible={showCelebration}
         onComplete={handleCelebrationComplete}
+        bonusCoins={COIN_PER_PUZZLE}
+        noHintBonus={usedHint ? 0 : NO_HINT_BONUS}
+        comboBonus={totalComboBonus}
       />
 
-      {/* Banner Ad */}
-      <View style={styles.bannerContainer}>
-        <BannerAd
-          unitId={BANNER_AD_UNIT_ID}
-          size={BannerAdSize.ANCHORED_ADAPTIVE_BANNER}
-          requestOptions={{
-            requestNonPersonalizedAdsOnly: true,
-          }}
-        />
-      </View>
+      {/* Banner Ad - Native only */}
+      {BannerAd && (
+        <View style={styles.bannerContainer}>
+          <BannerAd
+            unitId={BANNER_AD_UNIT_ID}
+            size={BANNER_SIZE}
+            requestOptions={{
+              requestNonPersonalizedAdsOnly: true,
+            }}
+          />
+        </View>
+      )}
     </LinearGradient>
   );
 }
@@ -351,6 +458,7 @@ export default function GameScreen({ onCoinsChange }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    paddingBottom: 60, // Reserve space for banner ad
   },
   loadingContainer: {
     flex: 1,
@@ -381,6 +489,45 @@ const styles = StyleSheet.create({
     paddingBottom: 10,
     paddingHorizontal: 16,
   },
+  backButton: {
+    backgroundColor: 'rgba(255, 255, 255, 0.4)',
+    paddingHorizontal: 12,
+    paddingVertical: 8,
+    borderRadius: 20,
+  },
+  backButtonText: {
+    fontSize: 18,
+    fontWeight: '700',
+    color: colors.textPrimary,
+  },
+  headerStats: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 8,
+  },
+  comboIndicator: {
+    backgroundColor: '#FF6B35',
+    paddingHorizontal: 10,
+    paddingVertical: 6,
+    borderRadius: 16,
+  },
+  comboText: {
+    fontSize: 14,
+    fontWeight: '700',
+    color: '#FFFFFF',
+  },
+  comboTimerBar: {
+    height: 3,
+    backgroundColor: 'rgba(255, 255, 255, 0.3)',
+    borderRadius: 2,
+    marginTop: 4,
+    overflow: 'hidden',
+  },
+  comboTimerFill: {
+    height: '100%',
+    backgroundColor: '#FFFFFF',
+    borderRadius: 2,
+  },
   statItem: {
     flexDirection: 'row',
     alignItems: 'center',
@@ -404,13 +551,25 @@ const styles = StyleSheet.create({
     fontWeight: '500',
     color: colors.textSecondary,
   },
-  coinAnimation: {
+  coinToast: {
     position: 'absolute',
-    right: -20,
-    top: -10,
-    fontSize: 14,
+    top: 100,
+    alignSelf: 'center',
+    backgroundColor: colors.coinGold,
+    paddingHorizontal: 20,
+    paddingVertical: 10,
+    borderRadius: 20,
+    zIndex: 100,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.25,
+    shadowRadius: 4,
+    elevation: 5,
+  },
+  coinToastText: {
+    fontSize: 16,
     fontWeight: '700',
-    color: colors.coinGold,
+    color: '#FFFFFF',
   },
   titleContainer: {
     flex: 1,
@@ -429,11 +588,20 @@ const styles = StyleSheet.create({
   buttonRow: {
     flexDirection: 'row',
     justifyContent: 'center',
-    alignItems: 'center',
+    alignItems: 'flex-end',
     marginTop: 16,
     marginBottom: 30,
     paddingHorizontal: 16,
     gap: 12,
+  },
+  hintButtonContainer: {
+    alignItems: 'center',
+  },
+  noHintBonusText: {
+    fontSize: 11,
+    fontWeight: '600',
+    color: colors.coinGold,
+    marginBottom: 4,
   },
   actionButton: {
     flexDirection: 'row',

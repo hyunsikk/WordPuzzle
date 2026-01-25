@@ -6,7 +6,11 @@ import { colors } from '../styles/colors';
 
 function WordItem({ word, isFound }) {
   return (
-    <View style={[styles.wordItem, isFound && styles.wordItemFound]}>
+    <View
+      style={[styles.wordItem, isFound && styles.wordItemFound]}
+      accessibilityLabel={`${word}, ${isFound ? 'found' : 'not found yet'}`}
+      accessibilityState={{ checked: isFound }}
+    >
       <View style={[styles.checkbox, isFound && styles.checkboxFound]}>
         {isFound && <Text style={styles.checkmark}>✓</Text>}
       </View>
@@ -18,20 +22,27 @@ function WordItem({ word, isFound }) {
 }
 
 export default function WordList({ words, foundWords, bonusCount = 0 }) {
+  const progress = `${foundWords.length}/${words.length}`;
+
   return (
-    <View style={styles.container}>
+    <View style={styles.container} accessibilityLabel={`Words to find: ${foundWords.length} of ${words.length} found`}>
       <View style={styles.header}>
         <Text style={styles.title}>Words to Find</Text>
-        {bonusCount > 0 && (
-          <View style={styles.bonusBadge}>
-            <Text style={styles.bonusText}>+{bonusCount} bonus</Text>
+        <View style={styles.headerRight}>
+          {bonusCount > 0 && (
+            <View style={styles.bonusBadge}>
+              <Text style={styles.bonusText}>🔥 +{bonusCount}</Text>
+            </View>
+          )}
+          <View style={styles.progressBadge}>
+            <Text style={styles.progressText}>{progress}</Text>
           </View>
-        )}
+        </View>
       </View>
       <View style={styles.wordGrid}>
-        {words.map((word) => (
+        {words.map((word, index) => (
           <WordItem
-            key={word}
+            key={`${word}-${index}`}
             word={word}
             isFound={foundWords.includes(word)}
           />
@@ -60,6 +71,11 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     marginBottom: 12,
   },
+  headerRight: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 8,
+  },
   title: {
     fontSize: 16,
     fontWeight: '700',
@@ -72,6 +88,17 @@ const styles = StyleSheet.create({
     borderRadius: 12,
   },
   bonusText: {
+    fontSize: 12,
+    fontWeight: '700',
+    color: colors.textPrimary,
+  },
+  progressBadge: {
+    backgroundColor: colors.bubbleBorder,
+    paddingHorizontal: 10,
+    paddingVertical: 4,
+    borderRadius: 12,
+  },
+  progressText: {
     fontSize: 12,
     fontWeight: '700',
     color: colors.textPrimary,

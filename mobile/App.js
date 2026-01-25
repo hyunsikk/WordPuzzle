@@ -5,22 +5,21 @@ import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { StyleSheet } from 'react-native';
 import HomeScreen from './src/screens/HomeScreen';
 import GameScreen from './src/screens/GameScreen';
+import ErrorBoundary from './src/components/ErrorBoundary';
 import { initializeCategories } from './src/utils/categories';
-import { initializeGameState, getCoins, getStreak } from './src/utils/gameState';
+import { initializeGameState, getCoins } from './src/utils/gameState';
 import { initializeAds } from './src/utils/ads';
 
 export default function App() {
   const [screen, setScreen] = useState('home');
   const [initialized, setInitialized] = useState(false);
   const [coins, setCoins] = useState(0);
-  const [streak, setStreak] = useState(0);
 
   useEffect(() => {
     async function init() {
       await initializeCategories();
       const state = await initializeGameState();
       setCoins(state.coins);
-      setStreak(state.streak);
       setInitialized(true);
     }
     init();
@@ -34,6 +33,12 @@ export default function App() {
     setScreen('game');
   };
 
+  const handleBack = () => {
+    // Refresh coins when returning to home
+    setCoins(getCoins());
+    setScreen('home');
+  };
+
   const handleCoinsChange = (newCoins) => {
     setCoins(newCoins);
   };
@@ -44,15 +49,13 @@ export default function App() {
 
   return (
     <GestureHandlerRootView style={styles.container}>
-      {screen === 'home' ? (
-        <HomeScreen
-          onPlay={handlePlay}
-          coins={coins}
-          streak={streak}
-        />
-      ) : (
-        <GameScreen onCoinsChange={handleCoinsChange} />
-      )}
+      <ErrorBoundary>
+        {screen === 'home' ? (
+          <HomeScreen onPlay={handlePlay} />
+        ) : (
+          <GameScreen onCoinsChange={handleCoinsChange} onBack={handleBack} />
+        )}
+      </ErrorBoundary>
     </GestureHandlerRootView>
   );
 }
