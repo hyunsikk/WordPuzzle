@@ -23,8 +23,7 @@
           {
             "SKAdNetworkIdentifier": "cstr6suwn9.skadnetwork"
           }
-        ],
-        "NSUserTrackingUsageDescription": "This allows us to show you relevant ads and support free access to the app."
+        ]
       }
     },
     "android": {
@@ -33,7 +32,8 @@
         "backgroundColor": "#87CEEB"
       },
       "edgeToEdgeEnabled": true,
-      "package": "com.amstudio.vocabbubbles"
+      "package": "com.amstudio.vocabbubbles",
+      "versionCode": 1
     },
     "web": {
       "favicon": "./assets/favicon.png"
