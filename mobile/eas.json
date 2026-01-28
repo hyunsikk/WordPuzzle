@@ -1,6 +1,7 @@
 {
   "cli": {
-    "version": ">= 5.0.0"
+    "version": ">= 5.0.0",
+    "requireCommit": false
   },
   "build": {
     "development": {
@@ -22,6 +23,10 @@
         "appleId": "paul483@naver.com",
         "ascAppId": "6758256351",
         "appleTeamId": "22R4239A68"
+      },
+      "android": {
+        "serviceAccountKeyPath": "./google-service-account.json",
+        "track": "production"
       }
     }
   }
