@@ -109,7 +109,7 @@ function Cell({ letter, isSelected, isFound, isHint, cellSize, foundColorIndex }
       <Text
         style={[
           Typography.button,
-          { fontSize: Math.max(14, cellSize * 0.5) },
+          { fontSize: Math.max(14, cellSize * 0.5), color: colors.textPrimary },
           getTextColor(),
         ]}
       >
