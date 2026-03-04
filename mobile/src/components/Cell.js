@@ -1,17 +1,46 @@
 // Cell.js - Bubble letter cell component
 
-import React, { memo } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React, { memo, useEffect } from 'react';
+import { StyleSheet, Text } from 'react-native';
+import Animated, {
+  useSharedValue,
+  useAnimatedStyle,
+  withSpring,
+  withSequence,
+} from 'react-native-reanimated';
 import { colors } from '../styles/colors';
+import Typography from '../styles/Typography';
 
 function Cell({ letter, isSelected, isFound, isHint, cellSize, foundColorIndex }) {
+  // Animation values
+  const scale = useSharedValue(1);
+  const selectedScale = useSharedValue(1);
+  
+  // Animate when cell becomes selected or deselected
+  useEffect(() => {
+    if (isSelected) {
+      selectedScale.value = withSpring(1.15, { damping: 15, stiffness: 200 });
+    } else {
+      selectedScale.value = withSpring(1, { damping: 15, stiffness: 200 });
+    }
+  }, [isSelected]);
+  
+  // Animate when word is found
+  useEffect(() => {
+    if (isFound) {
+      scale.value = withSequence(
+        withSpring(1.3, { damping: 8, stiffness: 200 }),
+        withSpring(1, { damping: 12, stiffness: 150 })
+      );
+    }
+  }, [isFound]);
+
   const getBubbleStyle = () => {
     // Hint takes highest priority - shows yellow even on found cells
     if (isHint) {
       return {
         backgroundColor: colors.bubbleSelected,
         borderColor: '#E6CC30',
-        transform: [{ scale: 1.2 }],
         shadowOpacity: 0.4,
         shadowRadius: 10,
         elevation: 10,
@@ -24,14 +53,12 @@ function Cell({ letter, isSelected, isFound, isHint, cellSize, foundColorIndex }
       return {
         backgroundColor: colorSet.bg,
         borderColor: colorSet.border,
-        transform: [{ scale: 1 }],
       };
     }
     if (isSelected) {
       return {
         backgroundColor: colors.bubbleSelected,
         borderColor: '#E6CC30',
-        transform: [{ scale: 1.15 }],
         shadowOpacity: 0.3,
         shadowRadius: 8,
         elevation: 8,
@@ -40,7 +67,6 @@ function Cell({ letter, isSelected, isFound, isHint, cellSize, foundColorIndex }
     return {
       backgroundColor: colors.bubbleDefault,
       borderColor: colors.bubbleBorder,
-      transform: [{ scale: 1 }],
     };
   };
 
@@ -58,8 +84,14 @@ function Cell({ letter, isSelected, isFound, isHint, cellSize, foundColorIndex }
 
   const accessibilityState = isFound ? 'found' : isSelected ? 'selected' : 'available';
 
+  const animatedStyle = useAnimatedStyle(() => ({
+    transform: [
+      { scale: scale.value * selectedScale.value * (isHint ? 1.2 : 1) }
+    ],
+  }));
+
   return (
-    <View
+    <Animated.View
       style={[
         styles.bubble,
         {
@@ -68,6 +100,7 @@ function Cell({ letter, isSelected, isFound, isHint, cellSize, foundColorIndex }
           borderRadius: cellSize / 2,
         },
         getBubbleStyle(),
+        animatedStyle,
       ]}
       accessible={true}
       accessibilityLabel={`Letter ${letter}, ${accessibilityState}`}
@@ -75,14 +108,14 @@ function Cell({ letter, isSelected, isFound, isHint, cellSize, foundColorIndex }
     >
       <Text
         style={[
-          styles.letter,
+          Typography.button,
           { fontSize: Math.max(14, cellSize * 0.5) },
           getTextColor(),
         ]}
       >
         {letter}
       </Text>
-    </View>
+    </Animated.View>
   );
 }
 
@@ -97,10 +130,6 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.15,
     shadowRadius: 4,
     elevation: 3,
-  },
-  letter: {
-    fontWeight: '700',
-    color: colors.textPrimary,
   },
 });
 

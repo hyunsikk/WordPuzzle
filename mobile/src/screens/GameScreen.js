@@ -1,14 +1,16 @@
 // GameScreen.js - Ocean Bubbles game screen
 
 import React, { useState, useEffect, useCallback, useRef } from 'react';
-import { StyleSheet, Text, View, StatusBar, TouchableOpacity, Platform, Alert, Vibration } from 'react-native';
+import { StyleSheet, Text, View, StatusBar, TouchableOpacity, Platform, Alert, Modal } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import { captureRef } from 'react-native-view-shot';
 import * as MediaLibrary from 'expo-media-library';
+import Animated, { useSharedValue, useAnimatedStyle, withSpring } from 'react-native-reanimated';
 import Grid from '../components/Grid';
 import WordList from '../components/WordList';
 import Celebration from '../components/Celebration';
 import { colors } from '../styles/colors';
+import Typography from '../styles/Typography';
 import { generatePuzzle, positionsMatch } from '../utils/puzzle';
 import { getNextCategory } from '../utils/categories';
 import {
@@ -28,6 +30,9 @@ import {
   BANNER_SIZE,
   BannerAd,
 } from '../utils/ads';
+import { recordPuzzleCompletion, addLearnedWord } from '../utils/stats';
+import { getFormattedDefinition } from '../utils/definitions';
+import { successFeedback, lightImpact, mediumImpact, errorFeedback } from '../utils/haptics';
 
 const REWARDED_COINS = 50; // Coins given for watching a rewarded ad
 const NO_HINT_BONUS = 25; // Bonus for completing without hints
@@ -53,6 +58,14 @@ export default function GameScreen({ onCoinsChange, onBack }) {
   const [comboTimeLeft, setComboTimeLeft] = useState(0); // 0-100 percentage
   const lastWordTimeRef = useRef(null);
   const comboTimerRef = useRef(null);
+  const puzzleStartTime = useRef(null);
+  
+  // Word definition modal
+  const [showDefinition, setShowDefinition] = useState(false);
+  const [currentWordDefinition, setCurrentWordDefinition] = useState(null);
+  
+  // Animation values
+  const celebrationScale = useSharedValue(1);
 
   useEffect(() => {
     setCoins(getCoins());
@@ -66,11 +79,16 @@ export default function GameScreen({ onCoinsChange, onBack }) {
     setFoundCells([]);
     setHintCells([]);
     setShowCelebration(false);
+    setShowDefinition(false);
+    setCurrentWordDefinition(null);
     setUsedHint(false);
     setComboCount(0);
     setTotalComboBonus(0);
     setComboTimeLeft(0);
     lastWordTimeRef.current = null;
+    puzzleStartTime.current = Date.now();
+    celebrationScale.value = 1;
+    
     if (comboTimerRef.current) {
       clearInterval(comboTimerRef.current);
       comboTimerRef.current = null;
@@ -109,10 +127,11 @@ export default function GameScreen({ onCoinsChange, onBack }) {
       if (foundWords.includes(placement.word)) continue;
 
       if (positionsMatch(cells, placement.positions)) {
-        // Found a word! Vibrate for feedback
-        if (Platform.OS !== 'web') {
-          Vibration.vibrate(50);
-        }
+        // Found a word! Success haptic feedback
+        successFeedback();
+        
+        // Add word to learned words (tracks in AsyncStorage)
+        await addLearnedWord(placement.word);
 
         const wordIndex = foundWords.length; // Index of this word (0-based)
         setFoundWords(prev => [...prev, placement.word]);
@@ -121,6 +140,16 @@ export default function GameScreen({ onCoinsChange, onBack }) {
           ...placement.positions.map(pos => ({ ...pos, wordIndex })),
         ]);
         setSelectedCells([]);
+
+        // Show word definition immediately
+        const definition = getFormattedDefinition(placement.word);
+        setCurrentWordDefinition(definition);
+        setShowDefinition(true);
+        
+        // Auto-hide definition after 3 seconds
+        setTimeout(() => {
+          setShowDefinition(false);
+        }, 3000);
 
         // Check for combo
         const now = Date.now();
@@ -173,10 +202,14 @@ export default function GameScreen({ onCoinsChange, onBack }) {
 
         // Check if all words found
         if (foundWords.length + 1 === puzzle.words.length) {
-          // Puzzle complete - celebration vibration pattern
-          if (Platform.OS !== 'web') {
-            Vibration.vibrate([0, 100, 50, 100, 50, 200]);
-          }
+          // Puzzle complete - celebration haptic sequence
+          successFeedback();
+          
+          // Trigger celebration animation
+          celebrationScale.value = withSpring(1.1, { damping: 15, stiffness: 150 });
+          setTimeout(() => {
+            celebrationScale.value = withSpring(1, { damping: 15, stiffness: 150 });
+          }, 200);
 
           // Puzzle complete bonus + no-hint bonus if applicable
           let completionBonus = COIN_PER_PUZZLE;
@@ -188,6 +221,15 @@ export default function GameScreen({ onCoinsChange, onBack }) {
           setCoins(finalCoins);
           if (onCoinsChange) onCoinsChange(finalCoins);
 
+          // Record puzzle completion stats
+          const playTimeMinutes = (Date.now() - puzzleStartTime.current) / 60000;
+          await recordPuzzleCompletion(
+            foundWords.length + 1, // total words found
+            puzzle.words.length, // total words in puzzle
+            usedHint ? 1 : 0, // hints used
+            playTimeMinutes
+          );
+
           setTimeout(() => {
             setShowCelebration(true);
           }, 500);
@@ -198,6 +240,10 @@ export default function GameScreen({ onCoinsChange, onBack }) {
 
     // No match, clear selection
     setSelectedCells([]);
+    // Light error feedback for invalid selection
+    if (cells.length >= 3) {
+      errorFeedback();
+    }
   }, [puzzle, foundWords, onCoinsChange, comboCount, usedHint]);
 
   const handleCelebrationComplete = useCallback(async () => {
@@ -231,6 +277,7 @@ export default function GameScreen({ onCoinsChange, onBack }) {
         setCoins(newCoins);
         if (onCoinsChange) onCoinsChange(newCoins);
         showHint(unfoundWord);
+        lightImpact(); // Haptic feedback for hint usage
       }
     } else {
       // Offer to watch a rewarded ad for coins
@@ -239,10 +286,11 @@ export default function GameScreen({ onCoinsChange, onBack }) {
           'Need more coins!',
           `Watch a short video to earn ${REWARDED_COINS} coins?`,
           [
-            { text: 'No thanks', style: 'cancel' },
+            { text: 'No thanks', style: 'cancel', onPress: () => lightImpact() },
             {
               text: 'Watch Video',
               onPress: async () => {
+                lightImpact();
                 const shown = await showRewardedAd(async () => {
                   // Reward callback - give coins
                   const newCoins = await addCoins(REWARDED_COINS);
@@ -250,6 +298,7 @@ export default function GameScreen({ onCoinsChange, onBack }) {
                   if (onCoinsChange) onCoinsChange(newCoins);
                   setCoinAnimation(`+${REWARDED_COINS}`);
                   setTimeout(() => setCoinAnimation(null), 1000);
+                  successFeedback(); // Haptic for successful coin earning
                 });
                 if (!shown) {
                   Alert.alert('Oops', 'Video not ready. Try again later.');
@@ -268,6 +317,7 @@ export default function GameScreen({ onCoinsChange, onBack }) {
   }, [coins, puzzle, foundWords, onCoinsChange, showHint]);
 
   const handleSnapshot = useCallback(async () => {
+    lightImpact();
     try {
       if (Platform.OS === 'web') {
         // Web: use html2canvas approach
@@ -305,8 +355,14 @@ export default function GameScreen({ onCoinsChange, onBack }) {
   }, [categoryName]);
 
   const handleSkip = useCallback(() => {
+    mediumImpact();
     loadNewPuzzle();
   }, [loadNewPuzzle]);
+
+  const handleBackPress = useCallback(() => {
+    lightImpact();
+    onBack();
+  }, [onBack]);
 
   if (loading || !puzzle) {
     return (
@@ -317,7 +373,7 @@ export default function GameScreen({ onCoinsChange, onBack }) {
         <StatusBar barStyle="dark-content" />
         <View style={styles.loadingContainer}>
           <View style={styles.loadingBubble}>
-            <Text style={styles.loadingText}>
+            <Text style={Typography.body}>
               {error ? `Error: ${error}` : 'Loading...'}
             </Text>
           </View>
@@ -339,15 +395,15 @@ export default function GameScreen({ onCoinsChange, onBack }) {
       <View style={styles.header}>
         <TouchableOpacity
           style={styles.backButton}
-          onPress={onBack}
+          onPress={handleBackPress}
           accessibilityLabel="Go back to home screen"
           accessibilityRole="button"
         >
-          <Text style={styles.backButtonText}>←</Text>
+          <Text style={Typography.subheading}>←</Text>
         </TouchableOpacity>
 
         <View style={styles.titleContainer}>
-          <Text style={styles.categoryName}>{categoryName}</Text>
+          <Text style={Typography.subheading}>{categoryName}</Text>
         </View>
 
         <View style={styles.headerStats}>
@@ -371,7 +427,7 @@ export default function GameScreen({ onCoinsChange, onBack }) {
       {/* Coin Toast */}
       {coinAnimation && (
         <View style={styles.coinToast}>
-          <Text style={styles.coinToastText}>{coinAnimation}</Text>
+          <Text style={Typography.button}>{coinAnimation}</Text>
         </View>
       )}
 
@@ -407,7 +463,7 @@ export default function GameScreen({ onCoinsChange, onBack }) {
               accessibilityRole="button"
             >
               <Text style={styles.buttonIcon}>💡</Text>
-              <Text style={styles.buttonText}>Hint ({HINT_COST})</Text>
+              <Text style={Typography.caption}>Hint ({HINT_COST})</Text>
             </TouchableOpacity>
           </View>
 
@@ -418,7 +474,7 @@ export default function GameScreen({ onCoinsChange, onBack }) {
             accessibilityRole="button"
           >
             <Text style={styles.buttonIcon}>📸</Text>
-            <Text style={styles.buttonText}>Snapshot</Text>
+            <Text style={Typography.caption}>Snapshot</Text>
           </TouchableOpacity>
 
           <TouchableOpacity
@@ -428,7 +484,7 @@ export default function GameScreen({ onCoinsChange, onBack }) {
             accessibilityRole="button"
           >
             <Text style={styles.buttonIcon}>⏭️</Text>
-            <Text style={styles.buttonText}>Skip</Text>
+            <Text style={Typography.caption}>Skip</Text>
           </TouchableOpacity>
         </View>
       </View>
@@ -440,6 +496,46 @@ export default function GameScreen({ onCoinsChange, onBack }) {
         noHintBonus={usedHint ? 0 : NO_HINT_BONUS}
         comboBonus={totalComboBonus}
       />
+
+      {/* Word Definition Modal */}
+      <Modal
+        visible={showDefinition}
+        transparent={true}
+        animationType="fade"
+        onRequestClose={() => setShowDefinition(false)}
+      >
+        <View style={styles.definitionOverlay}>
+          <Animated.View style={[styles.definitionCard, {
+            transform: [{ scale: celebrationScale }]
+          }]}>
+            <TouchableOpacity
+              style={styles.definitionClose}
+              onPress={() => {
+                lightImpact();
+                setShowDefinition(false);
+              }}
+            >
+              <Text style={Typography.caption}>✕</Text>
+            </TouchableOpacity>
+            
+            {currentWordDefinition && (
+              <>
+                <Text style={Typography.wordTitle}>
+                  {currentWordDefinition.word}
+                </Text>
+                <Text style={Typography.definition}>
+                  {currentWordDefinition.definition}
+                </Text>
+                {!currentWordDefinition.hasDefinition && (
+                  <Text style={[Typography.small, styles.noDefinitionNote]}>
+                    💭 Keep learning! This word builds your vocabulary.
+                  </Text>
+                )}
+              </>
+            )}
+          </Animated.View>
+        </View>
+      </Modal>
 
       {/* Banner Ad - Native only */}
       {BannerAd && (
@@ -650,5 +746,40 @@ const styles = StyleSheet.create({
     right: 0,
     alignItems: 'center',
     backgroundColor: 'transparent',
+  },
+  
+  // Definition modal styles
+  definitionOverlay: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: 'rgba(0, 0, 0, 0.6)',
+    paddingHorizontal: 32,
+  },
+  definitionCard: {
+    backgroundColor: colors.panelBackground,
+    borderRadius: 20,
+    padding: 24,
+    maxWidth: 320,
+    width: '100%',
+    shadowColor: colors.shadowColor,
+    shadowOffset: { width: 0, height: 8 },
+    shadowOpacity: 0.25,
+    shadowRadius: 12,
+    elevation: 8,
+  },
+  definitionClose: {
+    position: 'absolute',
+    top: 16,
+    right: 16,
+    padding: 8,
+    borderRadius: 16,
+    backgroundColor: 'rgba(0, 0, 0, 0.1)',
+  },
+  noDefinitionNote: {
+    marginTop: 12,
+    color: colors.textSecondary,
+    fontStyle: 'italic',
+    textAlign: 'center',
   },
 });

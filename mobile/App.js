@@ -2,9 +2,19 @@
 
 import React, { useState, useEffect } from 'react';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
-import { StyleSheet } from 'react-native';
+import { StyleSheet, View, Text } from 'react-native';
+import {
+  useFonts,
+  Nunito_400Regular,
+  Nunito_500Medium,
+  Nunito_600SemiBold,
+  Nunito_700Bold,
+  Nunito_800ExtraBold,
+} from '@expo-google-fonts/nunito';
 import HomeScreen from './src/screens/HomeScreen';
 import GameScreen from './src/screens/GameScreen';
+import StatsScreen from './src/screens/StatsScreen';
+import WordsLearnedScreen from './src/screens/WordsLearnedScreen';
 import ErrorBoundary from './src/components/ErrorBoundary';
 import { initializeCategories } from './src/utils/categories';
 import { initializeGameState, getCoins } from './src/utils/gameState';
@@ -14,6 +24,27 @@ export default function App() {
   const [screen, setScreen] = useState('home');
   const [initialized, setInitialized] = useState(false);
   const [coins, setCoins] = useState(0);
+
+  // Load Nunito fonts with fallback
+  let [fontsLoaded] = useFonts({
+    Nunito_400Regular,
+    Nunito_500Medium,
+    Nunito_600SemiBold,
+    Nunito_700Bold,
+    Nunito_800ExtraBold,
+  });
+
+  // Add fallback to prevent hanging on font load failure
+  useEffect(() => {
+    const fontTimeout = setTimeout(() => {
+      if (!fontsLoaded) {
+        fontsLoaded = true;
+        console.warn('Font loading timeout - continuing with system fonts');
+      }
+    }, 5000);
+
+    return () => clearTimeout(fontTimeout);
+  }, []);
 
   useEffect(() => {
     async function init() {
@@ -39,21 +70,48 @@ export default function App() {
     setScreen('home');
   };
 
+  const handleStats = () => {
+    setScreen('stats');
+  };
+
+  const handleWordsLearned = () => {
+    setScreen('words');
+  };
+
   const handleCoinsChange = (newCoins) => {
     setCoins(newCoins);
   };
 
-  if (!initialized) {
-    return null;
+  // Loading screen while fonts and data load
+  if (!fontsLoaded || !initialized) {
+    return (
+      <View style={styles.loadingContainer}>
+        <Text style={styles.loadingText}>Loading...</Text>
+      </View>
+    );
   }
 
   return (
     <GestureHandlerRootView style={styles.container}>
       <ErrorBoundary>
-        {screen === 'home' ? (
-          <HomeScreen onPlay={handlePlay} />
-        ) : (
-          <GameScreen onCoinsChange={handleCoinsChange} onBack={handleBack} />
+        {screen === 'home' && (
+          <HomeScreen
+            onPlay={handlePlay}
+            onStats={handleStats}
+            onWordsLearned={handleWordsLearned}
+          />
+        )}
+        {screen === 'game' && (
+          <GameScreen
+            onCoinsChange={handleCoinsChange}
+            onBack={handleBack}
+          />
+        )}
+        {screen === 'stats' && (
+          <StatsScreen onBack={handleBack} />
+        )}
+        {screen === 'words' && (
+          <WordsLearnedScreen onBack={handleBack} />
         )}
       </ErrorBoundary>
     </GestureHandlerRootView>
@@ -63,5 +121,16 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+  },
+  loadingContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#87CEEB', // Light blue background
+  },
+  loadingText: {
+    fontSize: 18,
+    color: '#1E3A5F',
+    fontWeight: '500',
   },
 });

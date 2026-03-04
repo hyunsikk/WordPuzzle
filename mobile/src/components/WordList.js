@@ -3,6 +3,7 @@
 import React from 'react';
 import { StyleSheet, Text, View, ScrollView } from 'react-native';
 import { colors } from '../styles/colors';
+import Typography from '../styles/Typography';
 
 function WordItem({ word, isFound }) {
   return (
@@ -12,9 +13,9 @@ function WordItem({ word, isFound }) {
       accessibilityState={{ checked: isFound }}
     >
       <View style={[styles.checkbox, isFound && styles.checkboxFound]}>
-        {isFound && <Text style={styles.checkmark}>✓</Text>}
+        {isFound && <Text style={Typography.small}>✓</Text>}
       </View>
-      <Text style={[styles.wordText, isFound && styles.wordTextFound]}>
+      <Text style={[Typography.caption, { letterSpacing: 1 }, isFound && styles.wordTextFound]}>
         {word}
       </Text>
     </View>
@@ -27,15 +28,15 @@ export default function WordList({ words, foundWords, bonusCount = 0 }) {
   return (
     <View style={styles.container} accessibilityLabel={`Words to find: ${foundWords.length} of ${words.length} found`}>
       <View style={styles.header}>
-        <Text style={styles.title}>Words to Find</Text>
+        <Text style={Typography.caption}>Words to Find</Text>
         <View style={styles.headerRight}>
           {bonusCount > 0 && (
             <View style={styles.bonusBadge}>
-              <Text style={styles.bonusText}>🔥 +{bonusCount}</Text>
+              <Text style={Typography.small}>🔥 +{bonusCount}</Text>
             </View>
           )}
           <View style={styles.progressBadge}>
-            <Text style={styles.progressText}>{progress}</Text>
+            <Text style={Typography.small}>{progress}</Text>
           </View>
         </View>
       </View>
@@ -85,32 +86,17 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     gap: 8,
   },
-  title: {
-    fontSize: 16,
-    fontWeight: '700',
-    color: colors.textPrimary,
-  },
   bonusBadge: {
     backgroundColor: colors.coinGold,
     paddingHorizontal: 10,
     paddingVertical: 4,
     borderRadius: 12,
   },
-  bonusText: {
-    fontSize: 12,
-    fontWeight: '700',
-    color: colors.textPrimary,
-  },
   progressBadge: {
     backgroundColor: colors.bubbleBorder,
     paddingHorizontal: 10,
     paddingVertical: 4,
     borderRadius: 12,
-  },
-  progressText: {
-    fontSize: 12,
-    fontWeight: '700',
-    color: colors.textPrimary,
   },
   wordGrid: {
     flexDirection: 'row',
@@ -143,17 +129,6 @@ const styles = StyleSheet.create({
   checkboxFound: {
     backgroundColor: colors.checkmark,
     borderColor: colors.checkmark,
-  },
-  checkmark: {
-    color: colors.textLight,
-    fontSize: 12,
-    fontWeight: '700',
-  },
-  wordText: {
-    fontSize: 14,
-    fontWeight: '600',
-    color: colors.wordDefault,
-    letterSpacing: 1,
   },
   wordTextFound: {
     color: colors.wordFound,

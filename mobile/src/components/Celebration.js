@@ -2,7 +2,15 @@
 
 import React, { useEffect } from 'react';
 import { StyleSheet, View, Text, Dimensions } from 'react-native';
+import Animated, { 
+  useSharedValue, 
+  useAnimatedStyle, 
+  withSpring, 
+  withSequence,
+  withDelay
+} from 'react-native-reanimated';
 import { colors } from '../styles/colors';
+import Typography from '../styles/Typography';
 
 export default function Celebration({
   visible,
@@ -11,12 +19,35 @@ export default function Celebration({
   noHintBonus = 0,
   comboBonus = 0,
 }) {
+  // Animation values
+  const scale = useSharedValue(0);
+  const emojiScale = useSharedValue(1);
+  const bonusOpacity = useSharedValue(0);
+
   useEffect(() => {
-    if (visible && onComplete) {
+    if (visible) {
+      // Animate container entrance
+      scale.value = withSpring(1, { damping: 15, stiffness: 150 });
+      
+      // Animate emoji celebration
+      emojiScale.value = withSequence(
+        withDelay(200, withSpring(1.3, { damping: 8, stiffness: 200 })),
+        withSpring(1, { damping: 10, stiffness: 150 })
+      );
+      
+      // Animate bonus text
+      bonusOpacity.value = withDelay(400, withSpring(1, { damping: 20, stiffness: 100 }));
+      
+      // Auto-complete after animation
       const timer = setTimeout(() => {
         onComplete();
-      }, 2500);
+      }, 3000);
+      
       return () => clearTimeout(timer);
+    } else {
+      scale.value = 0;
+      emojiScale.value = 1;
+      bonusOpacity.value = 0;
     }
   }, [visible, onComplete]);
 
@@ -24,29 +55,41 @@ export default function Celebration({
 
   const totalBonus = bonusCoins + noHintBonus + comboBonus;
 
+  const animatedContainerStyle = useAnimatedStyle(() => ({
+    transform: [{ scale: scale.value }],
+  }));
+
+  const animatedEmojiStyle = useAnimatedStyle(() => ({
+    transform: [{ scale: emojiScale.value }],
+  }));
+
+  const animatedBonusStyle = useAnimatedStyle(() => ({
+    opacity: bonusOpacity.value,
+  }));
+
   return (
     <View
       style={styles.container}
       accessibilityLabel={`Puzzle complete! You earned ${totalBonus} bonus coins`}
       accessibilityRole="alert"
     >
-      <View style={styles.messageContainer}>
-        <Text style={styles.emoji}>🎉</Text>
-        <Text style={styles.message}>Amazing!</Text>
-        <View style={styles.bonusContainer}>
-          <Text style={styles.subMessage}>+{bonusCoins} completion</Text>
+      <Animated.View style={[styles.messageContainer, animatedContainerStyle]}>
+        <Animated.Text style={[styles.emoji, animatedEmojiStyle]}>🎉</Animated.Text>
+        <Text style={Typography.heading}>Amazing!</Text>
+        <Animated.View style={[styles.bonusContainer, animatedBonusStyle]}>
+          <Text style={Typography.body}>+{bonusCoins} completion</Text>
           {noHintBonus > 0 && (
-            <Text style={styles.bonusLine}>+{noHintBonus} no hints!</Text>
+            <Text style={Typography.coin}>+{noHintBonus} no hints!</Text>
           )}
           {comboBonus > 0 && (
-            <Text style={styles.bonusLine}>+{comboBonus} combos!</Text>
+            <Text style={Typography.coin}>+{comboBonus} combos!</Text>
           )}
-          <Text style={styles.totalMessage}>Total: +{totalBonus} 💎</Text>
-        </View>
+          <Text style={[Typography.subheading, styles.totalText]}>Total: +{totalBonus} 💎</Text>
+        </Animated.View>
         <View style={styles.nextHint}>
-          <Text style={styles.nextHintText}>Next puzzle loading...</Text>
+          <Text style={Typography.small}>Next puzzle loading...</Text>
         </View>
-      </View>
+      </Animated.View>
     </View>
   );
 }
@@ -75,41 +118,18 @@ const styles = StyleSheet.create({
     fontSize: 60,
     marginBottom: 16,
   },
-  message: {
-    fontSize: 32,
-    fontWeight: '800',
-    color: colors.textPrimary,
-  },
   bonusContainer: {
     alignItems: 'center',
-    marginTop: 12,
+    marginTop: 16,
   },
-  subMessage: {
-    fontSize: 16,
-    fontWeight: '600',
-    color: colors.textSecondary,
-    marginTop: 4,
-  },
-  bonusLine: {
-    fontSize: 16,
-    fontWeight: '600',
-    color: colors.coinGold,
-    marginTop: 4,
-  },
-  totalMessage: {
-    fontSize: 20,
-    fontWeight: '700',
+  totalText: {
     color: colors.coinGold,
     marginTop: 12,
   },
   nextHint: {
-    marginTop: 20,
+    marginTop: 24,
     paddingTop: 16,
     borderTopWidth: 1,
     borderTopColor: colors.panelBorder,
-  },
-  nextHintText: {
-    fontSize: 14,
-    color: colors.textSecondary,
   },
 });
