@@ -14,6 +14,8 @@ import { colors } from '../styles/colors';
 import Typography from '../styles/Typography';
 import { getLearnedWords } from '../utils/stats';
 import { getFormattedDefinition } from '../utils/definitions';
+import { getSpacedRepetitionData, getWordsByMastery } from '../utils/spacedRepetition';
+import { getWordData } from '../data/examples';
 import { lightImpact } from '../utils/haptics';
 
 export default function WordsLearnedScreen({ onBack }) {
@@ -22,6 +24,8 @@ export default function WordsLearnedScreen({ onBack }) {
   const [filteredWords, setFilteredWords] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
   const [loading, setLoading] = useState(true);
+  const [selectedFilter, setSelectedFilter] = useState('all'); // all, new, learning, mastered
+  const [spacedRepData, setSpacedRepData] = useState({});
 
   useEffect(() => {
     loadLearnedWords();
@@ -29,28 +33,55 @@ export default function WordsLearnedScreen({ onBack }) {
 
   useEffect(() => {
     filterWords();
-  }, [wordsWithDefinitions, searchTerm]);
+  }, [wordsWithDefinitions, searchTerm, selectedFilter]);
 
   const loadLearnedWords = async () => {
     try {
       setLoading(true);
       const learned = await getLearnedWords();
+      const spacedRep = await getSpacedRepetitionData();
       setLearnedWords(learned);
+      setSpacedRepData(spacedRep);
 
-      // Get definitions for all learned words
+      // Get definitions and spaced rep data for all learned words
       const wordsArray = Object.keys(learned).map(word => {
         const definition = getFormattedDefinition(word);
+        const wordData = getWordData(word);
+        const spacedRepWord = spacedRep[word.toLowerCase()];
+        
         return {
           word,
           definition: definition.definition,
           hasDefinition: definition.hasDefinition,
           learnedDate: learned[word].learnedDate,
           reviewCount: learned[word].reviewCount,
+          // Spaced repetition data
+          masteryLevel: spacedRepWord?.masteryLevel || 'new',
+          interval: spacedRepWord?.interval || 1,
+          correctCount: spacedRepWord?.correctCount || 0,
+          incorrectCount: spacedRepWord?.incorrectCount || 0,
+          lastReviewed: spacedRepWord?.lastReviewed,
+          nextReview: spacedRepWord?.nextReview,
+          // Enhanced data
+          isSATWord: wordData?.isSATWord || false,
+          examples: wordData?.examples || [],
+          synonyms: wordData?.synonyms || [],
+          antonyms: wordData?.antonyms || [],
         };
       });
 
-      // Sort by most recently learned
-      wordsArray.sort((a, b) => new Date(b.learnedDate) - new Date(a.learnedDate));
+      // Sort by mastery level, then by most recently learned
+      wordsArray.sort((a, b) => {
+        const masteryOrder = { new: 3, learning: 2, mastered: 1 };
+        const aMastery = masteryOrder[a.masteryLevel] || 0;
+        const bMastery = masteryOrder[b.masteryLevel] || 0;
+        
+        if (aMastery !== bMastery) {
+          return bMastery - aMastery; // Higher mastery first
+        }
+        
+        return new Date(b.learnedDate) - new Date(a.learnedDate);
+      });
       
       setWordsWithDefinitions(wordsArray);
     } catch (error) {
@@ -61,16 +92,22 @@ export default function WordsLearnedScreen({ onBack }) {
   };
 
   const filterWords = () => {
-    if (!searchTerm.trim()) {
-      setFilteredWords(wordsWithDefinitions);
-      return;
+    let filtered = wordsWithDefinitions;
+    
+    // Filter by mastery level
+    if (selectedFilter !== 'all') {
+      filtered = filtered.filter(item => item.masteryLevel === selectedFilter);
     }
-
-    const filtered = wordsWithDefinitions.filter(
-      item => 
-        item.word.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        item.definition.toLowerCase().includes(searchTerm.toLowerCase())
-    );
+    
+    // Filter by search term
+    if (searchTerm.trim()) {
+      filtered = filtered.filter(
+        item => 
+          item.word.toLowerCase().includes(searchTerm.toLowerCase()) ||
+          item.definition.toLowerCase().includes(searchTerm.toLowerCase())
+      );
+    }
+    
     setFilteredWords(filtered);
   };
 
@@ -92,24 +129,90 @@ export default function WordsLearnedScreen({ onBack }) {
     });
   };
 
-  const WordCard = ({ item }) => (
-    <View style={styles.wordCard}>
-      <View style={styles.wordHeader}>
-        <Text style={Typography.wordTitle}>{item.word}</Text>
-        <Text style={Typography.small}>
-          {formatDate(item.learnedDate)}
+  const WordCard = ({ item }) => {
+    const getMasteryColor = (level) => {
+      switch (level) {
+        case 'mastered': return colors.checkmark;
+        case 'learning': return colors.buttonPrimary;
+        case 'new': return colors.textSecondary;
+        default: return colors.textSecondary;
+      }
+    };
+
+    const getMasteryEmoji = (level) => {
+      switch (level) {
+        case 'mastered': return '✨';
+        case 'learning': return '📖';
+        case 'new': return '🆕';
+        default: return '❓';
+      }
+    };
+
+    const getNextReviewText = (nextReview) => {
+      if (!nextReview) return 'Ready for review';
+      
+      const reviewDate = new Date(nextReview);
+      const today = new Date();
+      const diffTime = reviewDate.getTime() - today.getTime();
+      const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+      
+      if (diffDays <= 0) return 'Review now';
+      if (diffDays === 1) return 'Review tomorrow';
+      return `Review in ${diffDays} days`;
+    };
+
+    return (
+      <View style={styles.wordCard}>
+        <View style={styles.wordHeader}>
+          <View style={styles.wordTitleRow}>
+            <Text style={Typography.wordTitle}>{item.word}</Text>
+            <View style={styles.wordBadges}>
+              {item.isSATWord && (
+                <View style={styles.satBadge}>
+                  <Text style={styles.satBadgeText}>SAT</Text>
+                </View>
+              )}
+              <View style={[styles.masteryBadge, { borderColor: getMasteryColor(item.masteryLevel) }]}>
+                <Text style={[styles.masteryBadgeText, { color: getMasteryColor(item.masteryLevel) }]}>
+                  {getMasteryEmoji(item.masteryLevel)} {item.masteryLevel}
+                </Text>
+              </View>
+            </View>
+          </View>
+          <Text style={Typography.small}>
+            {formatDate(item.learnedDate)}
+          </Text>
+        </View>
+        
+        <Text style={Typography.definition}>
+          {item.definition}
         </Text>
+        
+        {item.masteryLevel !== 'new' && (
+          <View style={styles.progressInfo}>
+            <Text style={Typography.small}>
+              {item.correctCount}✓ / {item.incorrectCount}✗ • {getNextReviewText(item.nextReview)}
+            </Text>
+          </View>
+        )}
+        
+        {item.examples && item.examples.length > 0 && (
+          <View style={styles.exampleContainer}>
+            <Text style={Typography.small}>Example:</Text>
+            <Text style={[Typography.body, styles.exampleText]}>
+              "{item.examples[0]}"
+            </Text>
+          </View>
+        )}
+        
+        {!item.hasDefinition && (
+          <Text style={[Typography.small, styles.noDefinition]}>
+            💭 Definition not available
+          </Text>
+        )}
       </View>
-      <Text style={Typography.definition}>
-        {item.definition}
-      </Text>
-      {!item.hasDefinition && (
-        <Text style={[Typography.small, styles.noDefinition]}>
-          💭 Definition not available
-        </Text>
-      )}
-    </View>
-  );
+    );
+  };
 
   if (loading) {
     return (
@@ -159,6 +262,35 @@ export default function WordsLearnedScreen({ onBack }) {
           autoCapitalize="none"
           autoCorrect={false}
         />
+      </View>
+
+      {/* Filter Buttons */}
+      <View style={styles.filterContainer}>
+        {[
+          { key: 'all', label: 'All', emoji: '📚' },
+          { key: 'new', label: 'New', emoji: '🆕' },
+          { key: 'learning', label: 'Learning', emoji: '📖' },
+          { key: 'mastered', label: 'Mastered', emoji: '✨' }
+        ].map(filter => (
+          <TouchableOpacity
+            key={filter.key}
+            style={[
+              styles.filterButton,
+              selectedFilter === filter.key && styles.filterButtonActive
+            ]}
+            onPress={() => {
+              lightImpact();
+              setSelectedFilter(filter.key);
+            }}
+          >
+            <Text style={[
+              styles.filterButtonText,
+              selectedFilter === filter.key && styles.filterButtonTextActive
+            ]}>
+              {filter.emoji} {filter.label}
+            </Text>
+          </TouchableOpacity>
+        ))}
       </View>
 
       {/* Empty State */}
@@ -266,10 +398,84 @@ const styles = StyleSheet.create({
     elevation: 2,
   },
   wordHeader: {
+    marginBottom: 12,
+  },
+  wordTitleRow: {
     flexDirection: 'row',
     justifyContent: 'space-between',
+    alignItems: 'flex-start',
+    marginBottom: 8,
+  },
+  wordBadges: {
+    flexDirection: 'row',
+    gap: 8,
+  },
+  satBadge: {
+    backgroundColor: colors.accent,
+    paddingHorizontal: 6,
+    paddingVertical: 2,
+    borderRadius: 8,
+  },
+  satBadgeText: {
+    fontSize: 10,
+    fontFamily: 'Nunito_700Bold',
+    color: colors.textLight,
+  },
+  masteryBadge: {
+    borderWidth: 1,
+    paddingHorizontal: 8,
+    paddingVertical: 2,
+    borderRadius: 8,
+    backgroundColor: 'transparent',
+  },
+  masteryBadgeText: {
+    fontSize: 10,
+    fontFamily: 'Nunito_600SemiBold',
+  },
+  progressInfo: {
+    marginTop: 8,
+    paddingTop: 8,
+    borderTopWidth: 1,
+    borderTopColor: colors.panelBorder,
+  },
+  exampleContainer: {
+    marginTop: 12,
+    paddingTop: 12,
+    borderTopWidth: 1,
+    borderTopColor: colors.panelBorder,
+  },
+  exampleText: {
+    fontStyle: 'italic',
+    marginTop: 4,
+    color: colors.textSecondary,
+  },
+  filterContainer: {
+    flexDirection: 'row',
+    paddingHorizontal: 20,
+    marginBottom: 20,
+    gap: 8,
+  },
+  filterButton: {
+    flex: 1,
+    backgroundColor: colors.panelBackground,
+    borderRadius: 12,
+    paddingVertical: 8,
+    paddingHorizontal: 12,
     alignItems: 'center',
-    marginBottom: 12,
+    borderWidth: 1,
+    borderColor: colors.panelBorder,
+  },
+  filterButtonActive: {
+    backgroundColor: colors.buttonPrimary,
+    borderColor: colors.buttonPrimary,
+  },
+  filterButtonText: {
+    fontSize: 12,
+    fontFamily: 'Nunito_600SemiBold',
+    color: colors.textPrimary,
+  },
+  filterButtonTextActive: {
+    color: colors.textLight,
   },
   noDefinition: {
     marginTop: 8,

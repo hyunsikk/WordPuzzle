@@ -1,7 +1,7 @@
-// HomeScreen.js - Ocean Bubbles theme
+// HomeScreen.js - Ocean Bubbles theme with Learning Layer
 
 import React, { useState, useEffect } from 'react';
-import { StyleSheet, Text, View, TouchableOpacity, StatusBar } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity, StatusBar, ScrollView } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import Animated, { 
   useSharedValue, 
@@ -13,11 +13,17 @@ import Animated, {
 import { colors } from '../styles/colors';
 import Typography from '../styles/Typography';
 import { getStats, getStreakInfo } from '../utils/stats';
+import { getVocabularyScore, getSATProgress, getWordsForReview } from '../utils/spacedRepetition';
+import { getWordOfTheDay, addWordOfTheDayToQueue } from '../utils/wordOfTheDay';
 import { lightImpact, mediumImpact } from '../utils/haptics';
 
-export default function HomeScreen({ onPlay, onStats, onWordsLearned }) {
+export default function HomeScreen({ onPlay, onStats, onWordsLearned, onQuiz }) {
   const [stats, setStats] = useState(null);
   const [streakInfo, setStreakInfo] = useState(null);
+  const [vocabularyScore, setVocabularyScore] = useState(null);
+  const [satProgress, setSATProgress] = useState(null);
+  const [wordOfTheDay, setWordOfTheDay] = useState(null);
+  const [wordsForReview, setWordsForReview] = useState(0);
   
   // Breathing animation for bubbles
   const breathingScale = useSharedValue(1);
@@ -35,12 +41,28 @@ export default function HomeScreen({ onPlay, onStats, onWordsLearned }) {
   
   const loadData = async () => {
     try {
-      const [statsData, streakData] = await Promise.all([
+      const [
+        statsData, 
+        streakData, 
+        vocabScore, 
+        satProgressData, 
+        todayWord,
+        reviewWords
+      ] = await Promise.all([
         getStats(),
         getStreakInfo(),
+        getVocabularyScore(),
+        getSATProgress(),
+        getWordOfTheDay(),
+        getWordsForReview(1) // Just count
       ]);
+      
       setStats(statsData);
       setStreakInfo(streakData);
+      setVocabularyScore(vocabScore);
+      setSATProgress(satProgressData);
+      setWordOfTheDay(todayWord);
+      setWordsForReview(reviewWords.length);
     } catch (error) {
       console.error('Error loading home data:', error);
     }
@@ -60,6 +82,20 @@ export default function HomeScreen({ onPlay, onStats, onWordsLearned }) {
     lightImpact();
     onWordsLearned();
   };
+
+  const handleQuizPress = () => {
+    mediumImpact();
+    onQuiz();
+  };
+
+  const handleWordOfTheDayPress = async () => {
+    lightImpact();
+    const added = await addWordOfTheDayToQueue();
+    if (added) {
+      // Reload data to update counts
+      loadData();
+    }
+  };
   
   const animatedBubbleStyle = useAnimatedStyle(() => ({
     transform: [{ scale: breathingScale.value }],
@@ -74,40 +110,77 @@ export default function HomeScreen({ onPlay, onStats, onWordsLearned }) {
     >
       <StatusBar barStyle="dark-content" />
 
-      <View style={styles.content}>
-        {/* Decorative bubbles with breathing animation */}
-        <View style={styles.bubbleDecor}>
-          <Animated.View style={[styles.decorBubble, styles.bubble1, animatedBubbleStyle]} />
-          <Animated.View style={[styles.decorBubble, styles.bubble2, animatedBubbleStyle]} />
-          <Animated.View style={[styles.decorBubble, styles.bubble3, animatedBubbleStyle]} />
-        </View>
+      {/* Decorative bubbles with breathing animation */}
+      <View style={styles.bubbleDecor}>
+        <Animated.View style={[styles.decorBubble, styles.bubble1, animatedBubbleStyle]} />
+        <Animated.View style={[styles.decorBubble, styles.bubble2, animatedBubbleStyle]} />
+        <Animated.View style={[styles.decorBubble, styles.bubble3, animatedBubbleStyle]} />
+      </View>
 
-        {/* Stats row */}
-        {stats && (
-          <View style={styles.statsRow}>
-            <View style={styles.statItem}>
-              <Text style={Typography.small}>Puzzles</Text>
-              <Text style={Typography.coin}>{stats.puzzlesCompleted}</Text>
-            </View>
-            <View style={styles.statItem}>
-              <Text style={Typography.small}>Words</Text>
-              <Text style={Typography.coin}>{stats.wordsLearned}</Text>
-            </View>
-            {streakInfo && streakInfo.currentStreak > 0 && (
-              <View style={styles.statItem}>
-                <Text style={Typography.small}>Streak</Text>
-                <Text style={Typography.streak}>
-                  {streakInfo.emoji} {streakInfo.currentStreak}
-                </Text>
-              </View>
-            )}
-          </View>
-        )}
-
+      <ScrollView 
+        style={styles.scrollView}
+        contentContainerStyle={styles.scrollContent}
+        showsVerticalScrollIndicator={false}
+      >
+        {/* Header with Title */}
         <View style={styles.titleContainer}>
           <Text style={Typography.headingLight}>Vocab Bubbles</Text>
           <Text style={Typography.captionLight}>SAT & GRE Word Search</Text>
         </View>
+
+        {/* Vocabulary Score Card */}
+        {vocabularyScore && (
+          <View style={styles.scoreCard}>
+            <Text style={Typography.subheading}>Vocabulary Strength</Text>
+            <Text style={styles.scoreValue}>{vocabularyScore.score}</Text>
+            <Text style={Typography.caption}>{vocabularyScore.satEquivalent}</Text>
+            <View style={styles.scoreDetails}>
+              <Text style={Typography.small}>
+                {vocabularyScore.masteredWords} mastered • {vocabularyScore.learningWords} learning
+              </Text>
+            </View>
+          </View>
+        )}
+
+        {/* SAT/GRE Progress Card */}
+        {satProgress && (
+          <View style={styles.progressCard}>
+            <Text style={Typography.subheading}>SAT Progress</Text>
+            <Text style={Typography.caption}>
+              {satProgress.masteredSATWords} / {satProgress.targetSATWords} essential words mastered
+            </Text>
+            <View style={styles.progressBarContainer}>
+              <View style={styles.progressBar}>
+                <View style={[styles.progressBarFill, { width: `${satProgress.progress}%` }]} />
+              </View>
+              <Text style={Typography.small}>{satProgress.progress}%</Text>
+            </View>
+          </View>
+        )}
+
+        {/* Word of the Day Card */}
+        {wordOfTheDay && (
+          <TouchableOpacity 
+            style={styles.wordOfTheDayCard}
+            onPress={handleWordOfTheDayPress}
+            activeOpacity={0.8}
+          >
+            <View style={styles.wordOfTheDayHeader}>
+              <Text style={Typography.subheading}>Word of the Day</Text>
+              {!wordOfTheDay.isInLearning && (
+                <Text style={styles.addToQueueHint}>Tap to learn</Text>
+              )}
+            </View>
+            <Text style={styles.wordOfTheDayWord}>{wordOfTheDay.word}</Text>
+            {wordOfTheDay.pronunciation && (
+              <Text style={styles.pronunciation}>/{wordOfTheDay.pronunciation}/</Text>
+            )}
+            <Text style={Typography.definition}>{wordOfTheDay.definition}</Text>
+            {wordOfTheDay.exampleSentence && (
+              <Text style={styles.exampleSentence}>"{wordOfTheDay.exampleSentence}"</Text>
+            )}
+          </TouchableOpacity>
+        )}
 
         {/* Daily streak indicator */}
         {streakInfo && (
@@ -123,15 +196,55 @@ export default function HomeScreen({ onPlay, onStats, onWordsLearned }) {
           </View>
         )}
 
-        <TouchableOpacity
-          style={styles.playButton}
-          onPress={handlePlayPress}
-          activeOpacity={0.8}
-          accessibilityLabel="Start playing Vocab Bubbles"
-          accessibilityRole="button"
-        >
-          <Text style={Typography.button}>Play</Text>
-        </TouchableOpacity>
+        {/* Main Action Buttons */}
+        <View style={styles.actionButtons}>
+          <TouchableOpacity
+            style={styles.playButton}
+            onPress={handlePlayPress}
+            activeOpacity={0.8}
+            accessibilityLabel="Start playing Vocab Bubbles"
+            accessibilityRole="button"
+          >
+            <Text style={Typography.button}>Play Puzzle</Text>
+          </TouchableOpacity>
+
+          {/* Quiz Button - only show if there are words to review */}
+          {wordsForReview > 0 && (
+            <TouchableOpacity
+              style={styles.quizButton}
+              onPress={handleQuizPress}
+              activeOpacity={0.8}
+              accessibilityLabel="Start vocabulary quiz"
+              accessibilityRole="button"
+            >
+              <Text style={[Typography.button, styles.quizButtonText]}>
+                Quiz ({wordsForReview} due)
+              </Text>
+            </TouchableOpacity>
+          )}
+        </View>
+
+        {/* Stats row */}
+        {stats && (
+          <View style={styles.statsRow}>
+            <View style={styles.statItem}>
+              <Text style={Typography.small}>Puzzles</Text>
+              <Text style={Typography.coin}>{stats.puzzlesCompleted}</Text>
+            </View>
+            <View style={styles.statItem}>
+              <Text style={Typography.small}>Words Found</Text>
+              <Text style={Typography.coin}>{stats.wordsLearned}</Text>
+            </View>
+            {streakInfo && streakInfo.currentStreak > 0 && (
+              <View style={styles.statItem}>
+                <Text style={Typography.small}>Streak</Text>
+                <Text style={Typography.streak}>
+                  {streakInfo.emoji} {streakInfo.currentStreak}
+                </Text>
+              </View>
+            )}
+          </View>
+        )}
         
         {/* Navigation buttons */}
         <View style={styles.navButtons}>
@@ -155,7 +268,7 @@ export default function HomeScreen({ onPlay, onStats, onWordsLearned }) {
             <Text style={Typography.captionLight}>Words</Text>
           </TouchableOpacity>
         </View>
-      </View>
+      </ScrollView>
     </LinearGradient>
   );
 }
@@ -164,11 +277,13 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
   },
-  content: {
+  scrollView: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
+  },
+  scrollContent: {
+    paddingTop: 60,
     paddingHorizontal: 24,
+    paddingBottom: 100,
   },
   bubbleDecor: {
     position: 'absolute',
@@ -200,23 +315,102 @@ const styles = StyleSheet.create({
     bottom: '20%',
     right: '5%',
   },
-  statsRow: {
-    flexDirection: 'row',
-    justifyContent: 'center',
-    alignItems: 'center',
-    marginBottom: 32,
-    backgroundColor: 'rgba(255, 255, 255, 0.15)',
-    borderRadius: 20,
-    paddingVertical: 16,
-    paddingHorizontal: 24,
-  },
-  statItem: {
-    alignItems: 'center',
-    marginHorizontal: 16,
-  },
   titleContainer: {
     alignItems: 'center',
     marginBottom: 32,
+  },
+  scoreCard: {
+    backgroundColor: colors.panelBackground,
+    borderRadius: 20,
+    padding: 24,
+    marginBottom: 20,
+    alignItems: 'center',
+    shadowColor: colors.shadowColor,
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.15,
+    shadowRadius: 8,
+    elevation: 4,
+  },
+  scoreValue: {
+    fontSize: 36,
+    fontFamily: 'Nunito_800ExtraBold',
+    color: colors.buttonPrimary,
+    marginVertical: 8,
+  },
+  scoreDetails: {
+    marginTop: 8,
+  },
+  progressCard: {
+    backgroundColor: colors.panelBackground,
+    borderRadius: 20,
+    padding: 20,
+    marginBottom: 20,
+    shadowColor: colors.shadowColor,
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.15,
+    shadowRadius: 8,
+    elevation: 4,
+  },
+  progressBarContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginTop: 12,
+  },
+  progressBar: {
+    flex: 1,
+    height: 8,
+    backgroundColor: colors.panelBorder,
+    borderRadius: 4,
+    marginRight: 12,
+    overflow: 'hidden',
+  },
+  progressBarFill: {
+    height: '100%',
+    backgroundColor: colors.accent,
+    borderRadius: 4,
+  },
+  wordOfTheDayCard: {
+    backgroundColor: colors.panelBackground,
+    borderRadius: 20,
+    padding: 20,
+    marginBottom: 20,
+    shadowColor: colors.shadowColor,
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.15,
+    shadowRadius: 8,
+    elevation: 4,
+  },
+  wordOfTheDayHeader: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    marginBottom: 12,
+  },
+  addToQueueHint: {
+    fontSize: 12,
+    fontFamily: 'Nunito_500Medium',
+    color: colors.buttonPrimary,
+  },
+  wordOfTheDayWord: {
+    fontSize: 24,
+    fontFamily: 'Nunito_800ExtraBold',
+    color: colors.textPrimary,
+    marginBottom: 4,
+  },
+  pronunciation: {
+    fontSize: 14,
+    fontFamily: 'Nunito_400Regular',
+    color: colors.textSecondary,
+    marginBottom: 8,
+    fontStyle: 'italic',
+  },
+  exampleSentence: {
+    fontSize: 14,
+    fontFamily: 'Nunito_400Regular',
+    color: colors.textSecondary,
+    marginTop: 12,
+    fontStyle: 'italic',
+    lineHeight: 20,
   },
   streakContainer: {
     alignItems: 'center',
@@ -231,9 +425,13 @@ const styles = StyleSheet.create({
     textShadowOffset: { width: 0, height: 1 },
     textShadowRadius: 2,
   },
+  actionButtons: {
+    gap: 16,
+    marginBottom: 32,
+  },
   playButton: {
     backgroundColor: colors.buttonPrimary,
-    paddingHorizontal: 80,
+    paddingHorizontal: 40,
     paddingVertical: 20,
     borderRadius: 40,
     shadowColor: colors.shadowColor,
@@ -241,7 +439,36 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.25,
     shadowRadius: 10,
     elevation: 8,
-    marginBottom: 40,
+    alignItems: 'center',
+  },
+  quizButton: {
+    backgroundColor: colors.accent,
+    paddingHorizontal: 40,
+    paddingVertical: 20,
+    borderRadius: 40,
+    shadowColor: colors.shadowColor,
+    shadowOffset: { width: 0, height: 6 },
+    shadowOpacity: 0.25,
+    shadowRadius: 10,
+    elevation: 8,
+    alignItems: 'center',
+  },
+  quizButtonText: {
+    color: colors.buttonText,
+  },
+  statsRow: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginBottom: 32,
+    backgroundColor: 'rgba(255, 255, 255, 0.15)',
+    borderRadius: 20,
+    paddingVertical: 16,
+    paddingHorizontal: 24,
+  },
+  statItem: {
+    alignItems: 'center',
+    marginHorizontal: 16,
   },
   navButtons: {
     flexDirection: 'row',

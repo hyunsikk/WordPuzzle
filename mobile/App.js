@@ -15,6 +15,7 @@ import HomeScreen from './src/screens/HomeScreen';
 import GameScreen from './src/screens/GameScreen';
 import StatsScreen from './src/screens/StatsScreen';
 import WordsLearnedScreen from './src/screens/WordsLearnedScreen';
+import QuizScreen from './src/screens/QuizScreen';
 import ErrorBoundary from './src/components/ErrorBoundary';
 import { initializeCategories } from './src/utils/categories';
 import { initializeGameState, getCoins } from './src/utils/gameState';
@@ -78,6 +79,10 @@ export default function App() {
     setScreen('words');
   };
 
+  const handleQuiz = () => {
+    setScreen('quiz');
+  };
+
   const handleCoinsChange = (newCoins) => {
     setCoins(newCoins);
   };
@@ -99,6 +104,7 @@ export default function App() {
             onPlay={handlePlay}
             onStats={handleStats}
             onWordsLearned={handleWordsLearned}
+            onQuiz={handleQuiz}
           />
         )}
         {screen === 'game' && (
@@ -112,6 +118,9 @@ export default function App() {
         )}
         {screen === 'words' && (
           <WordsLearnedScreen onBack={handleBack} />
+        )}
+        {screen === 'quiz' && (
+          <QuizScreen onBack={handleBack} />
         )}
       </ErrorBoundary>
     </GestureHandlerRootView>

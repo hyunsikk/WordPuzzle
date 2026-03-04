@@ -32,6 +32,7 @@ import {
 } from '../utils/ads';
 import { recordPuzzleCompletion, addLearnedWord } from '../utils/stats';
 import { getFormattedDefinition } from '../utils/definitions';
+import { addWordToSpacedRep } from '../utils/spacedRepetition';
 import { successFeedback, lightImpact, mediumImpact, errorFeedback } from '../utils/haptics';
 
 const REWARDED_COINS = 50; // Coins given for watching a rewarded ad
@@ -132,6 +133,12 @@ export default function GameScreen({ onCoinsChange, onBack }) {
         
         // Add word to learned words (tracks in AsyncStorage)
         await addLearnedWord(placement.word);
+        
+        // Add word to spaced repetition system for quiz learning
+        const definition = getFormattedDefinition(placement.word);
+        if (definition.hasDefinition) {
+          await addWordToSpacedRep(placement.word, definition.definition);
+        }
 
         const wordIndex = foundWords.length; // Index of this word (0-based)
         setFoundWords(prev => [...prev, placement.word]);
