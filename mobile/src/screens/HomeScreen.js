@@ -108,13 +108,13 @@ export default function HomeScreen({ onPlay, onStats, onWordsLearned, onQuiz }) 
       start={{ x: 0, y: 0 }}
       end={{ x: 1, y: 1 }}
     >
-      <StatusBar barStyle="dark-content" />
+      <StatusBar barStyle="light-content" />
 
-      {/* Decorative bubbles with breathing animation */}
-      <View style={styles.bubbleDecor}>
-        <Animated.View style={[styles.decorBubble, styles.bubble1, animatedBubbleStyle]} />
-        <Animated.View style={[styles.decorBubble, styles.bubble2, animatedBubbleStyle]} />
-        <Animated.View style={[styles.decorBubble, styles.bubble3, animatedBubbleStyle]} />
+      {/* Elegant floating elements with breathing animation */}
+      <View style={styles.floatingDecor}>
+        <Animated.View style={[styles.decorElement, styles.element1, animatedBubbleStyle]} />
+        <Animated.View style={[styles.decorElement, styles.element2, animatedBubbleStyle]} />
+        <Animated.View style={[styles.decorElement, styles.element3, animatedBubbleStyle]} />
       </View>
 
       <ScrollView 
@@ -122,17 +122,17 @@ export default function HomeScreen({ onPlay, onStats, onWordsLearned, onQuiz }) 
         contentContainerStyle={styles.scrollContent}
         showsVerticalScrollIndicator={false}
       >
-        {/* Header with Title */}
+        {/* Header with Title - Premium typography treatment */}
         <View style={styles.titleContainer}>
-          <Text style={Typography.headingLight}>Vocab Bubbles</Text>
-          <Text style={Typography.captionLight}>SAT & GRE Word Search</Text>
+          <Text style={Typography.headingLight}>SAT Vocab Builder</Text>
+          <Text style={Typography.captionLight}>Word Puzzle Scholar</Text>
         </View>
 
-        {/* Vocabulary Score Card */}
+        {/* Vocabulary Score Card - Premium emphasis */}
         {vocabularyScore && (
           <View style={styles.scoreCard}>
-            <Text style={Typography.subheading}>Vocabulary Strength</Text>
-            <Text style={styles.scoreValue}>{vocabularyScore.score}</Text>
+            <Text style={Typography.subheading}>Vocabulary Mastery</Text>
+            <Text style={Typography.scoreValue}>{vocabularyScore.score}</Text>
             <Text style={Typography.caption}>{vocabularyScore.satEquivalent}</Text>
             <View style={styles.scoreDetails}>
               <Text style={Typography.small}>
@@ -158,12 +158,12 @@ export default function HomeScreen({ onPlay, onStats, onWordsLearned, onQuiz }) 
           </View>
         )}
 
-        {/* Word of the Day Card */}
+        {/* Word of the Day Card - Featured prominently */}
         {wordOfTheDay && (
           <TouchableOpacity 
             style={styles.wordOfTheDayCard}
             onPress={handleWordOfTheDayPress}
-            activeOpacity={0.8}
+            activeOpacity={0.9}
           >
             <View style={styles.wordOfTheDayHeader}>
               <Text style={Typography.subheading}>Word of the Day</Text>
@@ -171,7 +171,7 @@ export default function HomeScreen({ onPlay, onStats, onWordsLearned, onQuiz }) 
                 <Text style={styles.addToQueueHint}>Tap to learn</Text>
               )}
             </View>
-            <Text style={styles.wordOfTheDayWord}>{wordOfTheDay.word}</Text>
+            <Text style={Typography.wordOfTheDay}>{wordOfTheDay.word}</Text>
             {wordOfTheDay.pronunciation && (
               <Text style={styles.pronunciation}>/{wordOfTheDay.pronunciation}/</Text>
             )}
@@ -282,37 +282,39 @@ const styles = StyleSheet.create({
   },
   scrollContent: {
     paddingTop: 60,
-    paddingHorizontal: 24,
-    paddingBottom: 100,
+    paddingHorizontal: 24, // Premium spacing
+    paddingBottom: 120, // More generous bottom padding
   },
-  bubbleDecor: {
+  floatingDecor: {
     position: 'absolute',
     top: 0,
     left: 0,
     right: 0,
     bottom: 0,
   },
-  decorBubble: {
+  decorElement: {
     position: 'absolute',
-    backgroundColor: 'rgba(255, 255, 255, 0.2)',
+    backgroundColor: 'rgba(248, 246, 240, 0.08)', // Warm, subtle elements
     borderRadius: 100,
+    borderWidth: 1,
+    borderColor: 'rgba(212, 175, 55, 0.15)', // Subtle gold border
   },
-  bubble1: {
+  element1: {
+    width: 120,
+    height: 120,
+    top: '12%',
+    left: '8%',
+  },
+  element2: {
     width: 80,
     height: 80,
-    top: '15%',
-    left: '10%',
+    top: '20%',
+    right: '10%',
   },
-  bubble2: {
-    width: 60,
-    height: 60,
-    top: '25%',
-    right: '15%',
-  },
-  bubble3: {
-    width: 100,
-    height: 100,
-    bottom: '20%',
+  element3: {
+    width: 160,
+    height: 160,
+    bottom: '15%',
     right: '5%',
   },
   titleContainer: {

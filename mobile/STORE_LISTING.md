@@ -1,8 +1,8 @@
-# App Store Listing - SAT Vocab Builder
+# App Store Listing - Word Puzzle: SAT Vocab
 
 ## App Information
 
-- **App Name:** SAT Vocab Builder: Word Puzzle
+- **App Name:** Word Puzzle: SAT Vocab
 - **Subtitle:** GRE Prep & Vocabulary Builder
 - **Bundle ID:** com.amstudio.vocabbubbles
 - **Category:** Education (primary), Games > Word (secondary)
@@ -35,7 +35,7 @@ Game Features:
 • Offline gameplay - study anywhere, anytime
 • Progress syncing across sessions
 
-Whether you're preparing for the SAT, GRE, or simply want to build an impressive vocabulary, SAT Vocab Builder makes learning engaging and effective. Our users see measurable vocabulary improvements within weeks, not months.
+Whether you're preparing for the SAT, GRE, or simply want to build an impressive vocabulary, Word Puzzle: SAT Vocab makes learning engaging and effective. Our users see measurable vocabulary improvements within weeks, not months.
 
 Perfect for high school students, college prep, graduate school applicants, professionals, and lifelong learners who want to communicate with confidence and precision.
 
@@ -58,7 +58,7 @@ EXPANDED: Now featuring 584 word categories with 3,582 total SAT/GRE words (5x i
 IMPROVED: Enhanced learning analytics and progress tracking
 ADDED: Advanced combo system and coin economy
 
-This update transforms SAT Vocab Builder from a simple word game into a comprehensive vocabulary learning platform. Your vocabulary mastery journey starts now!
+This update transforms Word Puzzle: SAT Vocab from a simple word game into a comprehensive vocabulary learning platform. Your vocabulary mastery journey starts now!
 
 ## Screenshots Required
 
@@ -87,11 +87,11 @@ You need a privacy policy that discloses this. Host it on GitHub Pages or your w
 
 Sample privacy policy text:
 ```
-Privacy Policy for SAT Vocab Builder: Word Puzzle
+Privacy Policy for Word Puzzle: SAT Vocab
 
 Last updated: [DATE]
 
-SAT Vocab Builder is a vocabulary learning game by AM Studio.
+Word Puzzle: SAT Vocab is a vocabulary learning game by AM Studio.
 
 Data Collection:
 - Learning progress (vocabulary mastery, quiz scores, streaks) is stored locally on your device

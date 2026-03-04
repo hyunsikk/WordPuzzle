@@ -1,49 +1,50 @@
-// Ocean Bubbles color palette for Vocab Bubbles by AM Studio
+// Premium Scholar color palette - "leather-bound dictionary in a sunlit study"
+// Emotional territory: CALM, INTELLIGENT, REWARDING
 
 export const colors = {
-  // Background gradient
-  backgroundStart: '#87CEEB', // sky blue
-  backgroundEnd: '#40E0D0',   // turquoise
+  // Rich background gradient - deep navy to warm midnight
+  backgroundStart: '#1a2a4a', // deep navy  
+  backgroundEnd: '#2c3e50',   // warm midnight blue
 
-  // Bubbles
-  bubbleDefault: '#FFFFFF',
-  bubbleBorder: '#B0E0E6',    // powder blue
-  bubbleSelected: '#FFE135',  // sunny yellow
-  bubbleFound: '#90EE90',     // light green (default)
+  // Letter bubbles - warm, premium feel
+  bubbleDefault: '#f8f6f0',   // warm ivory
+  bubbleBorder: '#d4af37',    // refined gold
+  bubbleSelected: '#f5e6a8',  // warm golden glow
+  bubbleFound: '#e8dcc0',     // warm found state
 
-  // Found word colors (similar pastel tones)
+  // Found word colors - sophisticated, warm palette
   foundWordColors: [
-    { bg: '#90EE90', border: '#7AC87A', text: '#2D5A2D' },  // light green
-    { bg: '#87CEEB', border: '#6BB8D9', text: '#1E4A5F' },  // sky blue
-    { bg: '#DDA0DD', border: '#C890C8', text: '#5A2D5A' },  // plum
-    { bg: '#F0E68C', border: '#D9CF7A', text: '#5A5A2D' },  // khaki
-    { bg: '#FFB6C1', border: '#E8A0AB', text: '#5A2D35' },  // light pink
-    { bg: '#98D8C8', border: '#82C2B2', text: '#2D5A4A' },  // mint
-    { bg: '#F4A460', border: '#DD8E4A', text: '#5A3D2D' },  // sandy brown
-    { bg: '#B0C4DE', border: '#9AB0CA', text: '#2D3D5A' },  // light steel blue
+    { bg: '#e8dcc0', border: '#d4af37', text: '#5d4e37' },  // warm gold
+    { bg: '#f0e6d2', border: '#cd853f', text: '#8b4513' },  // warm tan
+    { bg: '#e6e2d3', border: '#a0522d', text: '#654321' },  // sage brown  
+    { bg: '#f5f0e8', border: '#daa520', text: '#6b5b3f' },  // cream gold
+    { bg: '#ede4d3', border: '#b8860b', text: '#704214' },  // warm beige
+    { bg: '#f2ead8', border: '#cd853f', text: '#8b6914' },  // champagne
+    { bg: '#eae0d1', border: '#d2691e', text: '#8b4513' },  // warm sand
+    { bg: '#f0e8dc', border: '#daa520', text: '#8b7355' },  // antique white
   ],
 
-  // Text
-  textPrimary: '#1E3A5F',     // deep ocean
-  textSecondary: '#5A7A8A',   // ocean gray
-  textLight: '#FFFFFF',
+  // Text - sophisticated hierarchy
+  textPrimary: '#2c2416',     // rich dark brown
+  textSecondary: '#5d4e37',   // warm brown
+  textLight: '#f8f6f0',       // warm ivory
 
-  // Accents
-  accent: '#FF6B6B',          // coral
-  coinGold: '#00CED1',        // dark turquoise (diamond)
-  streakFire: '#FF8C00',      // orange
+  // Accents - warm, scholarly
+  accent: '#d4af37',          // refined gold
+  coinGold: '#f5e6a8',        // warm golden
+  streakFire: '#ff7f00',      // warm amber
 
-  // UI Elements
-  panelBackground: '#FFFFFF',
-  panelBorder: '#E0F4F4',
-  buttonPrimary: '#40E0D0',   // turquoise
-  buttonText: '#FFFFFF',
+  // UI Elements - premium, warm-tinted
+  panelBackground: '#f8f6f0', // warm ivory cards
+  panelBorder: '#e8dcc0',     // soft gold border
+  buttonPrimary: '#d4af37',   // refined gold
+  buttonText: '#2c2416',      // dark text on gold
 
-  // Word list
-  wordDefault: '#1E3A5F',
-  wordFound: '#4A9F5A',
-  checkmark: '#4A9F5A',
+  // Word list - scholarly feel
+  wordDefault: '#2c2416',
+  wordFound: '#8b6914',       // warm brown success
+  checkmark: '#d4af37',       // gold checkmark
 
-  // Shadows
-  shadowColor: '#1E3A5F',
+  // Shadows - warm, subtle depth
+  shadowColor: 'rgba(44, 36, 22, 0.3)', // warm brown shadow
 };
