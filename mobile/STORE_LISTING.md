@@ -2,7 +2,7 @@
 
 ## App Information
 
-- **App Name:** SAT Vocab Builder: Word Quiz
+- **App Name:** SAT Vocab Builder: Word Puzzle
 - **Subtitle:** GRE Prep & Vocabulary Builder
 - **Bundle ID:** com.amstudio.vocabbubbles
 - **Category:** Education (primary), Games > Word (secondary)
@@ -87,7 +87,7 @@ You need a privacy policy that discloses this. Host it on GitHub Pages or your w
 
 Sample privacy policy text:
 ```
-Privacy Policy for SAT Vocab Builder: Word Quiz
+Privacy Policy for SAT Vocab Builder: Word Puzzle
 
 Last updated: [DATE]
 
