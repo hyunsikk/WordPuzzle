@@ -1,4 +1,4 @@
-// Grid.js - Ocean Bubbles grid with swipe handling
+// Grid.js - Premium Scholar grid with swipe handling
 
 import React, { useCallback, useRef, useState, useEffect } from 'react';
 import { StyleSheet, View, Dimensions, Platform } from 'react-native';

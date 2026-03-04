@@ -1,4 +1,4 @@
-// GameScreen.js - Ocean Bubbles game screen
+// GameScreen.js - Premium Scholar game screen
 
 import React, { useState, useEffect, useCallback, useRef } from 'react';
 import { StyleSheet, Text, View, StatusBar, TouchableOpacity, Platform, Modal } from 'react-native';

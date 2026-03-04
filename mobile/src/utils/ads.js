@@ -1,4 +1,4 @@
-// ads.js - Google AdMob integration for Vocab Bubbles
+// ads.js - Google AdMob integration for Word Puzzle: SAT Vocab
 
 import { Platform } from 'react-native';
 

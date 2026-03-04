@@ -1,4 +1,4 @@
-// Celebration.js - Ocean Bubbles celebration overlay
+// Celebration.js - Premium Scholar celebration overlay
 
 import React, { useEffect } from 'react';
 import { StyleSheet, View, Text, Dimensions } from 'react-native';

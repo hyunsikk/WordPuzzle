@@ -1,4 +1,4 @@
-// HomeScreen.js - Ocean Bubbles theme with Learning Layer
+// HomeScreen.js - Premium Scholar theme with Learning Layer
 
 import React, { useState, useEffect } from 'react';
 import { StyleSheet, Text, View, TouchableOpacity, StatusBar, ScrollView } from 'react-native';
@@ -124,8 +124,8 @@ export default function HomeScreen({ onPlay, onStats, onWordsLearned, onQuiz }) 
       >
         {/* Header with Title - Premium typography treatment */}
         <View style={styles.titleContainer}>
-          <Text style={Typography.headingLight}>SAT Vocab Builder</Text>
-          <Text style={Typography.captionLight}>Word Puzzle Scholar</Text>
+          <Text style={Typography.headingLight}>Word Puzzle: SAT Vocab</Text>
+          <Text style={Typography.captionLight}>Scholarly Word Search</Text>
         </View>
 
         {/* Vocabulary Score Card - Premium emphasis */}
@@ -202,7 +202,7 @@ export default function HomeScreen({ onPlay, onStats, onWordsLearned, onQuiz }) 
             style={styles.playButton}
             onPress={handlePlayPress}
             activeOpacity={0.8}
-            accessibilityLabel="Start playing Vocab Bubbles"
+            accessibilityLabel="Start playing Word Puzzle: SAT Vocab"
             accessibilityRole="button"
           >
             <Text style={Typography.button}>Play Puzzle</Text>
@@ -319,25 +319,21 @@ const styles = StyleSheet.create({
   },
   titleContainer: {
     alignItems: 'center',
-    marginBottom: 32,
+    marginBottom: 48, // More generous spacing
   },
   scoreCard: {
     backgroundColor: colors.panelBackground,
-    borderRadius: 20,
-    padding: 24,
-    marginBottom: 20,
+    borderRadius: 24, // Larger radius for premium feel
+    padding: 32, // More generous padding
+    marginBottom: 32, // Increased spacing between cards
     alignItems: 'center',
+    borderWidth: 1,
+    borderColor: colors.panelBorder,
     shadowColor: colors.shadowColor,
-    shadowOffset: { width: 0, height: 4 },
-    shadowOpacity: 0.15,
-    shadowRadius: 8,
-    elevation: 4,
-  },
-  scoreValue: {
-    fontSize: 36,
-    fontFamily: 'Nunito_800ExtraBold',
-    color: colors.buttonPrimary,
-    marginVertical: 8,
+    shadowOffset: { width: 0, height: 8 }, // Deeper shadow
+    shadowOpacity: 0.25,
+    shadowRadius: 12,
+    elevation: 8,
   },
   scoreDetails: {
     marginTop: 8,
