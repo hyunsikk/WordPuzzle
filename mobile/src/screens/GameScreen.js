@@ -150,7 +150,6 @@ export default function GameScreen({ onCoinsChange, onBack }) {
         setSelectedCells([]);
 
         // Show word definition immediately
-        const definition = getFormattedDefinition(placement.word);
         setCurrentWordDefinition(definition);
         setShowDefinition(true);
         
