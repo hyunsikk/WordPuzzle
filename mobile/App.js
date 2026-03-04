@@ -1,4 +1,4 @@
-// App.js - Vocab Bubbles by AM Studio
+// App.js - Word Puzzle: SAT Vocab by AM Studio
 
 import React, { useState, useEffect } from 'react';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
@@ -135,11 +135,11 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#87CEEB', // Light blue background
+    backgroundColor: '#1a2a4a', // Match app background
   },
   loadingText: {
     fontSize: 18,
-    color: '#1E3A5F',
+    color: '#f8f6f0',
     fontWeight: '500',
   },
 });

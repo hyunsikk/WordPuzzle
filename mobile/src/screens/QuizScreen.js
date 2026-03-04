@@ -15,7 +15,7 @@ import Typography from '../styles/Typography';
 import { getWordsForReview, recordQuizResult } from '../utils/spacedRepetition';
 import { generateQuizSession, validateAnswer, getQuizStats } from '../utils/quizGenerator';
 import { getAllDefinedWords } from '../utils/definitions';
-import { lightImpact, mediumImpact, successImpact } from '../utils/haptics';
+import { lightImpact, mediumImpact, successFeedback } from '../utils/haptics';
 
 const QUIZ_STATES = {
   LOADING: 'loading',
@@ -104,7 +104,7 @@ export default function QuizScreen({ onBack }) {
     
     // Provide haptic feedback
     if (result.isCorrect) {
-      successImpact();
+      successFeedback();
     } else {
       mediumImpact();
     }
@@ -442,6 +442,7 @@ const styles = StyleSheet.create({
   },
   progressContainer: {
     marginBottom: 24,
+    paddingHorizontal: 20,
   },
   progressBar: {
     height: 8,
