@@ -10,12 +10,12 @@
     "splash": {
       "image": "./assets/splash-icon.png",
       "resizeMode": "contain",
-      "backgroundColor": "#87CEEB"
+      "backgroundColor": "#1a2a4a"
     },
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "com.amstudio.vocabbubbles",
-      "buildNumber": "8",
+      "buildNumber": "9",
       "infoPlist": {
         "ITSAppUsesNonExemptEncryption": false,
         "GADApplicationIdentifier": "ca-app-pub-7846673001617739~7101599854",
@@ -29,7 +29,7 @@
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#87CEEB"
+        "backgroundColor": "#1a2a4a"
       },
       "edgeToEdgeEnabled": true,
       "package": "com.amstudio.vocabbubbles",
