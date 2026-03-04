@@ -1,8 +1,9 @@
 // GameScreen.js - Ocean Bubbles game screen
 
 import React, { useState, useEffect, useCallback, useRef } from 'react';
-import { StyleSheet, Text, View, StatusBar, TouchableOpacity, Platform, Alert, Modal } from 'react-native';
+import { StyleSheet, Text, View, StatusBar, TouchableOpacity, Platform, Modal } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
+import { crossAlert } from '../utils/alert';
 import { captureRef } from 'react-native-view-shot';
 import * as MediaLibrary from 'expo-media-library';
 import Animated, { useSharedValue, useAnimatedStyle, withSpring } from 'react-native-reanimated';
@@ -289,7 +290,7 @@ export default function GameScreen({ onCoinsChange, onBack }) {
     } else {
       // Offer to watch a rewarded ad for coins
       if (isRewardedReady()) {
-        Alert.alert(
+        crossAlert(
           'Need more coins!',
           `Watch a short video to earn ${REWARDED_COINS} coins?`,
           [
@@ -308,14 +309,14 @@ export default function GameScreen({ onCoinsChange, onBack }) {
                   successFeedback(); // Haptic for successful coin earning
                 });
                 if (!shown) {
-                  Alert.alert('Oops', 'Video not ready. Try again later.');
+                  crossAlert('Oops', 'Video not ready. Try again later.');
                 }
               },
             },
           ]
         );
       } else {
-        Alert.alert(
+        crossAlert(
           'Not enough coins',
           `You need ${HINT_COST} coins for a hint. Keep finding words to earn more!`
         );
@@ -350,14 +351,14 @@ export default function GameScreen({ onCoinsChange, onBack }) {
         const { status } = await MediaLibrary.requestPermissionsAsync();
         if (status === 'granted') {
           await MediaLibrary.saveToLibraryAsync(uri);
-          Alert.alert('Saved!', 'Screenshot saved to your photo library.');
+          crossAlert('Saved!', 'Screenshot saved to your photo library.');
         } else {
-          Alert.alert('Permission needed', 'Please allow photo library access to save screenshots.');
+          crossAlert('Permission needed', 'Please allow photo library access to save screenshots.');
         }
       }
     } catch (err) {
       console.error('Snapshot error:', err);
-      Alert.alert('Error', 'Could not capture screenshot.');
+      crossAlert('Error', 'Could not capture screenshot.');
     }
   }, [categoryName]);
 
