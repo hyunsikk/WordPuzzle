@@ -1,41 +1,64 @@
-# App Store Listing - Vocab Bubbles
+# App Store Listing - SAT Vocab Builder
 
 ## App Information
 
-- **App Name:** Vocab Bubbles
-- **Subtitle:** SAT & GRE Word Puzzles
+- **App Name:** SAT Vocab Builder: Word Quiz
+- **Subtitle:** GRE Prep & Vocabulary Builder
 - **Bundle ID:** com.amstudio.vocabbubbles
-- **Category:** Games > Word
+- **Category:** Education (primary), Games > Word (secondary)
 - **Age Rating:** 4+
 - **Price:** Free
 
 ## Promotional Text (170 char max)
 
-Master SAT & GRE vocabulary the fun way! New word categories added regularly. Perfect for students, lifelong learners, and puzzle enthusiasts.
+Master 3,582 SAT/GRE words through spaced repetition & word search! Track progress, build vocabulary strength, achieve your test score goals.
 
 ## Description
 
-Build your vocabulary while having fun! Find SAT & GRE words hidden in beautiful ocean-themed grids.
+Transform your SAT and GRE vocabulary mastery with the most effective word learning system disguised as a fun puzzle game. Our spaced repetition algorithm ensures you actually retain what you learn, while tracking your progress toward 500+ word mastery goals.
 
-Swipe through letters to discover words from 100+ themed categories featuring vocabulary from standardized tests. Perfect for test prep or keeping your mind sharp - no pressure, no timers.
+Master 3,582 carefully curated SAT and GRE words across 584 themed categories. This isn't just word search — it's a complete vocabulary learning ecosystem that adapts to your learning pace and ensures long-term retention through scientifically-proven spaced repetition.
 
-Features:
-• SAT & GRE vocabulary words
-• Soothing ocean-inspired design
-• 100+ word categories
-• Swipe-to-select gameplay
-• Daily streaks & coin rewards
-• Works offline - no internet needed to play
+Key Learning Features:
+• Spaced Repetition Quiz Mode - SM-2 algorithm ensures optimal review timing
+• SAT/GRE Progress Tracker - see exactly how many words you've mastered (X/500)
+• Vocabulary Strength Score - know your SAT verbal equivalent score
+• Example Sentences - learn words in context with synonyms and antonyms
+• Word of the Day - expand your vocabulary daily
+• Definition Learning - see word meanings when you find them
 
-Perfect for test prep, commutes, or anytime learning. Play anywhere, anytime.
+Game Features:
+• 584 themed word categories with 3,582 SAT/GRE words
+• Beautiful ocean-themed interface with sky blue and turquoise design
+• Daily streaks and combo system for motivation
+• Coin economy and achievement system
+• Offline gameplay - study anywhere, anytime
+• Progress syncing across sessions
+
+Whether you're preparing for the SAT, GRE, or simply want to build an impressive vocabulary, SAT Vocab Builder makes learning engaging and effective. Our users see measurable vocabulary improvements within weeks, not months.
+
+Perfect for high school students, college prep, graduate school applicants, professionals, and lifelong learners who want to communicate with confidence and precision.
 
 ## Keywords
 
-word search, SAT vocab, GRE prep, vocabulary, puzzle, word game, offline, test prep
+vocabulary,word search,SAT prep,GRE prep,vocab builder,learn words,word game,test prep,spelling,english,flashcards,quiz,study,education,spaced repetition,memory,retention
 
-## What's New (Version 1.0.0)
+## What's New (Version 2.0.0)
 
-Initial release! Enjoy 100+ SAT/GRE vocabulary categories with our beautiful ocean-themed interface.
+🚀 Complete Learning System Overhaul!
+
+NEW: Spaced Repetition Quiz Mode - scientifically proven method for vocabulary retention
+NEW: SAT/GRE Progress Tracker - track mastery toward your 500-word goal
+NEW: Vocabulary Strength Score with SAT verbal equivalent
+NEW: Example sentences with synonyms and antonyms for every word
+NEW: Word of the Day feature
+NEW: Enhanced word definitions shown on discovery
+
+EXPANDED: Now featuring 584 word categories with 3,582 total SAT/GRE words (5x increase!)
+IMPROVED: Enhanced learning analytics and progress tracking
+ADDED: Advanced combo system and coin economy
+
+This update transforms SAT Vocab Builder from a simple word game into a comprehensive vocabulary learning platform. Your vocabulary mastery journey starts now!
 
 ## Screenshots Required
 
@@ -46,40 +69,46 @@ You'll need screenshots for:
 - 12.9" iPad Pro: 2048 x 2732 pixels (if supporting tablet)
 
 Recommended screenshot content:
-1. Home screen with Play button
-2. Game grid with word being selected
-3. Word found celebration
-4. Multiple categories showcase
+1. Home screen highlighting "584 categories, 3,582 SAT/GRE words"
+2. Game grid with word being selected and definition popup
+3. Spaced repetition quiz mode interface
+4. SAT/GRE progress tracker showing "X/500 words mastered"
+5. Vocabulary strength score with SAT equivalent
+6. Daily streak and achievement celebration
 
 ## Privacy Policy
 
 The app uses Google AdMob for advertising, which may collect:
 - Device identifiers for ad personalization
 - Ad interaction data
+- Learning progress and quiz performance (stored locally)
 
 You need a privacy policy that discloses this. Host it on GitHub Pages or your website.
 
 Sample privacy policy text:
 ```
-Privacy Policy for Vocab Bubbles
+Privacy Policy for SAT Vocab Builder: Word Quiz
 
 Last updated: [DATE]
 
-Vocab Bubbles is a word puzzle game by AM Studio.
+SAT Vocab Builder is a vocabulary learning game by AM Studio.
 
 Data Collection:
-- Game progress (coins, streaks, completed puzzles) is stored locally on your device
+- Learning progress (vocabulary mastery, quiz scores, streaks) is stored locally on your device
+- Game progress (coins, achievements, completed puzzles) is stored locally on your device
 - We use Google AdMob to display advertisements, which may collect device identifiers and ad interaction data
 
 Third-Party Services:
 - Google AdMob: https://policies.google.com/privacy
 
+No personal information or learning data is transmitted to external servers.
+
 Contact:
 [Your email]
 ```
 
-Host it at: https://[username].github.io/vocabbubbles-privacy
+Host it at: https://[username].github.io/satvocabbuilder-privacy
 
 ## App Review Notes
 
-"This is a simple offline word search puzzle game. It does not require any special permissions or network access. All game data is stored locally on the device."
+"This is an educational vocabulary learning app with word search puzzle gameplay. It features spaced repetition learning algorithms, progress tracking, and SAT/GRE test preparation content. All learning data is stored locally on the device. The app includes Google AdMob advertising but does not require special permissions beyond what's needed for ads."
